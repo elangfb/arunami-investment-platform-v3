@@ -1,0 +1,83 @@
+# dependencies
+node_modules
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+coverage
+**/coverage
+**/test-results
+**/playwright-report
+**/reports
+
+# next.js
+.next
+**/.next
+out
+**/out
+
+# nx
+.nx/cache
+.nx/workspace-data
+
+# production
+build
+**/build
+dist
+**/dist
+
+# misc
+.DS_Store
+*.pem
+.tt/
+session-*.md
+wf-*.mjs
+__pycache__/
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+!.env.example
+!**/.env.example
+!.env.production.example
+
+# Claude Code local scratch: tt worktrees, plans, settings — never commit.
+# Exception: project skills under .claude/skills/ are shared deliverables — track them.
+.claude/*
+!.claude/skills/
+
+# Prisma local SQLite db (migrations ARE tracked; the db file is not).
+*.db
+*.db-journal
+
+# firebase emulators: exported local accounts (dev only) + CLI/emulator debug logs
+.emulator-data/
+.firebase/
+firebase-debug.log
+ui-debug.log
+firestore-debug.log
+*-debug.log
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+**/next-env.d.ts
+
+.playwright-mcp/
+
+# eslint
+.eslintcache
+**/.eslintcache

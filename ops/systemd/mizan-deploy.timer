@@ -1,0 +1,15 @@
+[Unit]
+Description=Poll GHCR for new Mizan images and deploy when changed
+Documentation=file://__MIZAN_DIR__/docs/guides/deployment.md
+
+[Timer]
+# First check shortly after boot, then on a fixed cadence. deploy-ghcr.sh is a no-op
+# unless the image digest changed, so a tight interval is cheap (one `docker compose pull`).
+OnBootSec=2min
+OnUnitActiveSec=__INTERVAL__
+# Catch up with a single run if the host was asleep/off across a scheduled tick.
+Persistent=true
+AccuracySec=30s
+
+[Install]
+WantedBy=timers.target

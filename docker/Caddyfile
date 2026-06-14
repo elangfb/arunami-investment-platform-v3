@@ -1,0 +1,36 @@
+# Mizan reverse proxy / TLS terminator.
+#   DOMAIN=localhost (default) → Caddy serves an internally-trusted local cert (dev/LAN).
+#   DOMAIN=mizan.bank.example  → Caddy auto-provisions a real cert. For Let's Encrypt the
+#     host must be reachable on 80/443 from the internet; for a closed on-prem network use
+#     an internal ACME CA or mount the bank's own cert with `tls /path/cert /path/key`.
+{$DOMAIN} {
+	encode gzip
+	# Allow KYC document uploads through the proxy (app caps each file at 10MB;
+	# server-action bodySizeLimit is 12MB — keep proxy a touch higher).
+	request_body {
+		max_size 15MB
+	}
+
+	# Security response headers (applied to every response). HSTS is emitted by Caddy
+	# only over HTTPS; browsers ignore it on localhost, so it's safe in dev too.
+	header {
+		# Clickjacking: Mizan embeds Google Docs, never the reverse — deny all framing of us.
+		X-Frame-Options "DENY"
+		# Stop MIME-sniffing (defends the document proxy + any user-supplied bytes).
+		X-Content-Type-Options "nosniff"
+		# Leak only the origin (not full path/PII query) on cross-origin navigations.
+		Referrer-Policy "strict-origin-when-cross-origin"
+		# Drop powerful features the app doesn't use (revisit if camera KYC capture lands).
+		Permissions-Policy "geolocation=(), microphone=(), camera=()"
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		# Don't advertise the framework/proxy versions.
+		-X-Powered-By
+		-Server
+	}
+
+	# NOTE: a Content-Security-Policy is intentionally NOT set yet — a correct policy must
+	# allowlist the Firebase auth domains, googleapis, and the Google Docs /preview iframe,
+	# and needs the real-login E2E (human-gated) to verify it doesn't break sign-in or doc
+	# embedding. Add CSP once that E2E exists. See docs/planning/production-readiness.md.
+	reverse_proxy web:3000
+}

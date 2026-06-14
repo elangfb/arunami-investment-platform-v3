@@ -1,0 +1,9 @@
+# CV Berkah Mandiri — Bisnis · Murabahah · Agunan Properti — Identitas Nasabah (dummy)
+
+Nama        : CV Berkah Mandiri
+NIK         : 3174012503850002
+Jenis       : Bisnis
+Nama Usaha  : Toko Bangunan Berkah Mandiri
+Telepon     : 081234567890
+WhatsApp    : 081234567890
+Alamat      : Jl. Merdeka No. 10, Jakarta Pusat (dummy)

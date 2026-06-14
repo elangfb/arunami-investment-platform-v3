@@ -1,0 +1,4 @@
+# Claude scratch + concurrent git worktrees live under .claude/ — they contain
+# checkouts of this same workspace, which nx would otherwise discover as duplicate
+# projects (e.g. two @mizan/web-app). Never treat them as project sources.
+.claude

@@ -1,0 +1,53 @@
+{
+  "name": "@mizan/source",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "volta": {
+    "node": "24.16.0"
+  },
+  "packageManager": "pnpm@11.5.1+sha512.93f7b57422ea7068257235b4c16eb60762eb68e1dc23723199cc739043ea9be2c4143274a399d8c6defa2b1176226d9ca1c4b63482d6200c1a8fbaa78c1d1485",
+  "scripts": {
+    "clean:dev": "rm -rf apps/web-app/.next apps/web-app/.next/cache node_modules/.cache .nx/cache",
+    "dev": "pnpm clean:dev && NX_DAEMON=false nx dev web-app --no-tui",
+    "build": "nx build web-app",
+    "start": "nx start web-app",
+    "e2e": "nx e2e @mizan/web-app-e2e",
+    "lint": "nx lint web-app --cache",
+    "typecheck": "nx typecheck web-app",
+    "test:unit": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.test.json node --import tsx --test \"apps/web-app/src/**/*.test.ts\"",
+    "eval": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.test.json node --import tsx --test \"eval/guardrails/*.test.ts\"",
+    "test:integration": "bash scripts/test-integration.sh",
+    "test:e2e": "bash scripts/test-e2e.sh",
+    "seed": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.json tsx apps/web-app/prisma/seed.ts",
+    "seed:config": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.json tsx apps/web-app/prisma/seed.ts --config-only",
+    "seed:emu": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.json tsx apps/web-app/scripts/seed-emulator-users.ts",
+    "seed:dummy": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.json tsx apps/web-app/prisma/run-seed-dummy.ts",
+    "seed:firestore": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.test.json tsx apps/web-app/scripts/seed-firestore.ts",
+    "seed:firestore:e2e": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.test.json tsx apps/web-app/scripts/reset-firestore-e2e.ts",
+    "verify:documentai": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.json tsx apps/web-app/scripts/verify-documentai.ts",
+    "gen:dummy": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.json tsx apps/web-app/scripts/gen-dummy-docs.ts",
+    "studio": "[ -f apps/web-app/.env.local ] && { set -a; . apps/web-app/.env.local; set +a; }; pnpm -C apps/web-app exec prisma studio --port 5555 --url \"$DATABASE_URL\"",
+    "google:auth": "tsx apps/web-app/scripts/google-auth.ts",
+    "emu": "bash scripts/emulator.sh"
+  },
+  "devDependencies": {
+    "@cucumber/cucumber": "^12.9.0",
+    "@nx/eslint": "22.7.1",
+    "@nx/eslint-plugin": "22.7.1",
+    "@nx/js": "22.7.1",
+    "@nx/next": "22.7.1",
+    "@playwright/test": "^1.60.0",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/node": "^24.12.4",
+    "@types/react": "^19.2.15",
+    "@types/react-dom": "^19.2.3",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "16.2.6",
+    "firebase-tools": "^15.19.0",
+    "nx": "22.7.1",
+    "tailwindcss": "^4.3.0",
+    "tsx": "^4.22.3",
+    "typescript": "^5.9.3"
+  }
+}

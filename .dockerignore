@@ -1,0 +1,22 @@
+# Build context hygiene — keep the image small and reproducible.
+**/node_modules
+**/.next
+**/dist
+**/.nx
+**/.cache
+.git
+.github
+.claude
+.agents
+.tt
+.pi
+**/.env*
+!**/.env.example
+!.env.production.example
+**/*.local
+playwright-report
+test-results
+**/coverage
+resources
+*.log
+npm-debug.log*

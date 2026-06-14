@@ -1,0 +1,82 @@
+{
+  "name": "@mizan/web-app",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nx build web-app",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@ai-sdk/google": "^3.0.80",
+    "@ai-sdk/google-vertex": "^4.0.140",
+    "@aws-sdk/client-s3": "^3.1056.0",
+    "@base-ui/react": "^1.5.0",
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@google-cloud/documentai": "^9.6.1",
+    "@google/genai": "^2.7.0",
+    "@prisma/adapter-pg": "^7.8.0",
+    "@prisma/client": "^7.8.0",
+    "ai": "^6.0.193",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "dotenv": "^17.4.2",
+    "file-type": "^22.0.1",
+    "firebase": "^12.14.0",
+    "firebase-admin": "^13.10.0",
+    "googleapis": "^172.0.0",
+    "lucide-react": "^1.17.0",
+    "next": "16.2.6",
+    "next-themes": "^0.4.6",
+    "nuqs": "^2.8.9",
+    "pg": "^8.21.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "recharts": "3.8.0",
+    "shadcn": "^4.8.2",
+    "sonner": "^2.0.7",
+    "tailwind-merge": "^3.6.0",
+    "tw-animate-css": "^1.4.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.20.0",
+    "eslint-config-next": "16.2.6",
+    "prisma": "^7.8.0"
+  },
+  "nx": {
+    "projectType": "application",
+    "includedScripts": [],
+    "targets": {
+      "typecheck": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "{workspaceRoot}/apps/web-app",
+          "command": "NODE_OPTIONS=--max-old-space-size=4096 tsc --noEmit"
+        },
+        "cache": true,
+        "dependsOn": [
+          "typegen"
+        ],
+        "inputs": [
+          "default",
+          "^production"
+        ]
+      },
+      "typegen": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "{workspaceRoot}/apps/web-app",
+          "command": "next typegen"
+        },
+        "cache": true,
+        "inputs": [
+          "default",
+          "^production"
+        ]
+      }
+    }
+  }
+}

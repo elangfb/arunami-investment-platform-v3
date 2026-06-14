@@ -1,0 +1,24 @@
+packages:
+  - apps/*
+  - packages/*
+  - tools/*
+
+# Minimum release age for dependencies: 7 days (10080 minutes).
+# Supply-chain guard — pnpm refuses versions published more recently than this.
+minimumReleaseAge: 10080
+
+allowBuilds:
+  '@firebase/util': false
+  '@google/genai': false
+  '@parcel/watcher': false
+  '@prisma/engines': true
+  better-sqlite3: false
+  esbuild: false
+  less: false
+  msw: false
+  nx: false
+  prisma: true
+  protobufjs: false
+  re2: false
+  sharp: false
+  unrs-resolver: false

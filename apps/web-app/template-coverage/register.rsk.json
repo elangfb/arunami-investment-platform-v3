@@ -1,0 +1,263 @@
+{
+  "[No. RSK]": {
+    "class": "unclassified"
+  },
+  "[Divisi]": {
+    "class": "unclassified"
+  },
+  "[Bulan]": {
+    "class": "unclassified"
+  },
+  "[Tahun]": {
+    "class": "unclassified"
+  },
+  "[Tanggal RSK]": {
+    "class": "bound"
+  },
+  "[Nama Perusahaan Pemohon]": {
+    "class": "bound"
+  },
+  "[Plafond yang Diajukan]": {
+    "class": "bound"
+  },
+  "[Nama Reviewer / Unit Risk]": {
+    "class": "unclassified"
+  },
+  "[ DISETUJUI  /  DISETUJUI DENGAN SYARAT  /  DITOLAK ]": {
+    "class": "unclassified"
+  },
+  "[Nama Direktur / Pemilik]": {
+    "class": "unclassified"
+  },
+  "[Nama Grup Usaha, jika ada]": {
+    "class": "unclassified"
+  },
+  "[Deskripsi singkat bidang usaha]": {
+    "class": "unclassified"
+  },
+  "[Internal Referral / Marketing / Walk-in]": {
+    "class": "unclassified"
+  },
+  "[Nama Account Officer / Unit]": {
+    "class": "unclassified"
+  },
+  "[PT / CV / Firma / Perorangan]": {
+    "class": "unclassified"
+  },
+  "[Nomor NIB]": {
+    "class": "bound"
+  },
+  "[dd Bulan Tahun]": {
+    "class": "unclassified"
+  },
+  "[X] oleh Notaris [Nama]": {
+    "class": "unclassified"
+  },
+  "[Nomor NPWP]": {
+    "class": "bound"
+  },
+  "[Alamat lengkap sesuai dokumen NIB]": {
+    "class": "unclassified"
+  },
+  "[Alamat operasional aktual — jika berbeda, catat sebagai catatan]": {
+    "class": "unclassified"
+  },
+  "[Nama KBLI]": {
+    "class": "unclassified"
+  },
+  "[KBLI Code]": {
+    "class": "unclassified"
+  },
+  "[Jika ada: SIUP, izin Kemenhub, SIUJK, dll. — sertakan nomor dan masa berlaku]": {
+    "class": "unclassified"
+  },
+  "[Wajib Pajak Badan Aktif / Suspended / PKP]": {
+    "class": "unclassified"
+  },
+  "[Nama Pemegang Saham 1]": {
+    "class": "unclassified"
+  },
+  "[UBO / Profesional]": {
+    "class": "unclassified"
+  },
+  "[Nama Pemegang Saham 2]": {
+    "class": "unclassified"
+  },
+  "[Keluarga / Investor]": {
+    "class": "unclassified"
+  },
+  "[Nama Direktur]": {
+    "class": "unclassified"
+  },
+  "[Latar belakang, industri, dan tahun pengalaman]": {
+    "class": "unclassified"
+  },
+  "[Nama Komisaris]": {
+    "class": "unclassified"
+  },
+  "[Latar belakang dan keterlibatan operasional]": {
+    "class": "unclassified"
+  },
+  "[Nama Sister Company 1]": {
+    "class": "unclassified"
+  },
+  "[Bidang Usaha]": {
+    "class": "unclassified"
+  },
+  "[Ada pembiayaan / tidak]": {
+    "class": "unclassified"
+  },
+  "[Nama Entitas Induk]": {
+    "class": "unclassified"
+  },
+  "[Line Facility / Term Loan / Non-Revolving / Revolving]": {
+    "class": "unclassified"
+  },
+  "[Plafond Terbilang]": {
+    "class": "bound"
+  },
+  "[xxx.xxx.xxx]": {
+    "class": "unclassified"
+  },
+  "[terbilang]": {
+    "class": "unclassified"
+  },
+  "[Jenis Akad]": {
+    "class": "bound"
+  },
+  "[Jika berbeda, beserta alasan]": {
+    "class": "unclassified"
+  },
+  "[Margin/Nisbah]": {
+    "class": "bound"
+  },
+  "[Jangka Waktu]": {
+    "class": "bound"
+  },
+  "[Revolving / Non-Revolving]": {
+    "class": "unclassified"
+  },
+  "[No. / Tanggal]": {
+    "class": "unclassified"
+  },
+  "[Tanggal]": {
+    "class": "unclassified"
+  },
+  "[Isi ringkas]": {
+    "class": "unclassified"
+  },
+  "[Nama bouwheer]": {
+    "class": "unclassified"
+  },
+  "[Rp]": {
+    "class": "unclassified"
+  },
+  "[Rp 3.000.000.000]": {
+    "class": "unclassified"
+  },
+  "[XX/MEMO-HIJRA-RISK/Bulan/Tahun]": {
+    "class": "unclassified"
+  },
+  "[Akad Musyarakah sesuai / tidak sesuai karena...]": {
+    "class": "unclassified"
+  },
+  "[Apakah ada unsur riba/gharar tersembunyi? Jelaskan]": {
+    "class": "unclassified"
+  },
+  "[Jenis usaha — halal/haram/borderline — proporsi pendapatan halal]": {
+    "class": "unclassified"
+  },
+  "[Apakah perlu eskalasi ke DPS?]": {
+    "class": "unclassified"
+  },
+  "[Alamat 1]": {
+    "class": "unclassified"
+  },
+  "[Nama Pemilik]": {
+    "class": "unclassified"
+  },
+  "[Rp X]": {
+    "class": "unclassified"
+  },
+  "[20-40%]": {
+    "class": "unclassified"
+  },
+  "[Rp Y]": {
+    "class": "unclassified"
+  },
+  "[Alamat 2]": {
+    "class": "unclassified"
+  },
+  "[10% dari plafond]": {
+    "class": "unclassified"
+  },
+  "[50%]": {
+    "class": "unclassified"
+  },
+  "[Nilai Agunan]": {
+    "class": "bound"
+  },
+  "[Rp Y — setelah penyesuaian]": {
+    "class": "unclassified"
+  },
+  "[Jalan Sadarmanah]": {
+    "class": "unclassified"
+  },
+  "[Deskripsikan dengan singkat dan jelas — mis: Man Power Supply untuk airport services]": {
+    "class": "unclassified"
+  },
+  "[Nama client, kontribusi % terhadap total revenue, durasi kerjasama]": {
+    "class": "unclassified"
+  },
+  "[Ya/Tidak — konsentrasi risiko]": {
+    "class": "unclassified"
+  },
+  "[persentase revenue dari 1 client]": {
+    "class": "unclassified"
+  },
+  "[Nama vendor, jenis pengadaan, ada/tidak perjanjian tertulis]": {
+    "class": "unclassified"
+  },
+  "[X] orang manajemen + [Y]": {
+    "class": "unclassified"
+  },
+  "[Daftar kota/bandara/lokasi proyek aktif]": {
+    "class": "unclassified"
+  },
+  "[Ground Handling / Logistik / Konstruksi / dll.]": {
+    "class": "unclassified"
+  },
+  "[Total RAB proyek]": {
+    "class": "unclassified"
+  },
+  "[Total RAB investasi]": {
+    "class": "unclassified"
+  },
+  "[Dibahas lebih lanjut]": {
+    "class": "unclassified"
+  },
+  "[Rp X/tahun]": {
+    "class": "unclassified"
+  },
+  "[Rp Y/tahun]": {
+    "class": "unclassified"
+  },
+  "[MEMENUHI / TIDAK MEMENUHI]": {
+    "class": "unclassified"
+  },
+  "[ ] Sesuai prinsip syariah  [ ]": {
+    "class": "unclassified"
+  },
+  "[ ] Halal  [ ]": {
+    "class": "unclassified"
+  },
+  "_______________________________________________": {
+    "class": "unclassified"
+  },
+  "_________________________": {
+    "class": "unclassified"
+  },
+  "___________": {
+    "class": "unclassified"
+  }
+}

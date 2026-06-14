@@ -1,0 +1,3178 @@
+[
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "______",
+    "line": "______/MUAP-MKT/___/20___",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "______/MUAP-MKT/___/20___",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "______/MUAP-MKT/___/20___",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___ ______________ 20___",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "______________",
+    "line": "___ ______________ 20___",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___ ______________ 20___",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[bracketed]",
+    "line": "Dokumen ini merupakan template panduan penyusunan MUAP berdasarkan praktik aktual perbankan syariah Indonesia, dilengkapi dengan panduan akademis analisis kredi",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "______",
+    "line": "______/MUAP-MKT/___/20___",
+    "section": "(top)",
+    "table": "0,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "______/MUAP-MKT/___/20___",
+    "section": "(top)",
+    "table": "0,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "______/MUAP-MKT/___/20___",
+    "section": "(top)",
+    "table": "0,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___ __________ 20___",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__________",
+    "line": "___ __________ 20___",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___ __________ 20___",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Lengkap Perusahaan]",
+    "line": "[Nama Lengkap Perusahaan] / [\"Inisial\"]Alamat Kantor (sesuai NIB): ____Alamat Kantor (sesuai Visit): ____",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[\"Inisial\"]",
+    "line": "[Nama Lengkap Perusahaan] / [\"Inisial\"]Alamat Kantor (sesuai NIB): ____Alamat Kantor (sesuai Visit): ____",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "____",
+    "line": "[Nama Lengkap Perusahaan] / [\"Inisial\"]Alamat Kantor (sesuai NIB): ____Alamat Kantor (sesuai Visit): ____",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "____",
+    "line": "[Nama Lengkap Perusahaan] / [\"Inisial\"]Alamat Kantor (sesuai NIB): ____Alamat Kantor (sesuai Visit): ____",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Bidang Usaha Utama]",
+    "line": "[Bidang Usaha Utama]",
+    "section": "(top)",
+    "table": "4,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Internal / External / Referral]",
+    "line": "Nasabah Baru / LamaSource of referral: [Internal / External / Referral]",
+    "section": "(top)",
+    "table": "5,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Tanggal]",
+    "line": "- / [Tanggal]",
+    "section": "(top)",
+    "table": "6,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Jabatan]",
+    "line": "[Nama Jabatan] — [Nama Lengkap] (Direktur dan Pemegang Saham)[Nama Jabatan] — [Nama Lengkap] (Komisaris dan Pemegang Saham)",
+    "section": "(top)",
+    "table": "7,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Lengkap]",
+    "line": "[Nama Jabatan] — [Nama Lengkap] (Direktur dan Pemegang Saham)[Nama Jabatan] — [Nama Lengkap] (Komisaris dan Pemegang Saham)",
+    "section": "(top)",
+    "table": "7,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Jabatan]",
+    "line": "[Nama Jabatan] — [Nama Lengkap] (Direktur dan Pemegang Saham)[Nama Jabatan] — [Nama Lengkap] (Komisaris dan Pemegang Saham)",
+    "section": "(top)",
+    "table": "7,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Lengkap]",
+    "line": "[Nama Jabatan] — [Nama Lengkap] (Direktur dan Pemegang Saham)[Nama Jabatan] — [Nama Lengkap] (Komisaris dan Pemegang Saham)",
+    "section": "(top)",
+    "table": "7,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Perusahaan Pemohon]",
+    "line": "[Nama Perusahaan Pemohon]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nomor surat / Tanggal surat permohonan pembiayaan]",
+    "line": "[Nomor surat / Tanggal surat permohonan pembiayaan]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Tanggal Pengajuan]",
+    "line": "[Tanggal Pengajuan]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Tujuan Pembiayaan]",
+    "line": "[Tujuan Pembiayaan]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Plafond Terbilang]",
+    "line": "Rp ____________,- ([Plafond Terbilang])",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "____________",
+    "line": "Rp ____________,- ([Plafond Terbilang])",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___ Bulan",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Modal Kerja / Investasi]",
+    "line": "[Modal Kerja / Investasi] ([Akad])",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Akad]",
+    "line": "[Modal Kerja / Investasi] ([Akad])",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "1,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Keterangan]",
+    "line": "[Keterangan]",
+    "section": "(top)",
+    "table": "1,5"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Modal Kerja / Investasi]",
+    "line": "[Modal Kerja / Investasi] ([Akad])",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Akad]",
+    "line": "[Modal Kerja / Investasi] ([Akad])",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "2,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Keterangan]",
+    "line": "[Keterangan]",
+    "section": "(top)",
+    "table": "2,5"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "3,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Jelaskan kondisi fasilitas existing di bank ini, penjelasan tujuan masing-masing fasilitas, pertimbangan mengapa diusulkan sebesar jumlah tersebut, mekanisme pencairan (reimbursement/non-reimbursement), persentase porsi bank vs self-financing.]",
+    "line": "[Jelaskan kondisi fasilitas existing di bank ini, penjelasan tujuan masing-masing fasilitas, pertimbangan mengapa diusulkan sebesar jumlah tersebut, mekanisme p",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Perusahaan Pemohon]",
+    "line": "[Nama Perusahaan Pemohon]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Alamat Sesuai Dokumen Legalitas]",
+    "line": "[Alamat Sesuai Dokumen Legalitas]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "No. ___ tgl ___ | Notaris: ___ | Pengesahan: AHU-___",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "No. ___ tgl ___ | Notaris: ___ | Pengesahan: AHU-___",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "No. ___ tgl ___ | Notaris: ___ | Pengesahan: AHU-___",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "No. ___ tgl ___ | Notaris: ___ | Pengesahan: AHU-___",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "No. ___ tgl ___",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "No. ___ tgl ___",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Keterangan Perubahan]",
+    "line": "[Keterangan Perubahan]",
+    "section": "(top)",
+    "table": "2,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nomor NIB]",
+    "line": "[Nomor NIB] — Tanggal [DD Bln YYYY]",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[DD Bln YYYY]",
+    "line": "[Nomor NIB] — Tanggal [DD Bln YYYY]",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nomor NPWP]",
+    "line": "[Nomor NPWP]",
+    "section": "(top)",
+    "table": "4,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[SIUP/IUI/Izin khusus sesuai sektor]",
+    "line": "[SIUP/IUI/Izin khusus sesuai sektor]",
+    "section": "(top)",
+    "table": "5,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Tgl Berlaku s.d.]",
+    "line": "[Tgl Berlaku s.d.]",
+    "section": "(top)",
+    "table": "5,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Kode KBLI]",
+    "line": "[Kode KBLI] — [Deskripsi KBLI]",
+    "section": "(top)",
+    "table": "6,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Deskripsi KBLI]",
+    "line": "[Kode KBLI] — [Deskripsi KBLI]",
+    "section": "(top)",
+    "table": "6,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Tuliskan kesimpulan: siapa yang berwenang menandatangani akad (sesuai AD/ART), masa berlaku jabatan direksi/komisaris, apakah ada pembatasan kewenangan yang memerlukan persetujuan organ tertentu, status kelengkapan legalitas secara keseluruhan. Untuk nasabah baru, cantumkan apakah seluruh dokumen asli sudah diterima dan diverifikasi.]",
+    "line": "[Tuliskan kesimpulan: siapa yang berwenang menandatangani akad (sesuai AD/ART), masa berlaku jabatan direksi/komisaris, apakah ada pembatasan kewenangan yang me",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Uraikan profil perusahaan: kapan berdiri, lini bisnis utama, posisi dalam group usaha (jika ada), skala operasional saat ini (jumlah karyawan, wilayah operasi, omzet terakhir yang diklaim). Jika nasabah merupakan bagian dari holding atau group, gambarkan struktur group secara singkat dan sebutkan entitas-entitas terkait beserta bidang usahanya masing-masing.]",
+    "line": "[Uraikan profil perusahaan: kapan berdiri, lini bisnis utama, posisi dalam group usaha (jika ada), skala operasional saat ini (jumlah karyawan, wilayah operasi,",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "1,4"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___%",
+    "section": "(top)",
+    "table": "1,5"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Profesional/Keluarga]",
+    "line": "[Profesional/Keluarga]",
+    "section": "(top)",
+    "table": "1,6"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "2,4"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___%",
+    "section": "(top)",
+    "table": "2,5"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Profesional/Keluarga]",
+    "line": "[Profesional/Keluarga]",
+    "section": "(top)",
+    "table": "2,6"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "3,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama] / Direktur",
+    "section": "(top)",
+    "table": "1,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Riwayat: Pengalaman kerja di industri relevan berapa tahun, perusahaan sebelumnya, pendidikan, posisi saat ini selain di perusahaan ini. Juga sebutkan jika ada hubungan kekeluargaan antar pengurus.]",
+    "line": "[Riwayat: Pengalaman kerja di industri relevan berapa tahun, perusahaan sebelumnya, pendidikan, posisi saat ini selain di perusahaan ini. Juga sebutkan jika ada",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama] / Komisaris",
+    "section": "(top)",
+    "table": "2,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Riwayat: idem]",
+    "line": "[Riwayat: idem]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama] / Founder / Key Influencer (jika ada)",
+    "section": "(top)",
+    "table": "3,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Deskripsikan peran orang-orang kunci yang tidak menjabat secara formal tapi memiliki pengaruh terhadap bisnis — penting untuk menilai key man risk]",
+    "line": "[Deskripsikan peran orang-orang kunci yang tidak menjabat secara formal tapi memiliki pengaruh terhadap bisnis — penting untuk menilai key man risk]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Berdasarkan penarikan data SLIK OJK per tanggal ___ dengan posisi data terakhir tanggal ___ diperoleh informasi sebagai berikut:",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Berdasarkan penarikan data SLIK OJK per tanggal ___ dengan posisi data terakhir tanggal ___ diperoleh informasi sebagai berikut:",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Perusahaan]",
+    "line": "[Nama Perusahaan] — Pemohon",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Direktur]",
+    "line": "[Nama Direktur] — Direktur",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Bank]",
+    "line": "[Bank]",
+    "section": "(top)",
+    "table": "2,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Keterangan lengkap]",
+    "line": "[Keterangan lengkap]",
+    "section": "(top)",
+    "table": "2,5"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Komisaris]",
+    "line": "[Nama Komisaris] — Komisaris",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Bank]",
+    "line": "[Bank]",
+    "section": "(top)",
+    "table": "3,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Keterangan lengkap]",
+    "line": "[Keterangan lengkap]",
+    "section": "(top)",
+    "table": "3,5"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Tuliskan hasil Pefindo: apakah ada scoring, riwayat dari P2P/multifinance yang tidak tercatat di SLIK OJK, catatan khusus yang relevan.]",
+    "line": "[Tuliskan hasil Pefindo: apakah ada scoring, riwayat dari P2P/multifinance yang tidak tercatat di SLIK OJK, catatan khusus yang relevan.]",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Uraikan industri di mana nasabah beroperasi: definisi, skala industri nasional, pemain utama, regulasi yang mengatur sektor ini, tren pertumbuhan 3–5 tahun terakhir. Sertakan sumber data yang kredibel (BPS, Kemenperin, Asosiasi Industri, dsb.)]",
+    "line": "[Uraikan industri di mana nasabah beroperasi: definisi, skala industri nasional, pemain utama, regulasi yang mengatur sektor ini, tren pertumbuhan 3–5 tahun ter",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[ Positif / Stagnan / Negatif ]",
+    "line": "[ Positif / Stagnan / Negatif ] — [Penjelasan singkat tren terkini]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Penjelasan singkat tren terkini]",
+    "line": "[ Positif / Stagnan / Negatif ] — [Penjelasan singkat tren terkini]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Daftar 3–5 pemain utama, perkiraan market share nasabah]",
+    "line": "[Daftar 3–5 pemain utama, perkiraan market share nasabah]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Tinggi/Sedang/Rendah]",
+    "line": "[Tinggi/Sedang/Rendah] — [Penjelasan: regulasi, modal, keahlian, relasi]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Penjelasan: regulasi, modal, keahlian, relasi]",
+    "line": "[Tinggi/Sedang/Rendah] — [Penjelasan: regulasi, modal, keahlian, relasi]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Ada / Tidak]",
+    "line": "[Ada / Tidak] — [Sebutkan regulasi yang berpotensi mengubah industri]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Sebutkan regulasi yang berpotensi mengubah industri]",
+    "line": "[Ada / Tidak] — [Sebutkan regulasi yang berpotensi mengubah industri]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Ada / Tidak]",
+    "line": "[Ada / Tidak] — [Sebutkan ancaman disrupsi teknologi atau model bisnis baru]",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Sebutkan ancaman disrupsi teknologi atau model bisnis baru]",
+    "line": "[Ada / Tidak] — [Sebutkan ancaman disrupsi teknologi atau model bisnis baru]",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Ada / Tidak]",
+    "line": "[Ada / Tidak] — [Sebutkan pola musiman, dampaknya pada cashflow nasabah]",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Sebutkan pola musiman, dampaknya pada cashflow nasabah]",
+    "line": "[Ada / Tidak] — [Sebutkan pola musiman, dampaknya pada cashflow nasabah]",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Kurs, inflasi bahan baku, suku bunga pasar — relevansi terhadap usaha]",
+    "line": "[Kurs, inflasi bahan baku, suku bunga pasar — relevansi terhadap usaha]",
+    "section": "(top)",
+    "table": "7,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Potensi perubahan fatwa DSN-MUI yang berdampak pada sektor ini]",
+    "line": "[Potensi perubahan fatwa DSN-MUI yang berdampak pada sektor ini]",
+    "section": "(top)",
+    "table": "8,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Uraikan secara naratif minimal 3 peluang dan 3 tantangan utama yang dihadapi industri ini. Kaitkan dengan posisi dan strategi bisnis nasabah yang bersangkutan.]",
+    "line": "[Uraikan secara naratif minimal 3 peluang dan 3 tantangan utama yang dihadapi industri ini. Kaitkan dengan posisi dan strategi bisnis nasabah yang bersangkutan.",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Alamat lengkap sesuai NIB — kecamatan, kota, provinsi]",
+    "line": "[Alamat lengkap sesuai NIB — kecamatan, kota, provinsi]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Alamat aktual tempat operasional berdasarkan kunjungan lapangan]",
+    "line": "[Alamat aktual tempat operasional berdasarkan kunjungan lapangan]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[ Milik Sendiri / Sewa / Pinjam Pakai ]",
+    "line": "[ Milik Sendiri / Sewa / Pinjam Pakai ] — berlaku s.d. ___",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "[ Milik Sendiri / Sewa / Pinjam Pakai ] — berlaku s.d. ___",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[ Representatif / Cukup / Kurang ]",
+    "line": "[ Representatif / Cukup / Kurang ] — [Deskripsi singkat hasil visit]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Deskripsi singkat hasil visit]",
+    "line": "[ Representatif / Cukup / Kurang ] — [Deskripsi singkat hasil visit]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[ Konsisten / Tidak Konsisten ]",
+    "line": "[ Konsisten / Tidak Konsisten ] — [Penjelasan]",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Penjelasan]",
+    "line": "[ Konsisten / Tidak Konsisten ] — [Penjelasan]",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Cantumkan catatan hasil kunjungan lapangan: kondisi fisik, aktivitas yang terlihat, jumlah karyawan di lokasi, peralatan/mesin yang ada, dan apakah skala fisik konsisten dengan klaim omzet. Lampirkan foto hasil visit sebagai bukti.]",
+    "line": "[Cantumkan catatan hasil kunjungan lapangan: kondisi fisik, aktivitas yang terlihat, jumlah karyawan di lokasi, peralatan/mesin yang ada, dan apakah skala fisik",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Uraikan secara detail produk/jasa yang dijual nasabah, proses bisnis dari pengadaan/produksi hingga penjualan, model penetapan harga, margin tipikal per produk/jasa, dan siklus operasional (berapa lama dari order masuk hingga pembayaran diterima).]",
+    "line": "[Uraikan secara detail produk/jasa yang dijual nasabah, proses bisnis dari pengadaan/produksi hingga penjualan, model penetapan harga, margin tipikal per produk",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Hari ke-1]",
+    "line": "[Hari ke-1]",
+    "section": "(top)",
+    "table": "1,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Hari ke-...]",
+    "line": "[Hari ke-...]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Hari ke-...]",
+    "line": "[Hari ke-...]",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Hari ke-...]",
+    "line": "[Hari ke-...]",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Hari ke-...]",
+    "line": "[Hari ke-...]",
+    "section": "(top)",
+    "table": "1,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Kota]",
+    "line": "[Kota]",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___ tahun",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "1,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Phone call/Email/Visit — Tgl ___]",
+    "line": "[Phone call/Email/Visit — Tgl ___]",
+    "section": "(top)",
+    "table": "1,5"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "[Phone call/Email/Visit — Tgl ___]",
+    "section": "(top)",
+    "table": "1,5"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Kota]",
+    "line": "[Kota]",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___ tahun",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "2,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Keterangan]",
+    "line": "[Keterangan]",
+    "section": "(top)",
+    "table": "2,5"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Kota]",
+    "line": "[Kota]",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___ tahun",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "3,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Keterangan]",
+    "line": "[Keterangan]",
+    "section": "(top)",
+    "table": "3,5"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Deskripsi]",
+    "line": "[Deskripsi]",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Tahun]",
+    "line": "[Tahun]",
+    "section": "(top)",
+    "table": "1,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Deskripsi]",
+    "line": "[Deskripsi]",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Tahun]",
+    "line": "[Tahun]",
+    "section": "(top)",
+    "table": "2,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Deskripsi]",
+    "line": "[Deskripsi]",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___",
+    "section": "(top)",
+    "table": "1,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Deskripsi]",
+    "line": "[Deskripsi]",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___",
+    "section": "(top)",
+    "table": "2,4"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "4,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Jelaskan status administratif masing-masing upcoming project — sudah sampai tahap apa (tender, verifikasi, penandatanganan), seberapa pasti realisasinya. Analis WAJIB membedakan antara project yang sudah pasti (on-going) dengan yang masih proyeksi, dan hanya menggunakan yang on-going sebagai dasar analisis cashflow konservatif.]",
+    "line": "* Keterangan status Upcoming: [Jelaskan status administratif masing-masing upcoming project — sudah sampai tahap apa (tender, verifikasi, penandatanganan), sebe",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Bahan baku/Jasa]",
+    "line": "[Bahan baku/Jasa]",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Net 30 / COD / dll.]",
+    "line": "[Net 30 / COD / dll.]",
+    "section": "(top)",
+    "table": "1,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Keterangan]",
+    "line": "[Keterangan]",
+    "section": "(top)",
+    "table": "1,5"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "[Nama]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Jenis]",
+    "line": "[Jenis]",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Terms]",
+    "line": "[Terms]",
+    "section": "(top)",
+    "table": "2,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Keterangan]",
+    "line": "[Keterangan]",
+    "section": "(top)",
+    "table": "2,5"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Per Desember 20___",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[KAP jika audited / catatan jika inhouse]",
+    "line": "[KAP jika audited / catatan jika inhouse]",
+    "section": "(top)",
+    "table": "1,4"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Per Desember 20___",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Per ___ 20___",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Per ___ 20___",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Cantumkan catatan relevan: apakah plafond yang diusulkan mewajibkan laporan audited berdasarkan SOP/RAC internal bank? Jika dibebaskan dari kewajiban audited, sebutkan dasar regulasinya.]",
+    "line": "[Cantumkan catatan relevan: apakah plafond yang diusulkan mewajibkan laporan audited berdasarkan SOP/RAC internal bank? Jika dibebaskan dari kewajiban audited, ",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___ (Aktual)",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___ (Aktual)",
+    "section": "(top)",
+    "table": "0,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___ (Interim)",
+    "section": "(top)",
+    "table": "0,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__",
+    "line": "__%",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__",
+    "line": "__%",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "4,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "4,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__",
+    "line": "__%",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__",
+    "line": "__%",
+    "section": "(top)",
+    "table": "5,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__",
+    "line": "__%",
+    "section": "(top)",
+    "table": "5,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "6,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "6,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "7,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "7,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "7,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "8,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "8,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "8,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__",
+    "line": "__%",
+    "section": "(top)",
+    "table": "9,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__",
+    "line": "__%",
+    "section": "(top)",
+    "table": "9,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__",
+    "line": "__%",
+    "section": "(top)",
+    "table": "9,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Berikan narasi analisis tren: apakah pertumbuhan pendapatan konsisten? Apa driver utamanya? Apakah margin kotor stabil atau menurun? Jika margin turun, apa penyebabnya dan apakah masih dapat dipertahankan? Kualitas laba: apakah laba bersumber dari aktivitas operasional utama (recurring) atau ada komponen one-off?]",
+    "line": "[Berikan narasi analisis tren: apakah pertumbuhan pendapatan konsisten? Apa driver utamanya? Apakah margin kotor stabil atau menurun? Jika margin turun, apa pen",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___",
+    "section": "(top)",
+    "table": "0,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___",
+    "section": "(top)",
+    "table": "0,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "4,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "4,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "5,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "5,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "6,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "6,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "7,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "7,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "7,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "8,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "8,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "8,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "9,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "9,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "9,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "10,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "10,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "10,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "11,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "11,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "11,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "12,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "12,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "12,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "13,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "13,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___",
+    "section": "(top)",
+    "table": "13,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Analisis kunci neraca: apakah ada piutang pihak terkait yang besar (related party)? Apakah ada hutang kepada pemegang saham yang tidak wajar? Kualitas aset — apakah piutang aging didominasi <30 hari? Apakah kenaikan aset konsisten dengan pertumbuhan bisnis?]",
+    "line": "[Analisis kunci neraca: apakah ada piutang pihak terkait yang besar (related party)? Apakah ada hutang kepada pemegang saham yang tidak wajar? Kualitas aset — a",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___",
+    "section": "(top)",
+    "table": "0,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "20___",
+    "section": "(top)",
+    "table": "0,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Berikan narasi DSCRi: berapa cashflow operasional bersih yang tersedia? Berapa total kewajiban angsuran + bagi hasil setelah fasilitas baru masuk? Apakah ratio terpenuhi? Jika menggunakan proyeksi, jelaskan asumsi yang digunakan dan seberapa konservatif asumsi tersebut.]",
+    "line": "[Berikan narasi DSCRi: berapa cashflow operasional bersih yang tersedia? Berapa total kewajiban angsuran + bagi hasil setelah fasilitas baru masuk? Apakah ratio",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Q1 20___",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Q2 20___",
+    "section": "(top)",
+    "table": "0,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Q3 20___",
+    "section": "(top)",
+    "table": "0,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Q4 20___",
+    "section": "(top)",
+    "table": "0,4"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "1,4"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "2,4"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "3,4"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__",
+    "line": "__%",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__",
+    "line": "__%",
+    "section": "(top)",
+    "table": "4,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__",
+    "line": "__%",
+    "section": "(top)",
+    "table": "4,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "__",
+    "line": "__%",
+    "section": "(top)",
+    "table": "4,4"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Analisis rekening koran: berapa bank yang diserahkan? Apakah semua rekening perusahaan sudah dilampirkan? Berapa persentase pencerminan omzet di rekening koran vs laporan keuangan? Jika ada perbedaan material, jelaskan alasannya (penjualan tunai, penggunaan rekening pribadi, dll.) dan apakah dapat diterima. Waspadai: penarikan tunai besar tanpa tujuan jelas, transfer ke pihak terkait dalam jumlah besar.]",
+    "line": "[Analisis rekening koran: berapa bank yang diserahkan? Apakah semua rekening perusahaan sudah dilampirkan? Berapa persentase pencerminan omzet di rekening koran",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Jelaskan kebutuhan pembiayaan nasabah secara naratif: apa masalah cashflow yang dihadapi? Apa tujuan spesifik penggunaan dana? Mengapa jumlah yang diminta adalah angka yang tepat? Apa yang terjadi jika pembiayaan tidak diberikan?]",
+    "line": "[Jelaskan kebutuhan pembiayaan nasabah secara naratif: apa masalah cashflow yang dihadapi? Apa tujuan spesifik penggunaan dana? Mengapa jumlah yang diminta adal",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Kontrak on-going / Proyeksi konservatif]",
+    "line": "[Kontrak on-going / Proyeksi konservatif] — Rp ___ per bulan",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "[Kontrak on-going / Proyeksi konservatif] — Rp ___ per bulan",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___% dari total pipeline (on-going saja / termasuk upcoming)",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___% dari nilai kontrak / pendapatan",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Maksimal ___% dari RAB (self-financing minimal ___%)",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Maksimal ___% dari RAB (self-financing minimal ___%)",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________ per siklus",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________ (konsisten dengan kebutuhan di atas)",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Lakukan validasi: apakah plafond yang diminta masuk akal relatif terhadap skala bisnis? Idealnya plafond modal kerja tidak melebihi 1–3 bulan omzet. Jika melebihi, berikan justifikasi kuat.]",
+    "line": "[Lakukan validasi: apakah plafond yang diminta masuk akal relatif terhadap skala bisnis? Idealnya plafond modal kerja tidak melebihi 1–3 bulan omzet. Jika meleb",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Jenis Agunan]",
+    "line": "[Jenis Agunan] — SHM/SHGB ___ a.n. ___ di [Lokasi]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Lokasi]",
+    "line": "[Jenis Agunan] — SHM/SHGB ___ a.n. ___ di [Lokasi]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "[Jenis Agunan] — SHM/SHGB ___ a.n. ___ di [Lokasi]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "[Jenis Agunan] — SHM/SHGB ___ a.n. ___ di [Lokasi]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Tanah LT: ___ m²Bangunan LB: ___ m²",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Tanah LT: ___ m²Bangunan LB: ___ m²",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___Rp ___",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___Rp ___",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___Rp ___",
+    "section": "(top)",
+    "table": "2,5"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___Rp ___",
+    "section": "(top)",
+    "table": "2,5"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Jenis Agunan]",
+    "line": "[Jenis Agunan] — SHM/SHGB ___ a.n. ___ di [Lokasi]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Lokasi]",
+    "line": "[Jenis Agunan] — SHM/SHGB ___ a.n. ___ di [Lokasi]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "[Jenis Agunan] — SHM/SHGB ___ a.n. ___ di [Lokasi]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "[Jenis Agunan] — SHM/SHGB ___ a.n. ___ di [Lokasi]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Tanah LT: ___ m²Bangunan LB: ___ m²",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Tanah LT: ___ m²Bangunan LB: ___ m²",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___Rp ___",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___Rp ___",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___Rp ___",
+    "section": "(top)",
+    "table": "3,5"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___Rp ___",
+    "section": "(top)",
+    "table": "3,5"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Cash Collateral (Tabungan/Deposito Syariah) ___% dari Plafond",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "5,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "5,5"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "6,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Rp ___",
+    "section": "(top)",
+    "table": "6,5"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "Personal Guarantee dari [Nama] — [Jabatan]",
+    "section": "(top)",
+    "table": "7,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Jabatan]",
+    "line": "Personal Guarantee dari [Nama] — [Jabatan]",
+    "section": "(top)",
+    "table": "7,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "8,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "8,5"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "9,5"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________",
+    "section": "(top)",
+    "table": "10,5"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___%",
+    "section": "(top)",
+    "table": "11,5"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___%  (min. 80%)",
+    "section": "(top)",
+    "table": "12,5"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Tuliskan: (1) status kepemilikan agunan — atas nama siapa? jika bukan atas nama nasabah/pengurus, apa alasannya dan kapan akan dibalik nama? (2) apakah sudah ada penilaian KJPP? sebutkan nama KJPP dan tanggal penilaian. (3) rencana pengikatan (HT/Fidusia) — notariil atau un-notariil. (4) catatan khusus terkait agunan (bangunan tanpa IMB, lokasi sengketa, dll.).]",
+    "line": "[Tuliskan: (1) status kepemilikan agunan — atas nama siapa? jika bukan atas nama nasabah/pengurus, apa alasannya dan kapan akan dibalik nama? (2) apakah sudah a",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Jenis Akad]",
+    "line": "[Jenis Akad]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nomor fatwa]",
+    "line": "[Nomor fatwa] — [Nama fatwa]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama fatwa]",
+    "line": "[Nomor fatwa] — [Nama fatwa]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Sesuai / Tidak Sesuai]",
+    "line": "[Sesuai / Tidak Sesuai] — Penjelasan substantif",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Apakah substansi ekonomi transaksi sesuai dengan akad yang dipilih? Tidak ada hilah?]",
+    "line": "[Apakah substansi ekonomi transaksi sesuai dengan akad yang dipilih? Tidak ada hilah?]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Ada / Tidak Ada]",
+    "line": "[Ada / Tidak Ada] — Penjelasan",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Tuliskan opini syariah secara naratif: mengapa akad yang dipilih sudah tepat untuk tujuan pembiayaan ini? Apa elemen fatwa DSN-MUI yang terpenuhi? Apakah ada aspek yang perlu dikonfirmasi ke DPS sebelum akad?]",
+    "line": "[Tuliskan opini syariah secara naratif: mengapa akad yang dipilih sudah tepat untuk tujuan pembiayaan ini? Apa elemen fatwa DSN-MUI yang terpenuhi? Apakah ada a",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Halal / Halal Bersyarat / Perlu Klarifikasi]",
+    "line": "[Halal / Halal Bersyarat / Perlu Klarifikasi]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Sumber dan dasar perhitungan]",
+    "line": "___% — [Sumber dan dasar perhitungan]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___% — [Sumber dan dasar perhitungan]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Ada / Tidak Ada / Dalam Proses]",
+    "line": "[Ada / Tidak Ada / Dalam Proses] — No. Sertifikat: ___",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "[Ada / Tidak Ada / Dalam Proses] — No. Sertifikat: ___",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Ada / Tidak Ada]",
+    "line": "[Ada / Tidak Ada] — [Deskripsi jika ada]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Deskripsi jika ada]",
+    "line": "[Ada / Tidak Ada] — [Deskripsi jika ada]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Diperlukan / Tidak Diperlukan]",
+    "line": "[Diperlukan / Tidak Diperlukan] — [Alasan]",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Alasan]",
+    "line": "[Diperlukan / Tidak Diperlukan] — [Alasan]",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Pastikan: apakah ada komponen pendapatan dari aktivitas haram? Jika usaha masuk kategori borderline (restoran yang jual alkohol, hotel, konten hiburan), hitung proporsi pendapatan halal vs non-halal. Jika non-halal > 5%, rekomendasikan penolakan atau restrukturisasi sebelum pembiayaan.]",
+    "line": "[Pastikan: apakah ada komponen pendapatan dari aktivitas haram? Jika usaha masuk kategori borderline (restoran yang jual alkohol, hotel, konten hiburan), hitung",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Terbilang]",
+    "line": "Rp ___________,- ([Terbilang])",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________,- ([Terbilang])",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Maksimal ___ (___) bulan sejak akad Line Facility ditandatangani",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Maksimal ___ (___) bulan sejak akad Line Facility ditandatangani",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Modal Kerja / Investasi]",
+    "line": "[Modal Kerja / Investasi] untuk [deskripsi spesifik penggunaan]",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[deskripsi spesifik penggunaan]",
+    "line": "[Modal Kerja / Investasi] untuk [deskripsi spesifik penggunaan]",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Kontrak/PO/SPK/RAB yang menjadi dasar penarikan]",
+    "line": "[Kontrak/PO/SPK/RAB yang menjadi dasar penarikan]",
+    "section": "(top)",
+    "table": "5,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Equivalent ___% effective per annum",
+    "section": "(top)",
+    "table": "6,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Terbilang]",
+    "line": "Rp ___________,- ([Terbilang])",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________,- ([Terbilang])",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Deskripsi spesifik tujuan penggunaan]",
+    "line": "[Deskripsi spesifik tujuan penggunaan]",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Maksimal ___ (___) bulan",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Maksimal ___ (___) bulan",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Maksimal ___% dari RAB (di luar pajak)",
+    "section": "(top)",
+    "table": "4,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Equivalent ___% effective per annum",
+    "section": "(top)",
+    "table": "5,3"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[bulanan/sekaligus di akhir]",
+    "line": "Sesuai jadwal angsuran [bulanan/sekaligus di akhir]",
+    "section": "(top)",
+    "table": "6,3"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________ (flat)",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama objek agunan, luas, lokasi lengkap, nomor sertifikat, a.n. siapa]",
+    "line": "[Nama objek agunan, luas, lokasi lengkap, nomor sertifikat, a.n. siapa]",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Cash collateral, piutang usaha, personal guarantee — rincian masing-masing]",
+    "line": "[Cash collateral, piutang usaha, personal guarantee — rincian masing-masing]",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Melampirkan RAB atas Kontrak/SPK/PO yang dibiayai — Bank membiayai maksimal ___% dari RAB, sisa menjadi porsi self-financing nasabah.",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Pencairan dilakukan dengan mekanisme reimbursement (maksimum ___%) atau non-reimbursement, langsung ke rekening vendor/pihak ketiga.",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[ SETUJU ]",
+    "line": "REKOMENDASI ANALIS:   [ SETUJU ]   /   [ SETUJU DENGAN SYARAT ]   /   [ TOLAK ]",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[ SETUJU DENGAN SYARAT ]",
+    "line": "REKOMENDASI ANALIS:   [ SETUJU ]   /   [ SETUJU DENGAN SYARAT ]   /   [ TOLAK ]",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[ TOLAK ]",
+    "line": "REKOMENDASI ANALIS:   [ SETUJU ]   /   [ SETUJU DENGAN SYARAT ]   /   [ TOLAK ]",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Berikan narasi singkat: alasan rekomendasi, poin-poin kekuatan nasabah yang mendukung approval, dan poin-poin risiko utama yang sudah dimitigasi melalui syarat dan covenant. Jika TOLAK, sebutkan alasan spesifik yang menjadi deal breaker.]",
+    "line": "[Berikan narasi singkat: alasan rekomendasi, poin-poin kekuatan nasabah yang mendukung approval, dan poin-poin risiko utama yang sudah dimitigasi melalui syarat",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Nasabah]",
+    "line": "Berdasarkan seluruh uraian di atas, maka diusulkan pemberian fasilitas pembiayaan kepada [Nama Nasabah] berupa:",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Perusahaan Pemohon]",
+    "line": "[Nama Perusahaan Pemohon]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Wa'ad Line Facility + Musyarakah / dll.]",
+    "line": "[Wa'ad Line Facility + Musyarakah / dll.]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Plafond Terbilang]",
+    "line": "Rp ___________,- ([Plafond Terbilang])",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Rp ___________,- ([Plafond Terbilang])",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___ bulan (Wa'ad) / ___ bulan (Realisasi)",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "___ bulan (Wa'ad) / ___ bulan (Realisasi)",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "Equivalent ___% effective per annum",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[ Low ]",
+    "line": "[ Low ] / [ Moderate ] / [ Moderate to High ] / [ High ]",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[ Moderate ]",
+    "line": "[ Low ] / [ Moderate ] / [ Moderate to High ] / [ High ]",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[ Moderate to High ]",
+    "line": "[ Low ] / [ Moderate ] / [ Moderate to High ] / [ High ]",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[ High ]",
+    "line": "[ Low ] / [ Moderate ] / [ Moderate to High ] / [ High ]",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Jenis agunan, SCCR ___% ]",
+    "line": "[Jenis agunan, SCCR ___% ]",
+    "section": "(top)",
+    "table": "7,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___",
+    "line": "[Jenis agunan, SCCR ___% ]",
+    "section": "(top)",
+    "table": "7,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Contoh: SLIK Pengurus]",
+    "line": "[Contoh: SLIK Pengurus]",
+    "section": "(top)",
+    "table": "1,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Tuliskan kondisi aktual secara jujur dan lengkap, lalu berikan justifikasi mengapa deviasi ini masih dapat diterima — misalnya: keterlambatan disebabkan force majeure yang sudah diselesaikan, sudah lunas, dll.]",
+    "line": "[Tuliskan kondisi aktual secara jujur dan lengkap, lalu berikan justifikasi mengapa deviasi ini masih dapat diterima — misalnya: keterlambatan disebabkan force ",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Contoh: Rekening Operasional]",
+    "line": "[Contoh: Rekening Operasional]",
+    "section": "(top)",
+    "table": "2,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Jelaskan kondisi aktual dan mitigant yang diberikan sebagai pengganti ketentuan yang tidak terpenuhi]",
+    "line": "[Jelaskan kondisi aktual dan mitigant yang diberikan sebagai pengganti ketentuan yang tidak terpenuhi]",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Deviasi lainnya jika ada]",
+    "line": "[Deviasi lainnya jika ada]",
+    "section": "(top)",
+    "table": "3,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Ketentuan RAC yang relevan]",
+    "line": "[Ketentuan RAC yang relevan]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Kondisi aktual dan justifikasi]",
+    "line": "[Kondisi aktual dan justifikasi]",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Perusahaan Pemohon]",
+    "line": "Nama: [Nama Perusahaan Pemohon]",
+    "section": "(top)",
+    "table": "1,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "Direktur: [Nama]",
+    "section": "(top)",
+    "table": "1,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama]",
+    "line": "Komisaris: [Nama]",
+    "section": "(top)",
+    "table": "1,0"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Line Facility: Rp ___________",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Jenis & Akad]",
+    "line": "Tujuan: [Jenis & Akad]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "_______________",
+    "line": "Tanggal: _______________",
+    "section": "(top)",
+    "table": "3,0"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "________________________",
+    "line": "________________________",
+    "section": "(top)",
+    "table": "3,0"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama RM]",
+    "line": "[Nama RM]",
+    "section": "(top)",
+    "table": "3,0"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "_______________",
+    "line": "Tanggal: _______________",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "________________________",
+    "line": "________________________",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama TL / SPV]",
+    "line": "[Nama TL / SPV]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "_______________",
+    "line": "Tanggal: _______________",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "underscore",
+    "slot": "________________________",
+    "line": "________________________",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama BM / KU]",
+    "line": "[Nama BM / KU]",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Nama Perusahaan]",
+    "line": "MUAP [Nama Perusahaan] — [Bulan Tahun]  |  Template v2.0 — Berdasarkan praktik aktual perbankan syariah Indonesia",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "muap",
+    "kind": "bracket",
+    "slot": "[Bulan Tahun]",
+    "line": "MUAP [Nama Perusahaan] — [Bulan Tahun]  |  Template v2.0 — Berdasarkan praktik aktual perbankan syariah Indonesia",
+    "section": "(top)",
+    "table": null
+  }
+]

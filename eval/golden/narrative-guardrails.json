@@ -1,0 +1,16 @@
+{
+  "_comment": "Golden set for the no-authoritative-output guarantee. scrubNarrative MUST drop every 'mustDrop' field (it smuggles a decision verdict or, for RSK, a risk level) and MUST keep every 'mustKeep' field (incidental level words with no risk framing). The model is never allowed to author a verdict/level — these assert the deterministic guard, not model quality.",
+  "mustDrop": [
+    { "docKind": "muap", "field": "m_syariah", "text": "Pembiayaan ini direkomendasikan untuk disetujui oleh komite.", "why": "decision verdict (direkomendasikan untuk disetujui)" },
+    { "docKind": "muap", "field": "m_capacity", "text": "Berdasarkan analisis arus kas, usaha ini layak untuk dibiayai.", "why": "eligibility verdict (layak dibiayai)" },
+    { "docKind": "rsk", "field": "r_kesimpulan", "text": "Nasabah tidak memenuhi ketentuan minimum agunan.", "why": "eligibility verdict (tidak memenuhi)" },
+    { "docKind": "rsk", "field": "r_profil_risiko", "text": "Overall risk rating: High.", "why": "English risk level" },
+    { "docKind": "rsk", "field": "r_profil_risiko", "text": "Profil risiko nasabah secara keseluruhan tergolong tinggi.", "why": "Indonesian risk-level framing" },
+    { "docKind": "rsk", "field": "r_kesimpulan", "text": "The exposure carries a moderate risk profile overall.", "why": "English moderate level in RSK" }
+  ],
+  "mustKeep": [
+    { "docKind": "muap", "field": "m_condition", "text": "Industri makanan olahan tumbuh dengan permintaan tinggi sepanjang tahun.", "why": "incidental 'tinggi', no risk framing" },
+    { "docKind": "rsk", "field": "r_mitigasi", "text": "Permintaan pasar tinggi dan stabil; tetapkan covenant pelaporan keuangan bulanan.", "why": "incidental level word, mitigation prose" },
+    { "docKind": "muap", "field": "m_capital", "text": "Struktur permodalan menunjukkan kontribusi self-financing sebesar 30% dari kebutuhan.", "why": "neutral capital prose" }
+  ]
+}

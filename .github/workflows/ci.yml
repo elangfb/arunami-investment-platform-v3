@@ -1,0 +1,110 @@
+name: CI
+
+# Production gate: typecheck + lint + unit tests, and a production image build.
+# Mirrors the verified local/Docker recipe. Activates once a GitHub remote is added.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    name: typecheck · lint · unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - run: corepack enable
+      # pnpm v11 gates dependency build scripts; install with them off (no fatal gate),
+      # then rebuild only the trusted packages that ship native binaries / postinstalls.
+      - name: Install dependencies
+        run: |
+          pnpm install --frozen-lockfile --ignore-scripts
+      - name: Generate Prisma client
+        run: apps/web-app/node_modules/.bin/prisma generate
+        env:
+          # Dummy URL — generate doesn't connect; the client connects lazily at runtime.
+          DATABASE_URL: postgresql://build:build@localhost:5432/build
+      - run: pnpm typecheck
+      - run: pnpm lint
+      - run: pnpm test:unit
+      # Deterministic AI compliance gate (no network): no authoritative output, PII masked
+      # before egress, fail-closed residual. Zero tolerance — see eval/README.md.
+      - run: pnpm eval
+
+  integration:
+    name: integration tests (Postgres)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: mizan_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U postgres" --health-interval 5s
+          --health-timeout 5s --health-retries 12
+    env:
+      TEST_DATABASE_URL: postgresql://postgres:password@localhost:5432/mizan_test?schema=public
+      # Object store for the document round-trip itest (real SeaweedFS, started below).
+      # No s3.config on the gateway → it ignores credentials, so these are throwaway.
+      S3_ENDPOINT: http://localhost:8333
+      S3_REGION: us-east-1
+      S3_BUCKET: mizan-docs-test
+      S3_ACCESS_KEY: ci
+      S3_SECRET_KEY: ci
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - run: corepack enable
+      - name: Install dependencies
+        run: |
+          pnpm install --frozen-lockfile --ignore-scripts
+      - name: Generate Prisma client
+        run: apps/web-app/node_modules/.bin/prisma generate
+        env:
+          # Dummy URL — generate doesn't connect; the client connects lazily at runtime.
+          DATABASE_URL: postgresql://build:build@localhost:5432/build
+      - name: Apply migrations to the test DB
+        run: apps/web-app/node_modules/.bin/prisma migrate deploy
+        env:
+          DATABASE_URL: ${{ env.TEST_DATABASE_URL }}
+      # SeaweedFS S3 gateway as a plain container (service-container can't override the
+      # `server -s3` command). Wait until the S3 port answers before running tests.
+      - name: Start SeaweedFS (S3)
+        run: |
+          docker run -d --name seaweedfs -p 8333:8333 chrislusf/seaweedfs:latest \
+            server -s3 -ip.bind=0.0.0.0
+          for i in $(seq 1 30); do
+            if curl -s -o /dev/null http://localhost:8333; then echo "S3 up"; exit 0; fi
+            sleep 1
+          done
+          echo "SeaweedFS S3 did not become ready" >&2; docker logs seaweedfs; exit 1
+      - name: Run integration tests
+        run: pnpm test:integration
+        env:
+          # test-integration.sh has no apps/web-app/.env.local in CI; pass DB + S3 directly.
+          TEST_DATABASE_URL: ${{ env.TEST_DATABASE_URL }}
+
+  image:
+    name: production image build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Build runner image
+        # NEXT_PUBLIC_* are inlined at build (Firebase client + /login prerender); CI uses
+        # throwaway values just to make the build pass — real values come from .env at deploy.
+        run: |
+          docker build --target runner \
+            --build-arg NEXT_PUBLIC_FIREBASE_API_KEY=ci-dummy-key \
+            --build-arg NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=ci.example \
+            --build-arg NEXT_PUBLIC_FIREBASE_PROJECT_ID=ci \
+            --build-arg NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=ci.example \
+            --build-arg NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=0 \
+            --build-arg NEXT_PUBLIC_FIREBASE_APP_ID=ci \
+            -t mizan-web:ci .

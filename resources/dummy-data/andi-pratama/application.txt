@@ -1,0 +1,43 @@
+# Andi Pratama — Individu · Murabahah · Tanpa Agunan
+# Data dummy untuk uji coba alur Mizan end-to-end.
+# Dihasilkan oleh `pnpm gen:dummy` (sumber: apps/web-app/src/lib/dummy-data/personas.ts).
+# JANGAN diedit manual — perubahan akan tertimpa saat regenerate.
+
+== FORMULIR APLIKASI (/applications/new) ==
+Jenis Nasabah        : Individu
+Nama Nasabah         : Andi Pratama
+Nama Usaha           : -
+No. Telepon          : 081298765432
+WhatsApp             : sama dengan telepon
+Sumber Penghasilan   : Karyawan
+Status Pernikahan    : Belum Menikah
+Jenis Akad           : Murabahah
+Plafond              : Rp 60.000.000
+Tenor                : 24 bulan
+Tujuan Pembiayaan    : Pembelian perlengkapan dan renovasi dapur rumah tinggal.
+Jenis Agunan         : Tanpa Agunan
+
+== INPUT KEUANGAN (tab Data, Stage 3) ==
+NIK (konfirmasi KTP)         : 3173052007900003
+Pendapatan Bersih / bln      : Rp 12.000.000
+Kewajiban Bulanan Berjalan   : Rp 1.000.000
+Nilai Appraisal Agunan       : -
+Margin (flat, per tahun)     : 12%
+Kolektibilitas SLIK          : Kol 1
+
+== TARGET HARD-GATE (happy path) ==
+DSR : 34%   (maks 40%)
+LTV : -   (maks 70%)
+Kol : 1    (maks 1)
+
+== DAFTAR DOKUMEN (folder dokumen/, 10 berkas) ==
+01  KTP Pemohon  [ktp]
+02  NPWP  [npwp]
+03  Formulir Permohonan Pembiayaan  [formulir_permohonan]
+04  Kartu Keluarga  [kartu_keluarga]
+05  Slip Gaji  [slip_gaji]
+06  Rekening Koran 3 Bulan Terakhir  [rekening_koran_pribadi]
+07  Quotation / Invoice Objek Pembiayaan  [quotation_objek]
+08  Spesifikasi Barang  [spesifikasi_barang]
+09  Laporan SLIK (OJK)  [slik_report]
+10  Laporan Pefindo  [pefindo_report]

@@ -1,0 +1,55 @@
+# Mizan app layer that builds web/migrate locally from this checkout.
+# Use with compose.shared.yaml:
+#   docker compose -f compose.shared.yaml -f compose.build.yaml up -d --build
+
+services:
+  # One-shot DB migrator: reuses the build image (has the Prisma CLI + schema engine +
+  # migrations). Applies pending migrations, then exits; `web` waits for success.
+  migrate:
+    build:
+      context: .
+      target: builder
+      args: &next_public_args
+        NEXT_PUBLIC_FIREBASE_API_KEY: ${NEXT_PUBLIC_FIREBASE_API_KEY}
+        NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: ${NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN}
+        NEXT_PUBLIC_FIREBASE_PROJECT_ID: ${NEXT_PUBLIC_FIREBASE_PROJECT_ID}
+        NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: ${NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET}
+        NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: ${NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID}
+        NEXT_PUBLIC_FIREBASE_APP_ID: ${NEXT_PUBLIC_FIREBASE_APP_ID}
+    # Direct binaries (deps installed with --ignore-scripts; pnpm exec would re-hit the v11 gate).
+    # migrate deploy → then seed FACTORY CONFIG ONLY (desks, role bundles, each config table's v1;
+    # idempotent, no demo data — seed.ts refuses dummy under NODE_ENV=production anyway). The builder
+    # target carries src + tsx + the generated client. Without this, prod has no desk/role catalog.
+    command: >-
+      sh -c "apps/web-app/node_modules/.bin/prisma migrate deploy &&
+      TSX_TSCONFIG_PATH=apps/web-app/tsconfig.json node_modules/.bin/tsx apps/web-app/prisma/seed.ts --config-only"
+    env_file: [.env]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: 'no'
+    networks: [internal]
+
+  web:
+    build:
+      context: .
+      target: runner
+      args: *next_public_args
+    restart: unless-stopped
+    env_file: [.env]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+      seaweedfs:
+        condition: service_started
+    networks: [internal]
+    # No published ports — reachable only via caddy on the internal network.
+    healthcheck:
+      # node 24 has global fetch; no extra tooling needed in the slim image.
+      test: ['CMD', 'node', '-e', "fetch('http://localhost:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s

@@ -1,0 +1,1174 @@
+{
+  "no_muap": {
+    "replace": "{{no_muap}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "tanggal": {
+    "replace": "{{tanggal}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "nama_perusahaan_or_inisial": {
+    "replace": "{{nama_perusahaan_or_inisial}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "nama_jabatan_direktur": {
+    "replace": "{{nama_jabatan_direktur}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "nama_jabatan_komisaris": {
+    "replace": "{{nama_jabatan_komisaris}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "nomor_surat_permohonan": {
+    "replace": "{{nomor_surat_permohonan}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "tanggal_surat_permohonan": {
+    "replace": "{{tanggal_surat_permohonan}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "tujuan": {
+    "replace": "{{tujuan}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "tenor_in_bulan": {
+    "replace": "{{tenor_in_bulan}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "total_outstanding_balance": {
+    "replace": "{{total_outstanding_balance}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "total_topup": {
+    "replace": "{{total_topup}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "total_topup_max": {
+    "replace": "{{total_topup_max}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "alamat_perusahaan_sesuai_legal": {
+    "replace": "{{alamat_perusahaan_sesuai_legal}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "ahu_akta_pendirian": {
+    "replace": "{{ahu_akta_pendirian}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "no_akta_perubahan": {
+    "replace": "{{no_akta_perubaahan}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1,
+    "notes": "Existing master literal uses old/typo token name; T3 rewrites to registry canonical."
+  },
+  "tanggal_akta_perubahan": {
+    "replace": "{{tanggal_akta_perubaahan}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1,
+    "notes": "Existing master literal uses old/typo token name; T3 rewrites to registry canonical."
+  },
+  "keterangan_perubahan": {
+    "replace": "{{keterangan_perubahan}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "tanggal_nib": {
+    "replace": "{{tanggal_nib}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "sesuai_or_tidak_dengan_riil": {
+    "replace": "{{sesuai_or_tidak_dengan_rill}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1,
+    "notes": "Existing master literal uses old/typo token name; T3 rewrites to registry canonical."
+  },
+  "lembar_saham_direktur": {
+    "replace": "{{lembar_saham_direktur}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "nilai_saham_direktur": {
+    "replace": "{{nilai_saham_direktur}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "lembar_saham_komisaris": {
+    "replace": "{{lembar_saham_komisaris}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "nilai_saham_komisaris": {
+    "replace": "{{nilai_saham_komisaris}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "total_lembar_saham": {
+    "replace": "{{total_lembar_saham}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "total_nilai_saham": {
+    "replace": "{{total_nilai_saham}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "nama_lengkap_non_formal": {
+    "replace": "{{nama_lengkap_non_formal}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "ai_keterangan_key_person_non_formal": {
+    "replace": "{{keterangan_key_person_non_formal}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1,
+    "notes": "Existing master literal uses old/typo token name; T3 rewrites to registry canonical."
+  },
+  "tanggal_slik_ojk": {
+    "replace": "{{tanggal_slik_ojk}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "tanggal_data_terakhir": {
+    "replace": "{{tanggal_data_terakhir}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "ai_keterangan_tujuan_pembiayaan": {
+    "replace": "{{ain_keterangan_tujuan_pembiayaan}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1,
+    "notes": "Existing master literal uses old/typo token name; T3 rewrites to registry canonical."
+  },
+  "ai_kesimpulan_analisis_yuridis": {
+    "replace": "{{ain_kesimpulan_analisis_yuridis}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1,
+    "notes": "Existing master literal uses old/typo token name; T3 rewrites to registry canonical."
+  },
+  "ai_profil_perusahaan": {
+    "replace": "{{uraian_profil_perusahaan}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1,
+    "notes": "Existing master literal uses old/typo token name; T3 rewrites to registry canonical."
+  },
+  "ai_pefindo_narrative": {
+    "replace": "[Tuliskan hasil Pefindo: apakah ada scoring, riwayat dari P2P/multifinance yang tidak tercatat di SLIK OJK, catatan khusus yang relevan.]",
+    "anchor": "MUAP post-T21",
+    "occurrence": 1
+  },
+  "ai_industri_overview": {
+    "replace": "[Uraikan industri di mana nasabah beroperasi: definisi, skala industri nasional, pemain utama, regulasi yang mengatur sektor ini, tren pertumbuhan 3–5 tahun terakhir. Sertakan sumber data yang kredibel (BPS, Kemenperin, Asosiasi Industri, dsb.)]",
+    "anchor": "MUAP pre-T25",
+    "occurrence": 1
+  },
+  "ai_produk_jasa_proses_bisnis": {
+    "replace": "[Uraikan secara detail produk/jasa, proses bisnis pengadaan→produksi→penjualan, penetapan harga, margin tipikal, siklus operasional.]",
+    "anchor": "MUAP post-T31",
+    "occurrence": 1
+  },
+  "ai_status_upcoming_projects": {
+    "replace": "[Jelaskan status administratif masing-masing upcoming project — tahap (tender, verifikasi, ttd), kepastian. WAJIB bedakan on-going vs proyeksi.]",
+    "anchor": "MUAP post-T36",
+    "occurrence": 1
+  },
+  "ai_audit_kewajiban_catatan": {
+    "replace": "[Cantumkan catatan relevan: apakah plafond yang diusulkan mewajibkan laporan audited berdasarkan SOP/RAC internal bank?]",
+    "anchor": "MUAP post-T41",
+    "occurrence": 1
+  },
+  "ai_analisis_tren_keuangan": {
+    "replace": "[Berikan narasi analisis tren: konsistensi pertumbuhan, driver, margin kotor stabil/turun, kualitas laba (recurring vs one-off).]",
+    "anchor": "MUAP post-T43",
+    "occurrence": 1
+  },
+  "ai_analisis_neraca_kunci": {
+    "replace": "[Analisis kunci neraca: piutang pihak terkait, hutang ke pemegang saham, kualitas aset, piutang aging, konsistensi kenaikan aset.]",
+    "anchor": "MUAP post-T45",
+    "occurrence": 1
+  },
+  "ai_dscri_narasi": {
+    "replace": "[Berikan narasi DSCRi: cashflow operasional bersih, total kewajiban setelah fasilitas baru, ratio terpenuhi, asumsi proyeksi.]",
+    "anchor": "MUAP post-T47",
+    "occurrence": 1
+  },
+  "ai_rekening_koran_analisis": {
+    "replace": "[Analisis rekening koran: berapa bank, persentase pencerminan omzet di rekkoran vs lapkeu, perbedaan material, penarikan tunai besar, transfer ke pihak terkait.]",
+    "anchor": "MUAP post-T50",
+    "occurrence": 1
+  },
+  "ai_kebutuhan_pembiayaan_narratif": {
+    "replace": "[Jelaskan kebutuhan pembiayaan nasabah secara naratif: masalah cashflow, tujuan spesifik, mengapa jumlah ini, dampak jika tidak dibiayai.]",
+    "anchor": "MUAP pre-T54",
+    "occurrence": 1
+  },
+  "porsi_bank_max_persen": {
+    "replace": "___%",
+    "anchor": "MUAP T54/T78",
+    "occurrence": 1,
+    "notes": "Appears twice as Maksimal ___% dari RAB; strict reuse seeds first occurrence only."
+  },
+  "ai_collateral_status_narratif": {
+    "replace": "[Tuliskan: (1) status kepemilikan agunan a.n. siapa, (2) penilaian KJPP + tanggal, (3) rencana pengikatan (HT/Fidusia, notariil), (4) catatan khusus (IMB, sengketa, dll).]",
+    "anchor": "MUAP post-T56",
+    "occurrence": 1
+  },
+  "kesesuaian_akad_or": {
+    "replace": "[Sesuai / Tidak Sesuai]",
+    "anchor": "MUAP T61",
+    "occurrence": 1
+  },
+  "ai_syariah_opini_narratif": {
+    "replace": "[Tuliskan opini syariah secara naratif: mengapa akad tepat, elemen fatwa DSN-MUI terpenuhi, aspek yang perlu konfirmasi ke DPS.]",
+    "anchor": "MUAP post-T61",
+    "occurrence": 1
+  },
+  "ai_kehalalan_pendapatan_pastikan": {
+    "replace": "[Pastikan: apakah ada komponen pendapatan dari aktivitas haram? Jika usaha masuk kategori borderline... hitung proporsi pendapatan halal vs non-halal. Jika non-halal > 5%, rekomendasikan penolakan...]",
+    "anchor": "MUAP post-T63",
+    "occurrence": 1,
+    "notes": "Ellipsis copied from walkthrough; verify exact long bracket in Doc before write."
+  },
+  "rekomendasi_analis": {
+    "replace": "[SETUJU]/[SETUJU DENGAN SYARAT]/[TOLAK]",
+    "anchor": "MUAP T82 r0 c0",
+    "occurrence": 1
+  },
+  "ai_rekomendasi_analis_alasan": {
+    "replace": "[Berikan narasi singkat: alasan rekomendasi]",
+    "anchor": "MUAP T82 r0 c0",
+    "occurrence": 1
+  },
+  "footer_bulan_tahun": {
+    "replace": "[Bulan Tahun]",
+    "anchor": "MUAP footer",
+    "occurrence": 1
+  },
+  "nama_perusahaan": {
+    "replace": "{{nama_perusahaan}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "nama_grup_usaha": {
+    "replace": "[Group / Afiliasi : -]",
+    "anchor": "MUAP T6 identity",
+    "occurrence": 1,
+    "notes": "Template evidence shows Group / Afiliasi fact cell; verify exact punctuation in Doc before write."
+  },
+  "alamat_kantor_nib": {
+    "replace": "{{alamat_kantor_nib}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "alamat_kantor_visit": {
+    "replace": "{{alamat_kantor_visit}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "bidang_usaha_utama": {
+    "replace": "{{bidang_usaha_utama}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "nasabah_baru_or_lama": {
+    "replace": "{{nasabah_baru_or_lama}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "source_of_referral": {
+    "replace": "{{source_of_referral}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "tanggal_menjadi_nasabah_or_strip": {
+    "replace": "{{tanggal_menjadi_nasabah_or_strip}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "nama_lengkap_direktur": {
+    "replace": "{{nama_lengkap_direktur}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "nama_lengkap_komisaris": {
+    "replace": "{{nama_lengkap_komisaris}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "plafond": {
+    "replace": "{{plafond}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "plafond_terbilang": {
+    "replace": "{{plafond_terbilang}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "no_akta_pendirian": {
+    "replace": "{{no_akta_pendirian}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "tanggal_akta_pendirian": {
+    "replace": "{{tanggal_akta_pendirian}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "notaris_akta_pendirian": {
+    "replace": "{{notaris_akta_pendirian}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "no_nib": {
+    "replace": "{{no_nib}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "no_npwp": {
+    "replace": "{{no_npwp}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "izin_usaha_sektoral": {
+    "replace": "{{izin_usaha_sektoral}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "izin_usaha_sektoral_berlaku_sampai": {
+    "replace": "{{izin_usaha_sektoral_berlaku_sampai}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "no_kbli": {
+    "replace": "{{no_kbli}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "deskripsi_kbli": {
+    "replace": "{{deskripsi_kbli}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "persen_direktur": {
+    "replace": "{{persen_direktur}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "professional_or_keluarga_direktur": {
+    "replace": "{{proffesional_or_keluarga_direktur}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1,
+    "notes": "Existing master literal uses old/typo token name; T3 rewrites to registry canonical."
+  },
+  "persen_komisaris": {
+    "replace": "{{persen_komisaris}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1
+  },
+  "professional_or_keluarga_komisaris": {
+    "replace": "{{proffesional_or_keluarga_komisaris}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1,
+    "notes": "Existing master literal uses old/typo token name; T3 rewrites to registry canonical."
+  },
+  "ai_keterangan_key_person_direktur": {
+    "replace": "{{keterangan_key_person_direktur}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1,
+    "notes": "Existing master literal uses old/typo token name; T3 rewrites to registry canonical."
+  },
+  "ai_keterangan_key_person_komisaris": {
+    "replace": "{{keterangan_key_person_komisaris}}",
+    "anchor": "MUAP existing v2 master token",
+    "occurrence": 1,
+    "notes": "Existing master literal uses old/typo token name; T3 rewrites to registry canonical."
+  },
+  "ai_kunjungan_lapangan_catatan": {
+    "replace": "[Cantumkan catatan hasil kunjungan lapangan: kondisi fisik, aktivitas yang terlihat, jumlah karyawan di lokasi, peralatan/mesin yang ada, dan apakah skala fisik konsisten dengan klaim omzet. Lampirkan foto hasil visit sebagai bukti.]",
+    "anchor": "MUAP post-T29",
+    "occurrence": 1
+  },
+  "__missing__": [
+    "unit_pengelola",
+    "modal_kerja_or_investasi_1",
+    "outstanding_balance_berjalan_1",
+    "topup_1",
+    "topup_max_1",
+    "keterangan_1",
+    "modal_kerja_or_investasi_2",
+    "outstanding_balance_berjalan_2",
+    "topup_2",
+    "topup_max_2",
+    "keterangan_2",
+    "tren_industri_or_stagnan",
+    "ai_tren_industri_penjelasan",
+    "ai_pemain_utama",
+    "barrier_to_entry",
+    "ai_barrier_to_entry_penjelasan",
+    "regulasi_perubahan_or_tidak",
+    "ai_regulasi_perubahan_penjelasan",
+    "disrupsi_teknologi_or_tidak",
+    "ai_disrupsi_teknologi_penjelasan",
+    "musiman_or_tidak",
+    "ai_musiman_penjelasan",
+    "ai_faktor_makro",
+    "ai_fatwa_dsn_mui_risk",
+    "ai_industri_peluang_tantangan",
+    "konsistensi_lokasi_skala_or_tidak",
+    "ai_konsistensi_lokasi_skala_penjelasan",
+    "aktivitas_hari_1",
+    "aktivitas_hari_2",
+    "aktivitas_hari_3",
+    "aktivitas_hari_4",
+    "aktivitas_hari_5",
+    "nama_pelanggan_1",
+    "kota_pelanggan_1",
+    "lama_relasi_pelanggan_1_tahun",
+    "nilai_bulanan_pelanggan_1",
+    "metode_pelanggan_1",
+    "tanggal_pelanggan_1",
+    "nama_pelanggan_2",
+    "kota_pelanggan_2",
+    "lama_relasi_pelanggan_2_tahun",
+    "nilai_bulanan_pelanggan_2",
+    "metode_pelanggan_2",
+    "tanggal_pelanggan_2",
+    "nama_pelanggan_3",
+    "kota_pelanggan_3",
+    "lama_relasi_pelanggan_3_tahun",
+    "nilai_bulanan_pelanggan_3",
+    "metode_pelanggan_3",
+    "tanggal_pelanggan_3",
+    "bouwheer_selesai_1",
+    "nama_pekerjaan_selesai_1",
+    "nilai_pekerjaan_selesai_1",
+    "periode_pekerjaan_selesai_1",
+    "bouwheer_selesai_2",
+    "nama_pekerjaan_selesai_2",
+    "nilai_pekerjaan_selesai_2",
+    "periode_pekerjaan_selesai_2",
+    "status_pekerjaan_pipeline_1",
+    "status_pekerjaan_pipeline_2",
+    "total_nilai_pekerjaan_on_going",
+    "total_nilai_pekerjaan_upcoming",
+    "nilai_bulanan_supplier_1",
+    "nama_supplier_2",
+    "jenis_supplier_2",
+    "nilai_bulanan_supplier_2",
+    "terms_supplier_2",
+    "keterangan_supplier_2",
+    "status_audited_or_inhouse_laporan_1",
+    "tahun_laporan_2",
+    "status_audited_or_inhouse_laporan_2",
+    "periode_laporan_2",
+    "kap_or_catatan_laporan_2",
+    "status_audited_or_inhouse_laporan_3",
+    "kap_or_catatan_laporan_3",
+    "laba_rugi_periode_1",
+    "laba_rugi_periode_2",
+    "laba_rugi_periode_3",
+    "neraca_periode_1",
+    "neraca_kas_setara_p1",
+    "neraca_piutang_usaha_p1",
+    "neraca_persediaan_p1",
+    "neraca_aset_lancar_lainnya_p1",
+    "neraca_aset_tidak_lancar_p1",
+    "neraca_hutang_panjang_p1",
+    "neraca_modal_disetor_p1",
+    "neraca_laba_ditahan_p1",
+    "neraca_periode_2",
+    "neraca_kas_setara_p2",
+    "neraca_piutang_usaha_p2",
+    "neraca_persediaan_p2",
+    "neraca_aset_lancar_lainnya_p2",
+    "neraca_aset_tidak_lancar_p2",
+    "neraca_hutang_panjang_p2",
+    "neraca_modal_disetor_p2",
+    "neraca_laba_ditahan_p2",
+    "neraca_periode_3",
+    "neraca_kas_setara_p3",
+    "neraca_piutang_usaha_p3",
+    "neraca_persediaan_p3",
+    "neraca_aset_lancar_lainnya_p3",
+    "neraca_aset_tidak_lancar_p3",
+    "neraca_hutang_panjang_p3",
+    "neraca_modal_disetor_p3",
+    "neraca_laba_ditahan_p3",
+    "rasio_periode_1",
+    "rasio_qr_p1",
+    "rasio_dar_p1",
+    "rasio_gpm_p1",
+    "rasio_npm_p1",
+    "rasio_roa_p1",
+    "rasio_roe_p1",
+    "rasio_dso_p1",
+    "rasio_dpo_p1",
+    "rasio_dio_p1",
+    "rasio_ccc_p1",
+    "rasio_periode_2",
+    "rasio_qr_p2",
+    "rasio_dar_p2",
+    "rasio_gpm_p2",
+    "rasio_npm_p2",
+    "rasio_roa_p2",
+    "rasio_roe_p2",
+    "rasio_dso_p2",
+    "rasio_dpo_p2",
+    "rasio_dio_p2",
+    "rasio_ccc_p2",
+    "rasio_periode_3",
+    "rasio_cr_p3",
+    "rasio_qr_p3",
+    "rasio_dar_p3",
+    "rasio_der_p3",
+    "rasio_gpm_p3",
+    "rasio_npm_p3",
+    "rasio_roa_p3",
+    "rasio_roe_p3",
+    "rasio_dso_p3",
+    "rasio_dpo_p3",
+    "rasio_dio_p3",
+    "rasio_ccc_p3",
+    "rasio_dscri_p3",
+    "rekkoran_q1_tahun",
+    "rekkoran_saldo_q1",
+    "rekkoran_kredit_q1",
+    "rekkoran_debit_q1",
+    "rekkoran_pencerminan_q1",
+    "rekkoran_q2_tahun",
+    "rekkoran_saldo_q2",
+    "rekkoran_kredit_q2",
+    "rekkoran_debit_q2",
+    "rekkoran_pencerminan_q2",
+    "rekkoran_q3_tahun",
+    "rekkoran_saldo_q3",
+    "rekkoran_kredit_q3",
+    "rekkoran_debit_q3",
+    "rekkoran_pencerminan_q3",
+    "rekkoran_q4_tahun",
+    "rekkoran_saldo_q4",
+    "rekkoran_kredit_q4",
+    "rekkoran_debit_q4",
+    "rekkoran_pencerminan_q4",
+    "ai_validasi_plafond_vs_skala",
+    "jenis_agunan_utama_1",
+    "jenis_sertifikat_agunan_1",
+    "no_sertifikat_agunan_1",
+    "atas_nama_utama_1",
+    "lokasi_utama_1",
+    "luas_tanah_utama_1_m2",
+    "luas_bangunan_utama_1_m2",
+    "nilai_pasar_tanah_utama_1",
+    "nilai_pasar_bangunan_utama_1",
+    "nilai_cev_tanah_utama_1",
+    "nilai_cev_bangunan_utama_1",
+    "jenis_agunan_utama_2",
+    "jenis_sertifikat_agunan_2",
+    "no_sertifikat_agunan_2",
+    "atas_nama_utama_2",
+    "lokasi_utama_2",
+    "luas_tanah_utama_2_m2",
+    "luas_bangunan_utama_2_m2",
+    "nilai_pasar_tanah_utama_2",
+    "nilai_pasar_bangunan_utama_2",
+    "nilai_cev_tanah_utama_2",
+    "nilai_cev_bangunan_utama_2",
+    "total_nilai_pasar_agunan",
+    "total_nilai_cev_agunan",
+    "total_nilai_pasar_agunan_utama_saja",
+    "coverage_persen_agunan",
+    "ai_gharar_riba_maysir_penjelasan",
+    "persen_halal_income",
+    "ai_halal_income_sumber",
+    "pelanggaran_syariah_or_tidak_ada",
+    "ai_pelanggaran_syariah_deskripsi",
+    "rekomendasi_dps_or_tidak",
+    "ai_rekomendasi_dps_alasan",
+    "bentuk_line_facility_revolving_or_non_revolving",
+    "pengikatan_line_facility_notariil_or_un_notariil",
+    "akad_realisasi",
+    "pengikatan_realisasi_notariil_or_un_notariil",
+    "biaya_administrasi_pembiayaan_flat",
+    "pengikatan_tanah_notariil_or_un_notariil",
+    "pengikatan_bangunan_notariil_or_un_notariil",
+    "pengikatan_mesin_notariil_or_un_notariil",
+    "pengikatan_kendaraan_notariil_or_un_notariil",
+    "pengikatan_piutang_notariil_or_un_notariil",
+    "pengikatan_cash_collateral_notariil_or_un_notariil",
+    "deviasi_rac_1_ketentuan",
+    "deviasi_rac_2_ketentuan",
+    "kategori_fasilitas",
+    "tanggal_ttd_tl_spv",
+    "nama_tl_spv",
+    "tanggal_ttd_bm_ku",
+    "nama_bm_ku",
+    "kol_slik_pemohon",
+    "baki_debet_slik_pemohon",
+    "kol_slik_direktur",
+    "baki_debet_slik_direktur",
+    "kol_slik_komisaris",
+    "baki_debet_slik_komisaris",
+    "bouwheer_pipeline_1",
+    "nama_pekerjaan_pipeline_1",
+    "nilai_pekerjaan_pipeline_1",
+    "periode_pekerjaan_pipeline_1",
+    "bouwheer_pipeline_2",
+    "nama_pekerjaan_pipeline_2",
+    "nilai_pekerjaan_pipeline_2",
+    "periode_pekerjaan_pipeline_2",
+    "laba_rugi_pendapatan_p1",
+    "laba_rugi_hpp_p1",
+    "laba_rugi_gross_profit_p1",
+    "laba_rugi_gpm_p1",
+    "laba_rugi_biaya_operasional_p1",
+    "laba_rugi_ebitda_p1",
+    "laba_rugi_net_profit_p1",
+    "laba_rugi_npm_p1",
+    "laba_rugi_pendapatan_p2",
+    "laba_rugi_hpp_p2",
+    "laba_rugi_gross_profit_p2",
+    "laba_rugi_gpm_p2",
+    "laba_rugi_biaya_operasional_p2",
+    "laba_rugi_ebitda_p2",
+    "laba_rugi_net_profit_p2",
+    "laba_rugi_npm_p2",
+    "laba_rugi_pendapatan_p3",
+    "laba_rugi_hpp_p3",
+    "laba_rugi_gross_profit_p3",
+    "laba_rugi_gpm_p3",
+    "laba_rugi_biaya_operasional_p3",
+    "laba_rugi_ebitda_p3",
+    "laba_rugi_net_profit_p3",
+    "laba_rugi_npm_p3",
+    "laba_rugi_pertumbuhan_yoy_p2",
+    "laba_rugi_pertumbuhan_yoy_p3",
+    "neraca_total_aset_lancar_p1",
+    "neraca_total_aset_p1",
+    "neraca_hutang_pendek_p1",
+    "neraca_total_liabilitas_p1",
+    "neraca_total_ekuitas_p1",
+    "neraca_total_aset_lancar_p2",
+    "neraca_total_aset_p2",
+    "neraca_hutang_pendek_p2",
+    "neraca_total_liabilitas_p2",
+    "neraca_total_ekuitas_p2",
+    "neraca_total_aset_lancar_p3",
+    "neraca_total_aset_p3",
+    "neraca_hutang_pendek_p3",
+    "neraca_total_liabilitas_p3",
+    "neraca_total_ekuitas_p3",
+    "rasio_cr_p1",
+    "rasio_der_p1",
+    "rasio_dscri_p1",
+    "rasio_cr_p2",
+    "rasio_der_p2",
+    "rasio_dscri_p2"
+  ],
+  "akad_1": {
+    "replace": "[Murabahah/Musyarakah/Ijarah/IMBT/Istishna/Salam]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "akad_2": {
+    "replace": "[Murabahah/Musyarakah/Ijarah/IMBT/Istishna/Salam]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "status_tempat_usaha": {
+    "replace": "[Milik Sendiri / Sewa / Pinjam Pakai] — berlaku s.d. ___",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "status_tempat_usaha_berlaku_sampai": {
+    "replace": "[Milik Sendiri / Sewa / Pinjam Pakai] — berlaku s.d. ___",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "kondisi_tempat_usaha": {
+    "replace": "[Representatif/Cukup/Kurang] — [Deskripsi singkat hasil visit]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_kondisi_tempat_usaha_deskripsi": {
+    "replace": "[Representatif/Cukup/Kurang] — [Deskripsi singkat hasil visit]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "nama_supplier_1": {
+    "replace": "[Nama]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "jenis_supplier_1": {
+    "replace": "[Bahan baku/Jasa]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "terms_supplier_1": {
+    "replace": "[Net 30/COD/dll.]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "keterangan_supplier_1": {
+    "replace": "[Keterangan]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "tahun_laporan_1": {
+    "replace": "20___",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "periode_laporan_1": {
+    "replace": "Per Desember 20___",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "kap_or_catatan_laporan_1": {
+    "replace": "[KAP jika audited / catatan jika inhouse]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "tahun_laporan_3": {
+    "replace": "20___",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "periode_laporan_3": {
+    "replace": "Per ___ 20___",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "basis_pendapatan_or_proyeksi": {
+    "replace": "[Kontrak on-going/Proyeksi konservatif] — Rp ___ per bulan",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "nilai_pendapatan_per_bulan": {
+    "replace": "[Kontrak on-going/Proyeksi konservatif] — Rp ___ per bulan",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "persen_pipeline_on_going": {
+    "replace": "___% dari total pipeline (on-going saja/total)",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "persen_dari_kontrak": {
+    "replace": "___% dari nilai kontrak/pendapatan",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "max_persen_rab": {
+    "replace": "Maksimal ___% dari RAB (self-financing minimal ___%)",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "min_self_financing_persen": {
+    "replace": "Maksimal ___% dari RAB (self-financing minimal ___%)",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "nilai_per_siklus": {
+    "replace": "Rp ___________ per siklus",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "nilai_kebutuhan_modal_kerja": {
+    "replace": "Rp ___________ (konsisten dengan kebutuhan di atas)",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "cash_collateral_persen_plafond": {
+    "replace": "___% dari Plafond",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "cash_collateral_nilai_pasar": {
+    "replace": "Nilai Pasar Rp ___",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "cash_collateral_nilai_cev": {
+    "replace": "Nilai CEV Rp ___",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "piutang_proyek_nilai_pasar": {
+    "replace": "Nilai Pasar Rp ___",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "piutang_proyek_nilai_cev": {
+    "replace": "Nilai CEV Rp ___",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "nama_personal_guarantor": {
+    "replace": "[Nama]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "jabatan_personal_guarantor": {
+    "replace": "[Jabatan]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "sccr_persen": {
+    "replace": "[Jenis agunan, SCCR ___%]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "akad_yang_digunakan": {
+    "replace": "[Murabahah/Musyarakah/Ijarah/IMBT/Istishna/Salam]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "no_fatwa_dsn_mui": {
+    "replace": "[Nomor fatwa] — [Nama fatwa]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "nama_fatwa_dsn_mui": {
+    "replace": "[Nomor fatwa] — [Nama fatwa]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "kesesuaian_fatwa_or_tidak": {
+    "replace": "[Sesuai/Tidak Sesuai] — Penjelasan substantif",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_kesesuaian_fatwa_penjelasan": {
+    "replace": "[Sesuai/Tidak Sesuai] — Penjelasan substantif",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_substansi_ekonomi_akad": {
+    "replace": "[Apakah substansi ekonomi transaksi sesuai dengan akad yang dipilih? Tidak ada hilah?]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "gharar_riba_maysir_or_tidak_ada": {
+    "replace": "/tmp/muap-ref.txt:710 — Kesesuaian Akad vs ... [Sesuai / Tidak Sesuai]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "kehalalan_usaha": {
+    "replace": "[Halal/Halal Bersyarat/Perlu Klarifikasi]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "sertifikat_halal_status": {
+    "replace": "[Ada/Tidak Ada/Dalam Proses] — No. Sertifikat: ___",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "no_sertifikat_halal": {
+    "replace": "[Ada/Tidak Ada/Dalam Proses] — No. Sertifikat: ___",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "plafond_line_facility": {
+    "replace": "Rp ___________,- ([Terbilang])",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "plafond_line_facility_terbilang": {
+    "replace": "Rp ___________,- ([Terbilang])",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "tenor_line_facility_bulan": {
+    "replace": "Maksimal ___ (___) bulan sejak akad Line Facility ditandatangani",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "tenor_line_facility_terbilang": {
+    "replace": "Maksimal ___ (___) bulan sejak akad Line Facility ditandatangani",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "tujuan_line_facility_kerja_or_investasi": {
+    "replace": "[Modal Kerja/Investasi] untuk [deskripsi spesifik penggunaan]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_line_facility_deskripsi_penggunaan": {
+    "replace": "[Modal Kerja/Investasi] untuk [deskripsi spesifik penggunaan]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "dasar_penarikan_line_facility": {
+    "replace": "[Kontrak/PO/SPK/RAB yang menjadi dasar penarikan]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "equivalent_pa_line_facility": {
+    "replace": "Equivalent ___% effective per annum",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "plafond_realisasi": {
+    "replace": "Rp ___________,- ([Terbilang])",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "plafond_realisasi_terbilang": {
+    "replace": "Rp ___________,- ([Terbilang])",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_realisasi_deskripsi_penggunaan": {
+    "replace": "[Deskripsi spesifik tujuan penggunaan]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "tenor_realisasi_bulan": {
+    "replace": "Maksimal ___ (___) bulan",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "tenor_realisasi_terbilang": {
+    "replace": "Maksimal ___ (___) bulan",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "max_persen_rab_realisasi": {
+    "replace": "Maksimal ___% dari RAB (di luar pajak)",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "equivalent_pa_realisasi": {
+    "replace": "Equivalent ___% effective per annum",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "jadwal_angsuran_bulanan_or_sekaligus": {
+    "replace": "Sesuai jadwal angsuran [bulanan/sekaligus di akhir]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_uraian_agunan_lengkap": {
+    "replace": "[Nama objek agunan, luas, lokasi lengkap, nomor sertifikat, a.n. siapa]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_uraian_collateral_lainnya": {
+    "replace": "[Cash collateral, piutang usaha, personal guarantee — rincian masing-masing]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "max_persen_rab_bank": {
+    "replace": "Bank membiayai maksimal ___% dari RAB, sisa menjadi porsi self-financing",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "min_persen_self_financing": {
+    "replace": "Bank membiayai maksimal ___% dari RAB, sisa menjadi porsi self-financing",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "max_persen_reimbursement": {
+    "replace": "mekanisme reimbursement (maksimum ___%) atau non-reimbursement",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "mekanisme_reimbursement_or_non_reimbursement": {
+    "replace": "mekanisme reimbursement (maksimum ___%) atau non-reimbursement",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "jenis_fasilitas_kesimpulan": {
+    "replace": "[Wa'ad Line Facility + Musyarakah/dll.]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "risk_rating_kesimpulan": {
+    "replace": "[Low/Moderate/Moderate to High/High]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "jenis_agunan_kesimpulan": {
+    "replace": "[Jenis agunan, SCCR ___%]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "deviasi_rac_1_jenis": {
+    "replace": "[Contoh: SLIK Pengurus]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_deviasi_rac_1_kondisi_mitigant": {
+    "replace": "[Tuliskan kondisi aktual secara jujur dan lengkap, lalu berikan justifikasi mengapa deviasi ini masih dapat diterima…]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "deviasi_rac_2_jenis": {
+    "replace": "[Contoh: Rekening Operasional]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_deviasi_rac_2_kondisi_mitigant": {
+    "replace": "[Jelaskan kondisi aktual dan mitigant yang diberikan sebagai pengganti ketentuan yang tidak terpenuhi]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "deviasi_rac_3_jenis": {
+    "replace": "[Deviasi lainnya jika ada]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "deviasi_rac_3_ketentuan": {
+    "replace": "[Ketentuan RAC yang relevan]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_deviasi_rac_3_kondisi_mitigant": {
+    "replace": "[Kondisi aktual dan justifikasi]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "tujuan_jenis_akad_form": {
+    "replace": "tambahan_jenis_akad was named under assumption the form is always \"Tambahan\". Actually form has 3 categories (kategori_fasilitas), and Tujuan: [Jenis & Akad] field applies to whichever is checked.",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "tanggal_ttd_rm": {
+    "replace": "Tanggal: _______________ + Tanda Tangan ________________________ + [Nama RM]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "nama_rm": {
+    "replace": "Tanggal: _______________ + Tanda Tangan ________________________ + [Nama RM]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "bank_slik_pemohon": {
+    "replace": "[Bank]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_keterangan_slik_pemohon": {
+    "replace": "[Keterangan lengkap]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "bank_slik_direktur": {
+    "replace": "[Bank]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_keterangan_slik_direktur": {
+    "replace": "[Keterangan lengkap]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "bank_slik_komisaris": {
+    "replace": "[Bank]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_keterangan_slik_komisaris": {
+    "replace": "[Keterangan lengkap]",
+    "anchor": "MUAP walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  }
+}

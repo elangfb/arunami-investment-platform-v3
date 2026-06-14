@@ -1,0 +1,27 @@
+{
+  "_comment": "Golden set for the PII-masking-before-egress guarantee (G1). maskForEgress (the active redactor) MUST remove every 'forbidden' substring and report NO residual; 'stray' structured PII not in the known secrets MUST still be masked by the generic sweep. Asserts the deterministic, NER-free redactor — see lib/pii-mask.ts header for the accepted residual (free-text person names).",
+  "secrets": {
+    "nasabahName": "Budi Santoso",
+    "namaUsaha": "Toko Maju Jaya",
+    "nik": "3201234567890123",
+    "phoneNumber": "081234567890"
+  },
+  "mustMask": [
+    {
+      "text": "Pemohon Budi Santoso (NIK 3201234567890123), pemilik Toko Maju Jaya, dapat dihubungi di 081234567890.",
+      "forbidden": ["Budi", "Santoso", "3201234567890123", "081234567890"]
+    },
+    {
+      "text": "Pak Budi menyerahkan dokumen; nomor WA 0812-3456-7890 dan surel budi.santoso@example.com.",
+      "forbidden": ["Budi", "0812-3456-7890", "budi.santoso@example.com"]
+    },
+    {
+      "text": "NPWP usaha 09.254.294.3-407.000 atas nama nasabah.",
+      "forbidden": ["09.254.294.3-407.000"]
+    }
+  ],
+  "strayPii": [
+    { "text": "Nomor identitas pihak lain 9988776655443322 tercatat di berkas.", "expectMaskedLabel": "[NIK]", "forbidden": ["9988776655443322"] },
+    { "text": "Kontak alternatif 0821 1111 2222 disebut di catatan.", "expectMaskedLabel": "[TELEPON]", "forbidden": ["0821 1111 2222"] }
+  ]
+}

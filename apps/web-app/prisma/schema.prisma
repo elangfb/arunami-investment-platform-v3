@@ -1,0 +1,1001 @@
+// Mizan persistence. PostgreSQL (prototype→production migration). Prisma 7:
+// connection URL lives in prisma.config.ts (CLI) + the driver adapter (runtime,
+// src/server/db.ts) — not here.
+//
+// Storage rule: anything iterated / filtered / audited → relational table;
+// anything authored-and-read as a unit → JSON column. This keeps the pure domain
+// fns (stage-action.ts, proses-steps.ts, …) operating on a reconstructed
+// LoanApplication identical to the former in-memory shape (see server/repo/serialize.ts).
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Domain: loan applications (the 6-stage pipeline aggregate)
+// ─────────────────────────────────────────────────────────────────────────────
+
+model Application {
+  id                  String   @id // 'FOS-2026-001'
+  // Identitas nasabah
+  nasabahName         String
+  nasabahType         String // 'individual' | 'business'
+  nik                 String?
+  phoneNumber         String
+  whatsappNumber      String?
+  namaUsaha           String?
+  incomeSource        String? // 'karyawan' | 'wiraswasta'
+  // Legal-identity fields (OCR-suggested from NPWP/NIB/KTP docs, human-confirmed; fill MUAP
+  // IDENTITAS HUKUM slots). Nullable: only set once captured at intake or confirmed from OCR.
+  npwp                String? // tax number (NPWP), e.g. '09.254.294.3-407.000'
+  nib                 String? // Nomor Induk Berusaha (business only)
+  alamat              String? // legal address (sesuai dokumen legalitas)
+  bidangUsaha         String? // primary business sector/line (OCR from NIB/SIUP) — fills [Bidang Usaha Utama]
+  // Opportunistic OCR-extracted fields that have no dedicated column yet (sektor detail, pengurus,
+  // pemegang saham, tempat/tgl lahir, …). Open map shown in the Data tab; promotable to a column later.
+  // Shape: Record<key, { value, sourceDocType }>. Always OCR-suggested → human-confirmed like other fields.
+  extractionExtras    Json?
+  isMarried           Boolean?
+  // Pembiayaan
+  akadType            String
+  requestedPlafond    BigInt
+  requestedTenorMonths Int
+  approvedPlafond     BigInt?
+  approvedTenorMonths Int?
+  approvedMarginRate  Float?
+  marginRate          Float?
+  purpose             String
+  collateralType      String? // 'none' | 'fixed_asset' | 'vehicle' | 'guarantor'
+  // Pipeline state
+  stage               Int
+  enteredStageAt      DateTime
+  createdAt           DateTime @default(now())
+  createdBy           String
+  kolEntered          Boolean  @default(false)
+  financialsAssessed  Boolean  @default(false)
+  // Persisted WorkflowSnapshot (ADR-0004 §3, Phase 3a): the named phase/step/status/closeReason
+  // read-model, written at the persistence seam (server/repo/write.ts) atomically with the ledger,
+  // kept == deriveWorkflowSnapshot(app). `stage` REMAINS the SSOT — the authority inversion + the
+  // ~150-reader predicate migration are Phase 3b (deferred). Null on pre-migration rows → serialize
+  // re-derives, so reads always get a snapshot.
+  workflowSnapshot    Json?
+  // Risk / committee outcomes
+  riskRecommendation  String? // 'approve' | 'conditional' | 'reject'
+  riskNote            String?
+  komiteDecision      String? // 'approve' | 'conditional' | 'reject'
+  komiteDecisionNote  String?
+  // Docs-as-source mirrors
+  muapNarrative       String?
+  muapSyncedAt        DateTime?
+  rskSyncedAt         DateTime?
+  // Disbursement (Stage 6)
+  disbursementStatus  String?
+  // Terminal closure. 'active' until a terminal event ends the application without
+  // disbursement: committee REJECT (after AO notifies the nasabah) or a committee
+  // CONDITIONAL approval the nasabah DECLINED. 'closed' is terminal.
+  applicationStatus   String   @default("active") // 'active' | 'closed'
+  closeReason         String? // 'committee-reject' | 'nasabah-decline'
+  closedAt            DateTime?
+  // Nasabah response to a committee CONDITIONAL approval: 'accepted' → proceed to
+  // Pencairan (Stage 6, decision stays 'conditional' for audit); 'declined' → closed.
+  // null = awaiting response (AO follow-up at Stage 1).
+  conditionalResponse String? // 'accepted' | 'declined'
+  // JSON-mapped aggregates (authored & read as a unit, never filtered by sub-field)
+  hardGates           Json // { dsr, ltv, kol } — SOURCE OF TRUTH for the gate computation
+  // DERIVED READ-CACHE of computeViolations(hardGates, active RiskPolicy). For fast list/dashboard
+  // reads only; NEVER hand-set. Auto-recomputed from hardGates at the single write seam
+  // (saveApplication / createApplication in server/repo/write.ts) so it can't drift. To change the
+  // logic, edit lib/hardGates.ts computeViolations — not this column.
+  hardGateViolations  Json     @default("[]") // ('dsr'|'ltv'|'kol')[]
+  financialInputs     Json // FinancialInputs object
+  analysis            Json // FiveCSAnalysis
+  extractionSources   Json? // Record<string, ExtractionSource>
+  extractionMismatches Json? // Record<string, ExtractionMismatch> — OCR cross-check conflicts (Batch 6)
+  advisoryExtractions Json? // Record<string, AdvisoryExtraction> — ADVISORY OCR-widening fields (design §3); informational + cross-check ONLY, never gating (NIK stays the sole blocker)
+  stage2LegalApproval Json? // { verifiedByLG, notes? } | null
+  stage2SlikApproval Json? // { verifiedByRT, notes? } | null — explicit RT "Kirim SLIK ke Feasibility" handoff
+  // Stage-2 Appraisal desk (LG): agunan valuation method used — 'internal'|'kjpp_short'|'kjpp_long'
+  // | null. RECORDED for audit only; NOT gating (the 2→3 advance stays Legal+SLIK). The appraised
+  // VALUE stays in financialInputs.collateralAppraisedValue. See lib/desks.ts + recordAppraisalAction.
+  appraisalPath      String? // AppraisalPath | null
+  // P3-D structured Penilaian (design §4): the RICH appraisal deliverable. { path, nilaiPasar?,
+  // nilaiLikuidasi?, penilai?, tanggalLaporan?(ISO), reportDocId? } | null. KEPT alongside the scalar
+  // appraisalPath (the gate reads the scalar; recordAppraisalAction writes BOTH). nilaiPasar/Likuidasi
+  // are ADVISORY (cross-check only) and do NOT feed the LTV input (collateralAppraisedValue stays human).
+  appraisalRecord    Json? // AppraisalRecord | null
+  // P3-D origin tag (design §4): 'original' | 'review' | 'adendum' | null (null treated as 'original').
+  // Inert in P3-D — pre-wires the AML fresh-attest hook (lib/aml.ts amlReattestRequired) for P5.
+  originType         String? // 'original' | 'review' | 'adendum' | null
+  // P5 (RM-led redesign §7 / Topic 7): self-reference forming the review/adendum LINEAGE. A review or
+  // adendum app points at the prior cycle's app id (its direct parent); an 'original' app has null. Walk
+  // sourceApplicationId to the ROOT for the "full story", the HEAD for "current terms" (server/repo/
+  // applications.ts getLineage). ADDITIVE; no facility entity (C7 deferred) — the chain IS the facility.
+  sourceApplicationId String?
+  source             Application?  @relation("AppLineage", fields: [sourceApplicationId], references: [id])
+  derived            Application[] @relation("AppLineage")
+  // P5 (RM-led redesign §7 / Topic 7): the cadence ANCHOR — the disbursement DATE, set once at the 5→6
+  // 'Cair' transition (server/actions/application-data.ts advanceDisbursementAction). The next review is
+  // due addMonths(disbursedAt, cadence). A DATE, never a payment signal — INVARIANT "Mizan records,
+  // never monitors": no payment/Kol/balance ingestion ever feeds this. Null until the facility disburses.
+  disbursedAt        DateTime?
+  // Stage-1 Initial-AML attestation (OJK APU-PPT). { attestedBy, attestedByName, attestedAt(ISO),
+  // statement } | null. The RM affirms the EXTERNAL DTTOT/PEP/negative-list check (CS/Compliance,
+  // not MIZAN) PASSED before 1→2. Authoritative OJK record is the paired HistoryEntry; cleared on a
+  // 2→1 / 3→1 send-back. See lib/aml.ts + server/actions/application-stage.ts (attestAmlAction).
+  amlAttestation     Json? // { attestedBy, attestedByName, attestedAt, statement } | null
+  // AI bureau-bundle summary (SLIK+Pefindo+Rek Koran), ADVISORY ONLY. { summary, model,
+  // generatedAt(ISO), generatedByName } | null. Generated via the masked-egress + audited seam
+  // (server/ai/bureau.ts); Kol/gating stay human-confirmed + deterministic. See lib/bureau-summary.ts.
+  bureauSummary      Json? // { summary, model, generatedAt, generatedByName } | null
+  disbursementConditions Json? // Record<string, boolean>
+  // ADVISORY ONLY — AI's "Saran AI" risk recommendation (workflow-finetune.md §6).
+  //   { recommendation: 'approve'|'conditional'|'reject', rationale: string,
+  //     model: string, generatedAt: ISOString }
+  // Labelled "non-authoritative" in the UI, NEVER written to riskRecommendation, NEVER
+  // frozen into the RSK doc; RT must still explicitly choose. Persisted so a page reload
+  // doesn't re-call Gemini.
+  aiRiskAdvisory      Json?
+  // Grounded web-research artifact (workflow-finetune.md §7). Array of
+  // { url, title, claim, retrievedAt } — citations enforced by the synthesizer; URLs are
+  // filtered by the source allowlist; egress was business-entity-only (egress classifier).
+  // Rendered on MUAP and frozen into DecisionCheckpoint at committee decision time so the
+  // immutable audit record carries the exact cited sources the committee had available.
+  exploredSources     Json?
+  // (aiChatHistory / aiAssistantLog JSON columns were replaced by the ConversationMessage table)
+  // Optimistic concurrency (stage-2 LG/RT parallel writes; see server/actions)
+  version             Int      @default(0)
+  updatedAt           DateTime @updatedAt
+
+  documents          ApplicationDocument[]
+  history            HistoryEntry[]
+  assignments        StageAssignment[]
+  komiteVotes        KomiteVote[]
+  conversation       ConversationMessage[]
+  meetingAgendaItems MeetingAgendaItem[]
+  approvalSteps      ApprovalStep[]
+  sourceManifest     SourceDocManifestEntry[]
+  deskAssignments    DeskAssignment[]
+
+  // P1 (ADR-0020): Customer entity — ADDITIVE + dual-read. `customerId` is nullable during the
+  // dual-read window; Application KEEPS its identity columns (still the read source) so the ~45
+  // existing identity readers stay unchanged in P1. Backfill links one Customer per app (1:1).
+  customerId         String?
+  customer           Customer? @relation(fields: [customerId], references: [id])
+
+  // P2 (RM-led redesign, design §3) — the APP-SPECIFIC Drive folder for this deal (per-deal docs:
+  // financials of the deal, agunan, akad/objek, RAB/kontrak). Nullable until the folder is linked;
+  // a null ref means discovery simply lists no app-level files (the Dokumen Pengajuan card is all-⬜).
+  // `driveFolderOwner` records who owns the folder: 'mizan' (we scaffolded it) | 'user' (RM's own).
+  // These are REFERENCES only — discovery lists paths + sha256, never bytes (invariant: "Discovery
+  // never reads content"). See src/server/discovery/.
+  driveFolderId      String?
+  driveFolderOwner   String? // 'mizan' | 'user'
+
+  // P4-C (RM-led redesign / ADR-0019 §4 / Topic 6): the MIZAN-OWNED folder holding this app's GENERATED
+  // docs (MUAP/RSK/MoM/SP3) — distinct from driveFolderId (the USER's app folder for source uploads).
+  // Generated docs are copied UNDER this folder (parented), Mizan-owned + frozen, so they can't be moved
+  // /edited/deleted out from under the audit trail; a SHORTCUT into driveFolderId lets the user still see
+  // + reorganize them. Nullable until the first generated doc is minted (ensureMizanDocFolder creates +
+  // persists it lazily). See src/server/docs/mizan-drive.ts.
+  mizanDocFolderId   String?
+
+  // P4-A (RM-led redesign §5 / Topic 5): app-scoped AI context (≈ AGENTS.md app-local). Stores ONLY
+  // the SACRED HUMAN "Catatan" block (free-text, additive, attributed) for this deal. The AUTO derived
+  // block is built LIVE at injection (buildAiContextLayers) from app facts — NEVER stored here (so it
+  // can never go stale). Mirrors Customer.contextMd (the broader, Nasabah-scoped track). Nullable;
+  // absent = no human note yet. Injected per-surface via lib/ai-context-policy.ts.
+  contextMd          String?
+
+  @@index([stage])
+  @@index([createdBy])
+  @@index([applicationStatus])
+  @@index([customerId])
+  @@index([sourceApplicationId])
+}
+
+/// P1 · ADR-0020 — first-class Nasabah/Customer entity (customer-first entry; carry-forward across
+/// deals; review/adendum lineage). Identity migrates here off Application, but Application KEEPS its
+/// columns during the dual-read window (Fork A1: `stage` Int stays SSOT; this change is additive +
+/// reversible). Repeating groups (pengurus/pemegangSaham) are Zod-validated JSON aggregates read as a
+/// unit — the schema's existing convention (hardGates/financialInputs). `contextMd` is the Topic-5
+/// AI-context home (AUTO derived block + sacred human "Catatan"); added now to avoid a later
+/// migration, unused until P4.
+model Customer {
+  id               String   @id @default(cuid())
+  type             String   // 'individual' | 'business'
+  // Queried identity
+  nik              String?  // individual (KTP)
+  npwp             String?  // tax number (business or individual)
+  nib              String?  // Nomor Induk Berusaha (business)
+  alamat           String?  // legal address per dokumen legalitas
+  bidangUsaha      String?  // primary business sector
+  nama             String?  // individual full name
+  namaUsaha        String?  // business legal name
+  // Contact
+  phoneNumber      String?
+  whatsappNumber   String?
+  // Structured attribute aggregates (Zod-validated; read as a unit, never filtered by sub-field)
+  pengurus         Json?    // [{ nama, nik?, jabatan?, ... }]
+  pemegangSaham    Json?    // [{ nama, nik?, persentase?, ... }]
+  // Individual extras
+  isMarried        Boolean?
+  incomeSource     String?  // 'karyawan' | 'wiraswasta'
+  // P5 (RM-led redesign §7 / Topic 7): the Nasabah-level review-cadence OVERRIDE in months. The cadence
+  // cascade is `customer.reviewCadenceMonths ?? CADENCE_DEFAULT_MONTHS(12)` (facility-level override
+  // DEFERRED, C7). Null = use the 12-month default. Read by lib/review-cadence.ts reviewCadenceMonths.
+  reviewCadenceMonths Int?
+  // Slimmed opportunistic OCR long-tail (pengurus/pemegangSaham now in the aggregates above)
+  extractionExtras Json?
+  // Topic-5 AI context (P4): AUTO derived block + sacred human "Catatan" block
+  contextMd        String?
+  // P2 (RM-led redesign, design §3) — the NASABAH-level Drive folder (customer-level, shared BY
+  // REFERENCE across all of this customer's deals: carry-forward identity/legal like KTP, NPWP,
+  // akta, NIB). Nullable until linked; a null ref means discovery lists no nasabah files (the
+  // Dokumen Nasabah card is all-⬜). `driveFolderOwner`: 'mizan' (we scaffolded) | 'user' (RM's own).
+  // References only — discovery never reads bytes. See src/server/discovery/.
+  driveFolderId    String?
+  driveFolderOwner String? // 'mizan' | 'user'
+  createdAt        DateTime @default(now())
+  createdBy        String
+  updatedAt        DateTime @updatedAt
+
+  applications     Application[]
+  sourceManifest   SourceDocManifestEntry[]
+
+  @@index([nik])
+  @@index([npwp])
+  @@index([nib])
+}
+
+/// P3-C · RM-led redesign (design Follow-up-decisions "A1 colek") — COLEK: an in-app directed work
+/// request where one desk nudges another desk to do work on an application (request + notify + track).
+/// SEPARATE from StageAssignment: cross-desk, INDEPENDENT lifecycle, and may PRE-DATE stage entry (the
+/// Inisiasi windows are phase-wide now), so it cannot ride the stage-gated assignment table. First
+/// assignment = the candidate user holding `targetDesk` with the FEWEST active (non-terminal) coleks
+/// (tie → least-recently-assigned); STICKY per app×desk start-to-end (`activeColekForDesk` reuses an
+/// open one instead of creating a second). Admin reassign is audited in `reassignmentLog`. The OJK
+/// audit row is the paired HistoryEntry on the Application (appendHistory) — this table is the
+/// trackable work item, not the audit ledger. ADDITIVE; no reader change.
+model DeskAssignment {
+  id              String   @id @default(cuid())
+  applicationId   String
+  application     Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  // The desk asked to do the work (the colek target, e.g. 'legal'); candidates are its holders.
+  targetDesk      String
+  // The chosen assignee (load-balanced or sticky). Name denormalized for display without a join.
+  assigneeUserId  String
+  assigneeName    String
+  // Who raised the colek (a participant on the app). Name denormalized for display.
+  requestedBy     String
+  requestedByName String
+  // The work being asked for (free text shown in the incoming-colek panel + the audit action line).
+  description     String
+  // Lifecycle, INDEPENDENT of stage: 'pending' (raised, not started) | 'in_progress' (assignee took
+  // it up) | 'completed' (done) | 'rejected' (declined). pending/in_progress are NON-TERMINAL (the
+  // sticky + active-caseload lookups treat them as live); completed/rejected are TERMINAL.
+  status          String
+  createdAt       DateTime @default(now())
+  completedAt     DateTime?
+  // Admin reassignment audit trail: [{ from, to, by, reason, at }] appended on each reassign.
+  reassignmentLog Json?
+
+  @@index([applicationId])
+  @@index([assigneeUserId])
+  @@index([targetDesk])
+}
+
+/// P2 · design §3 "Versioning (source docs)" / Fork B5 — content-addressed ledger of source-doc
+/// REFERENCES (one row per scanned file). `sha256` is the content address: it DETECTS change (a new
+/// digest for the same scope+docType is a new version row), but bytes are NOT copied — only the Drive
+/// `fileId`/`driveRevisionId` references are kept (Approach B; no byte-vault). Generated docs use a
+/// different regime — the Drive copy-snapshot (DocumentVersion / ADR-0008). Discovery never reads
+/// content: matching is deterministic path/name substring, never byte/OCR. Exactly one of
+/// applicationId (app-specific docs) / customerId (nasabah-level shared docs) is set per row.
+model SourceDocManifestEntry {
+  id               String       @id @default(cuid())
+  applicationId    String?
+  application      Application? @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  customerId       String?
+  customer         Customer?    @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  docType          String
+  fullPath         String
+  sha256           String // content address — detects change; bytes are NOT copied (Approach B / Fork B5)
+  fileId           String? // Drive file reference (NOT bytes)
+  driveRevisionId  String? // Drive-native revision link (bonus; never the source of truth)
+  scannedAt        DateTime     @default(now())
+  scannedBy        String
+
+  @@index([applicationId])
+  @@index([customerId])
+  @@index([sha256])
+}
+
+/// Per-application conversation streams (replaces the former Application.aiChatHistory +
+/// aiAssistantLog JSON columns). Append-one-row writes — does NOT bump Application.version, so
+/// chat no longer collides with the workflow optimistic lock. `surface` discriminates the team
+/// thread from the private risk-assistant; `seq` is per-(app,surface) monotonic.
+/// Content is the DISPLAY text: user messages as typed; assistant replies are the MASKED reply
+/// (answerAndAudit returns maskedReply) — the masked-audit copy still lives in AiInteraction.
+model ConversationMessage {
+  id            String      @id @default(cuid())
+  applicationId String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  surface       String // 'discussion' (team thread) | 'assistant' (risk Q&A, read-windowed to 10 turns)
+  seq           Int // per-(applicationId, surface) monotonic
+  role          String // 'user' | 'assistant'
+  content       String
+  // Verified author of the message (discussion surface); null for AI/assistant + legacy rows.
+  authorId      String?
+  authorName    String?
+  // @mentioned user ids (discussion surface; MentionUser) — drives derived mention notifications.
+  mentions      String[] @default([])
+  createdAt     DateTime    @default(now())
+
+  @@unique([applicationId, surface, seq])
+  @@index([applicationId, surface, seq])
+}
+
+/// Admin-configurable MEETING SCHEDULE TEMPLATES (workflow-finetune.md §8). Versioned-config
+/// pattern. Each row is one recurring slot (dayOfWeek + time + room/url + attendees + chair +
+/// capacity + optional routing filter). The daily auto-materializer (slice B; pg-boss job)
+/// reads the ACTIVE version's templates, computes the next scheduledDate per cadence, and
+/// upserts KomiteMeeting rows with status='proposed'. NO chair gating yet: a proposed meeting
+/// keeps `chairUserId` filled from the template default; final confirm replaces if needed.
+model MeetingScheduleTemplateVersion {
+  version       Int      @id
+  /// JSON array of ScheduleTemplate { scheduleKey, dayOfWeek 0-6, time 'HH:mm', room?, meetingUrl?,
+  /// attendeeUserIds: string[], chairUserId, capacity, routingFilter? { minPlafond?, maxPlafond?,
+  /// akadTypes?: string[] }, notes? }. Validated by lib/config/schedule-template-input.ts.
+  templates     Json
+  effectiveFrom DateTime
+  reason        String?
+  createdBy     String
+  createdAt     DateTime @default(now())
+}
+
+/// Admin-configurable AI SYSTEM PROMPTS (versioned-config pattern, mirrors SlaPolicyVersion/
+/// RiskPolicyVersion). One row per (promptKey, version); resolveActiveVersion picks the
+/// highest with effectiveFrom ≤ now. Code fallback when no row exists keeps dev/CI working.
+/// COMPLIANCE: hard guards (scrubNarrative, schema-no-field, detectResidualPii, mask-in/unmask)
+/// stay enforced IN CODE regardless of prompt text — admin can rephrase, not bypass.
+model AiPromptVersion {
+  promptKey         String // 'narrative_muap' | 'narrative_rsk' | 'advisory_rec' | …
+  version           Int // monotonic per promptKey
+  systemInstruction String // full system instruction text (Bahasa Indonesia)
+  effectiveFrom     DateTime
+  reason            String?
+  createdBy         String
+  createdAt         DateTime @default(now())
+
+  @@id([promptKey, version])
+  @@index([promptKey, effectiveFrom])
+}
+
+model ApplicationDocument {
+  id                String   @id
+  applicationId     String
+  application       Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  name              String
+  docType           String
+  status            String // 'missing' | 'uploaded'
+  required          Boolean
+  uploadedAt        DateTime?
+  uploadedBy        String?
+  fileName          String?
+  legalVerification String? // 'pass' | 'fail' | null
+  legalVerificationReason String? // required when legalVerification='fail'; cleared on pass/reupload
+  // Real document storage (Tier 0.1). Null until bytes are stored in object storage.
+  storageKey        String? // object key in S3-compatible store (SeaweedFS)
+  sha256            String? // hex digest of the stored bytes — tamper-evidence
+  sizeBytes         Int? // size of the stored object
+  contentType       String? // MIME type captured at upload
+  // Full-document OCR transcription (Slice 2). Null until extracted. Feeds MUAP/RSK
+  // narrative grounding (masked before egress). PII-bearing — protect like the bytes.
+  extractedText     String?
+  extractedAt       DateTime?
+
+  @@index([applicationId])
+}
+
+/// Append-only audit trail (the OJK record). `seq` is a per-application monotonic
+/// counter assigned inside the write transaction (replaces the former module-global
+/// counter); ordering is (timestamp desc, seq desc).
+model HistoryEntry {
+  id            String   @id // 'h-0000001-FOS-2026-005'
+  applicationId String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  seq           Int
+  timestamp     DateTime
+  userId        String
+  userName      String
+  action        String
+  stage         Int
+  reason        String?
+
+  @@unique([applicationId, seq])
+  @@index([applicationId, seq])
+}
+
+/// Append-only ownership log. One record per (user, stage) desk-holding;
+/// submittedAt set when that desk hands the application onward.
+model StageAssignment {
+  id            String   @id @default(cuid())
+  applicationId String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  stage         Int
+  role          String // pipeline role: AO|LG|RT|LA|CM
+  userId        String
+  userName      String
+  status        String // 'todo' | 'in_progress' | 'submitted'
+  assignedAt    DateTime
+  submittedAt   DateTime?
+
+  @@index([applicationId])
+}
+
+model KomiteVote {
+  id            String   @id @default(cuid())
+  applicationId String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  userId        String
+  userName      String
+  vote          String // 'approve' | 'conditional' | 'reject'
+  comment       String?
+  timestamp     DateTime
+  isEarlyVote   Boolean  @default(false)
+
+  @@unique([applicationId, userId]) // one live vote per member
+  @@index([applicationId])
+}
+
+/// Append-only maker-checker ladder ledger — one row per signer action on the MUAP or RSK
+/// chain. NEVER mutated/deleted: a send-back + resubmit appends a fresh `request` (new cycle
+/// → new document version → new QRs). Pure rules live in src/lib/approval-chain.ts; this is
+/// the persisted shape. `reason` is mandatory on `reject` (enforced in the action layer).
+model ApprovalStep {
+  id            String   @id @default(cuid())
+  applicationId String
+  application   Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  chain         String // 'muap' | 'rsk'
+  role          String // ApprovalRole, e.g. 'muap-approve-tl' | 'rsk-sign-dps'
+  action        String // 'request' | 'approve' | 'reject'
+  userId        String
+  userName      String
+  reason        String?
+  // Opaque, unguessable signature token minted on approve/sign rows. Encodes nothing; resolves
+  // server-side to this row (signer + timestamp) at /qr/<token>. Unique, never reused.
+  qrToken       String?  @unique
+  createdAt     DateTime @default(now())
+
+  @@index([applicationId, chain])
+}
+
+/// A scheduled committee session (Rapat Komite). Per-meeting voting composition:
+/// attendees + chair vary per meeting (no fixed committee).
+model KomiteMeeting {
+  id              String   @id // 'MTG-2026-001'
+  date            String // 'YYYY-MM-DD'
+  time            String // 'HH:mm'
+  room            String? // physical room (tatap muka / hybrid); null for online-only
+  meetingUrl      String? // join link (daring / hybrid); null for onsite-only
+  // (agendaAppIds / attendeeUserIds JSON arrays were replaced by the MeetingAgendaItem /
+  //  MeetingAttendee join tables below)
+  chairUserId     String // Ketua for this meeting; MUST be among attendees
+  notes           String?
+  // Minutes-of-meeting (MOM / notulen). Due ≤ H+1 business day after a meeting completes (SOP);
+  // the SLA + notification surface read these (lib/komite.ts meetingMomSlaState). Null = not yet
+  // recorded. The frozen DecisionCheckpoint per app is the immutable record; this is the session log.
+  minutes           String? // free-text minutes / notulen
+  minutesRecordedAt DateTime?
+  minutesRecordedBy String?
+  status          String // 'upcoming' | 'completed' | 'proposed' | 'cancelled'  (workflow-finetune.md §8)
+  createdBy       String
+  createdAt       DateTime @default(now())
+  // Auto-materialization metadata (slice B, pg-boss). When set, this row was created by the
+  // daily auto-materializer from a MeetingScheduleTemplateVersion entry; the (sourceTemplateId,
+  // scheduledDate) pair is unique so re-runs are idempotent. Manually-created meetings have
+  // these fields null and are never deduped against templates.
+  sourceTemplateId String? // template `scheduleKey` (stable across versions)
+  scheduledDate    DateTime? // the calendar date the materializer chose
+  slotCapacity     Int? // copied from the template at materialize time
+
+  agendaItems MeetingAgendaItem[]
+  attendees   MeetingAttendee[]
+
+  @@unique([sourceTemplateId, scheduledDate])
+  @@index([status])
+}
+
+/// Join table: meeting agenda ↔ applications (replaces KomiteMeeting.agendaAppIds JSON array).
+/// Real FK to Application gives referential integrity + a direct "which meeting carries app X"
+/// query (no in-memory scan of all meetings).
+model MeetingAgendaItem {
+  meetingId     String
+  meeting       KomiteMeeting @relation(fields: [meetingId], references: [id], onDelete: Cascade)
+  applicationId String
+  application   Application   @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+  routingReason String? // why auto-assignment/P2 proposed this app for this slot
+
+  @@id([meetingId, applicationId])
+  @@index([applicationId])
+}
+
+/// Join table: meeting ↔ attendees (replaces KomiteMeeting.attendeeUserIds JSON array). Real FK
+/// to User gives integrity + a "meetings I attend" query. The chair stays on KomiteMeeting.chairUserId.
+model MeetingAttendee {
+  meetingId String
+  meeting   KomiteMeeting @relation(fields: [meetingId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([meetingId, userId])
+  @@index([userId])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Identity & access: users → roles → desks (+ direct desk grants).
+// Effective desks = ⋃(role.desks) ∪ direct grants. Resolved in verifySession().
+// ─────────────────────────────────────────────────────────────────────────────
+
+model User {
+  id             String   @id // 'u-001' for seeded actors; cuid() for new sign-ins
+  email          String?  @unique // from Firebase; null for seeded demo actors
+  firebaseUid    String?  @unique
+  name           String
+  avatarInitials String
+  title          String?
+  tagline        String?
+  isSuperadmin   Boolean  @default(false)
+  createdAt      DateTime @default(now())
+
+  roles            UserRole[]
+  desks            UserDesk[]
+  meetingAttendances MeetingAttendee[]
+}
+
+/// Editable named bundle of desks (a job position). Superadmin-managed.
+model Role {
+  id       String     @id @default(cuid())
+  key      String     @unique // 'relationship-manager'
+  name     String // 'Relationship Manager'
+  isSystem Boolean    @default(false) // seeded defaults; protected from deletion
+  desks    RoleDesk[]
+  users    UserRole[]
+}
+
+model RoleDesk {
+  roleId String
+  role   Role   @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  desk   String // Desk enum value (src/lib/desks.ts)
+
+  @@id([roleId, desk])
+}
+
+model UserRole {
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  roleId    String
+  role      Role     @relation(fields: [roleId], references: [id], onDelete: Cascade)
+  grantedAt DateTime @default(now())
+  grantedBy String?
+
+  @@id([userId, roleId])
+}
+
+/// Direct/exception desk grants on a user (e.g. an AO who also does SLIK).
+model UserDesk {
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  desk      String
+  grantedAt DateTime @default(now())
+  grantedBy String?
+
+  @@id([userId, desk])
+}
+
+/// Read-only catalog of the fixed desks (seeded for display in the Superadmin
+/// console). The desk → stage/role mapping that drives gate logic lives in code
+/// (src/lib/desks.ts); this table mirrors it for the UI.
+model DeskCatalog {
+  desk         String  @id // 'intake' … 'komite' … 'MG'
+  label        String
+  stage        Int? // null for MG (no pipeline stage)
+  pipelineRole String // RM|LG|RA|CM|MG
+  description  String?
+  sortOrder    Int
+}
+
+/// Session-level record of a Superadmin acting as another desk/user identity.
+/// Per-action attribution additionally lives in HistoryEntry ("via Superadmin X").
+model ImpersonationAudit {
+  id            String   @id @default(cuid())
+  superadminId  String
+  actedAsDesk   String?
+  actedAsUserId String?
+  reason        String?
+  startedAt     DateTime @default(now())
+  endedAt       DateTime?
+
+  @@index([superadminId, startedAt])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Docs-as-source persistence (unchanged from the prototype; now on Postgres).
+// ─────────────────────────────────────────────────────────────────────────────
+
+/// Links an application to its per-application Google Docs (copied from masters).
+model DocLinkage {
+  applicationId   String          @id
+  muapDocId       String? // N2 (ADR-0018): MUAP is minted by an explicit RM "Generate MUAP", not auto at creation — null until then
+  rskDocId        String? // Batch 3 T3: RSK is created at Stage-4 entry, not with the MUAP — null until then
+  momDocId        String? // generated committee-minutes Doc (MoM), once produced
+  sp3DocId        String? // generated offer-letter Doc (SP3), once produced
+  // P4-C (ADR-0019 §4): the per-app shortcut-placement outcome. Generated docs live Mizan-owned and get
+  // a SHORTCUT dropped into the user's app folder (driveFolderId). When Mizan lacks Editor on that folder
+  // the placement 403s — we record a Bahasa warning here (the doc still lives Mizan-owned + viewable
+  // in-app), so the doc panel can surface a "Coba lagi" retry. Null = no outstanding shortcut warning.
+  shortcutWarning String?
+  templateVersion String          @default("v1")
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  runs            ExtractionRun[]
+}
+
+/// Per-human Google Drive permission grants on a per-application MUAP/RSK Doc. The Docs
+/// are owned by the dedicated Mizan account; each human who works/views one is granted
+/// the correct Drive role just-in-time (writer = maker, reader = participant) so nobody
+/// hits Google's "request access" wall. Never link-shared (the Docs carry customer PII):
+/// always per-email (type=user). This table is the idempotency guard (skip redundant
+/// Drive calls / role already sufficient), the audit record of who can reach a PII Doc,
+/// and the handle for a future revoke. `grantedToUserId` is the human OPERATING the
+/// session — the superadmin's id when impersonating, not the impersonated persona.
+model DocAccessGrant {
+  id              String   @id @default(cuid())
+  applicationId   String
+  docId           String // Drive file id (the MUAP or RSK Doc)
+  email           String // the Google identity the permission was granted to
+  role            String // 'writer' | 'reader'
+  permissionId    String? // Drive permission id, for a future revoke
+  grantedToUserId String // Mizan user id of the human operating the session
+  grantedAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@unique([docId, email])
+  @@index([applicationId])
+}
+
+/// Tiny key→Drive-folder-id registry. Row key 'mizan-root' holds the id of the single root "Mizan"
+/// folder in the Mizan account's Drive — the ADR-0019 §3 V1 share root: every per-app Mizan-owned
+/// generated-doc folder is parented under it, so one per-email 'reader' grant on the root covers the
+/// whole tree (Drive permissions inherit downward).
+model DriveRef {
+  key       String   @id
+  folderId  String
+  createdAt DateTime @default(now())
+}
+
+/// Per-user 'reader' grant on the root "Mizan" folder (ADR-0019 §3 V1 — per-email at ROOT granularity
+/// until a Google Workspace org exists at W1, when N member grants become 1 group grant). Preserves the
+/// ADR-0014 audit-ledger intent at folder granularity: who can read the Mizan-owned doc tree, with the
+/// Drive permissionId kept for a future revoke. One row per email (the Google identity granted); also
+/// the idempotency guard that lets the login path skip the Drive round-trip.
+model DriveRootGrant {
+  id           String   @id @default(cuid())
+  userId       String
+  email        String   @unique
+  role         String // 'reader'
+  permissionId String?
+  grantedAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([userId])
+}
+
+/// Append-only Drive snapshot ledger (ADR-0008). Each row points at a read-only `files.copy` snapshot
+/// of one live Google Doc (MUAP or RSK). Rollback snapshots the current doc first, then copies a
+/// chosen snapshot into a fresh current Doc and repoints `DocLinkage`; nothing is destroyed.
+model DocumentVersion {
+  id            String      @id @default(cuid())
+  applicationId String
+  kind          String // 'muap' | 'rsk'
+  docId         String // Drive file id of the read-only snapshot
+  sourceDocId   String? // the live/current doc id this snapshot was copied from
+  trigger       String // stage_transition | regenerate | revise | freeze | rollback_current | manual
+  label         String
+  createdBy     String
+  createdByName String?
+  createdAt     DateTime @default(now())
+
+  @@index([applicationId, kind, createdAt])
+}
+
+/// Immutable freeze of MUAP + RSK PDFs captured at the committee decision +
+/// SHA-256 (tamper-evidence) for the OJK audit trail.
+model DecisionCheckpoint {
+  id            String   @id @default(cuid())
+  applicationId String
+  decision      String // approve | conditional | reject
+  decidedAt     DateTime
+  muapDocId     String
+  rskDocId      String
+  // Frozen PDF storage. Current checkpoints store the PDFs in SeaweedFS (object storage,
+  // consistent with uploaded docs) and keep only the storage keys + sizes here. The inline
+  // Bytes columns are LEGACY (pre-SeaweedFS checkpoints) — kept nullable so existing audit
+  // records still serve; checkpointPdf prefers the storage key and falls back to bytes.
+  muapStorageKey String?
+  rskStorageKey  String?
+  muapSizeBytes  Int?
+  rskSizeBytes   Int?
+  muapPdf       Bytes?
+  rskPdf        Bytes?
+  contentHash   String // sha256 over both PDFs
+  // Hard-gate policy FROZEN at the committee decision (Phase C freeze-at-decision): the OJK
+  // thresholds the decision was made under, for the audit record. Nullable for pre-Phase-C
+  // checkpoints. `riskPolicyVersion` null = the code default was in effect (no seeded version).
+  riskPolicyVersion Int?
+  riskDsrMaxPct     Int?
+  riskLtvMaxPct     Int?
+  riskKolMax        Int?
+  // Exact web-research citations available at committee decision time. Nullable for legacy
+  // checkpoints and apps where web research was not run/enabled.
+  exploredSources Json?
+  createdAt     DateTime @default(now())
+
+  @@index([applicationId, createdAt])
+}
+
+/// One Doc→snapshot extraction run. report/snapshot are JSON strings (kept as
+/// String for parity with the extraction code that JSON.parses them).
+model ExtractionRun {
+  id            String     @id @default(cuid())
+  applicationId String
+  linkage       DocLinkage @relation(fields: [applicationId], references: [applicationId], onDelete: Cascade)
+  runId         String
+  extractedAt   DateTime
+  ok            Boolean
+  report        String
+  snapshot      String?
+  createdAt     DateTime   @default(now())
+
+  @@index([applicationId, createdAt])
+}
+
+/// Immutable audit log of every AI interaction (OJK + Bank §1.1). One row per
+/// prompt/response. The prompt + reply stored here are ALREADY PII-masked (the
+/// same text sent to / received from the model). `surface` distinguishes the
+/// team discussion ('discussion') from the dedicated risk-assistant ('assistant').
+model AiInteraction {
+  id            String   @id @default(cuid())
+  applicationId String
+  userId        String
+  surface       String   // 'discussion' | 'assistant' | 'advisory' | 'research' | 'narrative'
+  maskedPrompt  String
+  maskedReply   String
+  model         String
+  createdAt     DateTime @default(now())
+
+  @@index([applicationId, createdAt])
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Configurability (configurability-and-admin.md). Append-only, effective-dated
+// version rows ARE the audit record (single-actor + audit, no maker-checker). A
+// change writes a NEW row; never edit/delete in place. Resolver = highest version
+// with effectiveFrom <= at (server/config/*). v1 is seeded from today's code
+// constants, so cutover is behavior-preserving until an admin deliberately edits.
+// ─────────────────────────────────────────────────────────────────────────────
+
+/// SLA day-targets per pipeline stage (Master reference data). `targets` is a JSON
+/// map { "1": 3, … "6": 5 } — read as a unit, so JSON per the storage rule.
+/// `deskTargets` (optional) is the per-DESK business-day (HK) override map { "legal": 2, … }
+/// per Hijra's SOP — additive over the per-stage model: a desk without an entry falls back to the
+/// stage clock (behavior-preserving). Exact per-desk values + clock-start triggers are W1.
+model SlaPolicyVersion {
+  id            String   @id @default(cuid())
+  version       Int      @unique // monotonic; resolver picks the highest effective one
+  targets       Json // Record<Stage(1-6), days>
+  deskTargets   Json? // Partial<Record<Desk, businessDays>> | null — per-desk SLA override (HK)
+  effectiveFrom DateTime
+  reason        String?
+  createdBy     String
+  createdAt     DateTime @default(now())
+
+  @@index([effectiveFrom])
+}
+
+/// Versioned committee meeting rooms (Reference config, ADMIN-MASTER). `rooms` = string[] of
+/// physical room names; resolver picks the highest effective version, fallback to the constant.
+model CommitteeRoomsVersion {
+  id            String   @id @default(cuid())
+  version       Int      @unique
+  rooms         Json // string[]
+  effectiveFrom DateTime
+  reason        String?
+  createdBy     String
+  createdAt     DateTime @default(now())
+
+  @@index([effectiveFrom])
+}
+
+/// Versioned disbursement release-conditions checklist (Reference config, ADMIN-MASTER).
+/// `conditions` = string[]; gates the Stage-6 "Cair" step. The STEP ORDER stays structural in code.
+model DisbursementConditionsVersion {
+  id            String   @id @default(cuid())
+  version       Int      @unique
+  conditions    Json // string[]
+  effectiveFrom DateTime
+  reason        String?
+  createdBy     String
+  createdAt     DateTime @default(now())
+
+  @@index([effectiveFrom])
+}
+
+/// Versioned OJK hard-gate thresholds (Policy config, ADMIN-POLICY). Explicit columns
+/// (not JSON) since each is a distinct audited compliance number. A value STRICTLY ABOVE
+/// its max fails the gate. v1 seeded = DEFAULT_RISK_POLICY (lib/hardGates.ts). Phase C: the
+/// applied version is frozen into DecisionCheckpoint at the committee decision (pending).
+model RiskPolicyVersion {
+  id            String   @id @default(cuid())
+  version       Int      @unique // monotonic; resolver picks the highest effective one
+  dsrMaxPct     Int
+  ltvMaxPct     Int
+  kolMax        Int
+  effectiveFrom DateTime
+  reason        String?
+  createdBy     String
+  createdAt     DateTime @default(now())
+
+  @@index([effectiveFrom])
+}
+
+/// Per-submitter approval ROUTING (approval-routing-config.md). Separates ROUTING (which account a
+/// rung is sent to) from AUTHORITY (the desk grant + four-eyes/order rules in code, which stay
+/// non-editable). Versioned + effective-dated + append-only PER (makerUserId, chain) — the resolver
+/// (lib/config/versioned.ts resolveActiveVersion over the (maker, chain) subset) picks the highest
+/// effective version. `routing` = JSON map { ApprovalRole -> approverUserId } for the chain's CHECKER
+/// rungs only. STRICT: when a rung is configured, only that account may sign it; an UNCONFIGURED maker
+/// falls back to "all desk holders" (today's behavior) so the system never deadlocks before the W1 map.
+model ApprovalRoutingRule {
+  id            String   @id @default(cuid())
+  makerUserId   String // the submitter (chain author) this routing applies to
+  chain         String // 'muap' | 'rsk'
+  version       Int // monotonic WITHIN (makerUserId, chain); resolver picks the highest effective one
+  routing       Json // Record<ApprovalRole, approverUserId> for the checker rungs
+  effectiveFrom DateTime
+  reason        String?
+  createdBy     String
+  createdAt     DateTime @default(now())
+
+  @@unique([makerUserId, chain, version])
+  @@index([makerUserId, chain])
+  @@index([effectiveFrom])
+}
+
+/// Admin-configurable holiday-calendar overrides for the SLA business-day clock
+/// (jakarta-holiday-calendar.md). Versioned + effective-dated + append-only like the other config.
+/// `added`/`removed` are 'YYYY-MM-DD' (Asia/Jakarta) dates that augment the BUNDLED national snapshot
+/// (lib/scheduling/holidays.ts) — admin wins: resolveHolidayCalendar = bundled ∪ added − removed. A
+/// public-holiday-API refresh writes the fetched national set into `added` of a new version
+/// (best-effort; API failure → no new version, the bundled/last calendar stays). The merged calendar
+/// reaches the SLA clock via server/config/holidays.resolveHolidayCalendar.
+model HolidayCalendarVersion {
+  id            String   @id @default(cuid())
+  version       Int      @unique // monotonic; resolver picks the highest effective one
+  added         String[] // 'YYYY-MM-DD' extra holidays (admin adds + a national-API refresh)
+  removed       String[] // 'YYYY-MM-DD' bundled dates the admin dropped
+  effectiveFrom DateTime
+  reason        String?
+  createdBy     String
+  createdAt     DateTime @default(now())
+
+  @@index([effectiveFrom])
+}
+
+/// Background research job (workflow-finetune §7 / muap-template-engine-v2 deep-research).
+/// One row per analyst-triggered research task. The tree-exploration agent plans sub-questions,
+/// runs strict-to-plan, persists every step (`ResearchStep`), enforces budget caps, supports
+/// cancellation, and feeds `ExploredSource[]` into MUAP/RSK narrative generation.
+///
+/// Restart-safety MVP: on boot, any `running` job from a previous process is flipped to
+/// `failed-restart` and the analyst must re-queue. Granular sub-Q checkpoint resume deferred.
+model ResearchJob {
+  id            String   @id @default(cuid())
+  appId         String
+  status        String // queued | running | completed | completed-partial | completed-capped | failed | failed-restart | cancelled
+  /// Sub-questions from the planner. JSON array of { question, rationale }.
+  plan          Json?
+  /// Liveness/UX: current sub-Q index, last activity label, last update timestamp.
+  progress      Json?
+  /// Citations consolidated so far (ExploredSource[]). Appended incrementally so cancellation
+  /// always commits the latest partial set into MUAP narrative.
+  exploredSourcesPartial Json?
+  costEstimateUsd Float?
+  tokensUsed    Int      @default(0)
+  llmCalls      Int      @default(0)
+  fetches       Int      @default(0)
+  /// Polled by the agent loop between sub-questions. UI sets via cancelResearchAction.
+  cancelRequested Boolean @default(false)
+  startedAt     DateTime?
+  completedAt   DateTime?
+  elapsedMs     Int?
+  errorMessage  String?
+  createdAt     DateTime @default(now())
+
+  steps         ResearchStep[]
+
+  @@index([status])
+  @@index([appId])
+  @@index([createdAt])
+}
+
+/// Per-step audit row for OJK auditability (G3-class). Every search/fetch/LLM-call gets a row
+/// with timestamp + tokens + duration. PII-mask discipline lives at the caller; this table
+/// stores whatever the caller passes (masked prompts, business-entity-only queries).
+model ResearchStep {
+  id          String      @id @default(cuid())
+  jobId       String
+  job         ResearchJob @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  /// plan | search | fetch | synthesize | consolidate | refusal
+  stepType    String
+  query       String?
+  url         String?
+  prompt      String?
+  response    String?
+  tokensIn    Int         @default(0)
+  tokensOut   Int         @default(0)
+  durationMs  Int         @default(0)
+  errorMessage String?
+  timestamp   DateTime    @default(now())
+
+  @@index([jobId])
+  @@index([timestamp])
+}
+
+/// Reference text per token — the bracketed guidance string or blank-line literal that
+/// appears in the v2 Master (or References) Doc cell when no value is filled. Reads at
+/// fill time when the application resolver returns null for a token, so the analyst sees
+/// the original Hijra prompt instead of an empty cell. Regenerable from the References
+/// Doc via scripts/sync-reference-texts.ts.
+model TemplateReferenceText {
+  templateId   String // 'muap' | 'rsk'
+  tokenName    String
+  text         String
+  syncedAt     DateTime @default(now())
+  /// Drive revision id captured at sync time, for change tracking.
+  sourceDocRevisionId String?
+
+  @@id([templateId, tokenName])
+  @@index([templateId])
+}
+
+/// Per-app per-token persistence for the v2 fill engine. One row per (application,
+/// docId, tokenName) records the value the engine wrote into the Doc's NamedRange,
+/// the source (system/ai/reference/analyst), and lost-in-doc recovery state.
+///
+/// `namedRangeId` is the primary anchor — survives Doc edits. `tokenName` is the
+/// fallback lookup. `status='lost-in-doc'` triggers the per-field re-unlock in the
+/// app form (T12) when sync detects the NamedRange disappeared.
+model ApplicationDocumentFill {
+  id            String   @id @default(cuid())
+  appId         String
+  docId         String // Google Docs document id
+  tokenName     String
+  namedRangeId  String?
+  value         String?
+  /// system | ai | reference | analyst-app-edit | analyst-doc-edit
+  source        String
+  /// filled | reference | lost-in-doc
+  status        String
+  filledAt      DateTime @default(now())
+  lastSyncedAt  DateTime @default(now())
+
+  @@unique([appId, docId, tokenName])
+  @@index([appId])
+  @@index([namedRangeId])
+  @@index([status])
+}

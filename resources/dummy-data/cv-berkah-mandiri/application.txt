@@ -1,0 +1,56 @@
+# CV Berkah Mandiri — Bisnis · Murabahah · Agunan Properti
+# Data dummy untuk uji coba alur Mizan end-to-end.
+# Dihasilkan oleh `pnpm gen:dummy` (sumber: apps/web-app/src/lib/dummy-data/personas.ts).
+# JANGAN diedit manual — perubahan akan tertimpa saat regenerate.
+
+== FORMULIR APLIKASI (/applications/new) ==
+Jenis Nasabah        : Bisnis
+Nama Nasabah         : CV Berkah Mandiri
+Nama Usaha           : Toko Bangunan Berkah Mandiri
+No. Telepon          : 081234567890
+WhatsApp             : sama dengan telepon
+Jenis Akad           : Murabahah
+Plafond              : Rp 250.000.000
+Tenor                : 36 bulan
+Tujuan Pembiayaan    : Modal kerja pengadaan stok material bangunan untuk ekspansi cabang kedua.
+Jenis Agunan         : Properti / Tanah
+
+== INPUT KEUANGAN (tab Data, Stage 3) ==
+NIK (konfirmasi KTP)         : 3174012503850002
+Pendapatan Bersih / bln      : Rp 35.000.000
+Kewajiban Bulanan Berjalan   : Rp 3.000.000
+Nilai Appraisal Agunan       : Rp 400.000.000
+Margin (flat, per tahun)     : 12%
+Kolektibilitas SLIK          : Kol 1
+
+== TARGET HARD-GATE (happy path) ==
+DSR : 36%   (maks 40%)
+LTV : 63%   (maks 70%)
+Kol : 1    (maks 1)
+
+== DAFTAR DOKUMEN (folder dokumen/, 25 berkas) ==
+01  KTP Pemohon  [ktp]
+02  NPWP  [npwp]
+03  Formulir Permohonan Pembiayaan  [formulir_permohonan]
+04  KTP Pengurus  [ktp_pengurus]
+05  Akta Pendirian & Perubahan  [akta_pendirian]
+06  SK Pengesahan Kemenkumham  [sk_kemenkumham]
+07  NIB  [nib]
+08  SIUP / Izin Usaha  [siup]
+09  Laporan Keuangan  [laporan_keuangan]
+10  Rekening Koran Perusahaan 6 Bulan Terakhir  [rekening_koran_perusahaan]
+11  Daftar Pemegang Saham  [daftar_pemegang_saham]
+12  Daftar Pengurus & Komisaris  [daftar_pengurus_komisaris]
+13  SPT Tahunan Badan  [spt_tahunan]
+14  Daftar Hutang & Piutang  [daftar_hutang_piutang]
+15  Daftar Supplier & Pelanggan Utama  [daftar_supplier_pelanggan]
+16  Daftar Proyek Berjalan  [list_project]
+17  Quotation / Invoice Objek Pembiayaan  [quotation_objek]
+18  Spesifikasi Barang  [spesifikasi_barang]
+19  Sertifikat Agunan (SHM / SHGB)  [sertifikat_agunan]
+20  IMB / PBG  [imb_pbg]
+21  PBB Agunan (Tahun Terakhir)  [pbb]
+22  Dokumen Appraisal Agunan  [appraisal_agunan]
+23  Bukti Asuransi Agunan  [asuransi_agunan]
+24  Laporan SLIK (OJK)  [slik_report]
+25  Laporan Pefindo  [pefindo_report]

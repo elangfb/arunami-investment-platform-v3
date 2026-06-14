@@ -1,0 +1,52 @@
+# SearXNG settings for the Mizan research stack. See https://docs.searxng.org/admin/settings.html.
+# Minimal-egress, JSON-API-only configuration; the UI is gated to localhost in compose.
+use_default_settings: true
+
+general:
+  debug: false
+  instance_name: "Mizan Research"
+  privacypolicy_url: false
+  donation_url: false
+  contact_url: false
+  # Identify the operator without exposing personal info — used in HTTP requests to source engines.
+  enable_metrics: false
+
+search:
+  safe_search: 1
+  autocomplete: ""
+  default_lang: "id"
+  # Limit to general results — the agent doesn't need image/video/news as a separate category.
+  default_format: "json"
+  formats:
+    - html
+    - json
+
+server:
+  bind_address: "0.0.0.0"
+  port: 8080
+  # SECRET_KEY pulled from env (docker-compose passes SEARXNG_SECRET).
+  secret_key: "!env SEARXNG_SECRET"
+  base_url: "http://searxng:8080/"
+  image_proxy: false
+  http_protocol_version: "1.0"
+  method: "GET"
+
+ui:
+  static_use_hash: true
+  default_locale: "id"
+  query_in_title: false
+  infinite_scroll: false
+  center_alignment: false
+  cache_url: ""
+  hotkeys: default
+
+outgoing:
+  request_timeout: 6.0
+  max_request_timeout: 12.0
+  pool_connections: 100
+  pool_maxsize: 20
+  enable_http2: true
+  using_tor_proxy: false
+
+# Engines: leave default-enabled set. Disable any that surface adult/spam content for this domain;
+# the lib/research/classifier.ts allowlist gives a second layer of defense in the app.

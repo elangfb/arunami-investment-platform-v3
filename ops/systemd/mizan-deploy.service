@@ -1,0 +1,22 @@
+[Unit]
+# Pull-based auto-deploy: pull the GHCR images for the configured tag and, only if the
+# image digest changed, run migrate -> web -> caddy in order (scripts/deploy-ghcr.sh).
+# A no-op (no new image) exits 0 and leaves the stack untouched, so it is safe to run often.
+# This is a systemd *user* unit (systemctl --user) — runs as your login user, no root.
+Description=Mizan pull-based auto-deploy (GHCR -> docker compose)
+Documentation=file://__MIZAN_DIR__/docs/guides/deployment.md
+# No After/Requires on docker.service: that is a *system* unit, invisible to the user
+# manager. The OnBootSec delay + deploy-ghcr.sh's own resilience (it just retries next
+# tick) cover the "docker not up yet" window instead.
+
+[Service]
+Type=oneshot
+# Holds the repo's compose files + scripts + .env (compose reads .env from CWD).
+WorkingDirectory=__MIZAN_DIR__
+# deploy-ghcr.sh reads GHCR_IMAGE_PREFIX / IMAGE_TAG from .env (or the environment).
+ExecStart=__MIZAN_DIR__/scripts/deploy-ghcr.sh
+# A slow pull + migrate + recreate must not be killed mid-deploy; the timer retries next tick.
+TimeoutStartSec=1800
+Nice=10
+# Runs as the user manager's user. That user must reach docker without sudo (be in the
+# `docker` group, or use rootless Docker) and have run `docker login ghcr.io`.

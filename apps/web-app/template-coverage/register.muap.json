@@ -1,0 +1,419 @@
+{
+  "______": {
+    "class": "unclassified"
+  },
+  "___": {
+    "class": "unclassified"
+  },
+  "______________": {
+    "class": "unclassified"
+  },
+  "[bracketed]": {
+    "class": "unclassified"
+  },
+  "__________": {
+    "class": "unclassified"
+  },
+  "[Nama Lengkap Perusahaan]": {
+    "class": "unclassified"
+  },
+  "[\"Inisial\"]": {
+    "class": "unclassified"
+  },
+  "____": {
+    "class": "unclassified"
+  },
+  "[Bidang Usaha Utama]": {
+    "class": "bound"
+  },
+  "[Internal / External / Referral]": {
+    "class": "unclassified"
+  },
+  "[Tanggal]": {
+    "class": "unclassified"
+  },
+  "[Nama Jabatan]": {
+    "class": "unclassified"
+  },
+  "[Nama Lengkap]": {
+    "class": "unclassified"
+  },
+  "[Nama Perusahaan Pemohon]": {
+    "class": "bound"
+  },
+  "[Nomor surat / Tanggal surat permohonan pembiayaan]": {
+    "class": "unclassified"
+  },
+  "[Tanggal Pengajuan]": {
+    "class": "bound"
+  },
+  "[Tujuan Pembiayaan]": {
+    "class": "bound"
+  },
+  "[Plafond Terbilang]": {
+    "class": "bound"
+  },
+  "____________": {
+    "class": "unclassified"
+  },
+  "[Modal Kerja / Investasi]": {
+    "class": "unclassified"
+  },
+  "[Akad]": {
+    "class": "unclassified"
+  },
+  "___________": {
+    "class": "unclassified"
+  },
+  "[Keterangan]": {
+    "class": "unclassified"
+  },
+  "[Jelaskan kondisi fasilitas existing di bank ini, penjelasan tujuan masing-masing fasilitas, pertimbangan mengapa diusulkan sebesar jumlah tersebut, mekanisme pencairan (reimbursement/non-reimbursement), persentase porsi bank vs self-financing.]": {
+    "class": "unclassified"
+  },
+  "[Alamat Sesuai Dokumen Legalitas]": {
+    "class": "bound"
+  },
+  "[Keterangan Perubahan]": {
+    "class": "unclassified"
+  },
+  "[Nomor NIB]": {
+    "class": "bound"
+  },
+  "[DD Bln YYYY]": {
+    "class": "unclassified"
+  },
+  "[Nomor NPWP]": {
+    "class": "bound"
+  },
+  "[SIUP/IUI/Izin khusus sesuai sektor]": {
+    "class": "unclassified"
+  },
+  "[Tgl Berlaku s.d.]": {
+    "class": "unclassified"
+  },
+  "[Kode KBLI]": {
+    "class": "unclassified"
+  },
+  "[Deskripsi KBLI]": {
+    "class": "unclassified"
+  },
+  "[Tuliskan kesimpulan: siapa yang berwenang menandatangani akad (sesuai AD/ART), masa berlaku jabatan direksi/komisaris, apakah ada pembatasan kewenangan yang memerlukan persetujuan organ tertentu, status kelengkapan legalitas secara keseluruhan. Untuk nasabah baru, cantumkan apakah seluruh dokumen asli sudah diterima dan diverifikasi.]": {
+    "class": "unclassified"
+  },
+  "[Uraikan profil perusahaan: kapan berdiri, lini bisnis utama, posisi dalam group usaha (jika ada), skala operasional saat ini (jumlah karyawan, wilayah operasi, omzet terakhir yang diklaim). Jika nasabah merupakan bagian dari holding atau group, gambarkan struktur group secara singkat dan sebutkan entitas-entitas terkait beserta bidang usahanya masing-masing.]": {
+    "class": "unclassified"
+  },
+  "[Nama]": {
+    "class": "unclassified"
+  },
+  "[Profesional/Keluarga]": {
+    "class": "unclassified"
+  },
+  "[Riwayat: Pengalaman kerja di industri relevan berapa tahun, perusahaan sebelumnya, pendidikan, posisi saat ini selain di perusahaan ini. Juga sebutkan jika ada hubungan kekeluargaan antar pengurus.]": {
+    "class": "unclassified"
+  },
+  "[Riwayat: idem]": {
+    "class": "unclassified"
+  },
+  "[Deskripsikan peran orang-orang kunci yang tidak menjabat secara formal tapi memiliki pengaruh terhadap bisnis — penting untuk menilai key man risk]": {
+    "class": "unclassified"
+  },
+  "[Nama Perusahaan]": {
+    "class": "unclassified"
+  },
+  "[Nama Direktur]": {
+    "class": "unclassified"
+  },
+  "[Bank]": {
+    "class": "unclassified"
+  },
+  "[Keterangan lengkap]": {
+    "class": "unclassified"
+  },
+  "[Nama Komisaris]": {
+    "class": "unclassified"
+  },
+  "[Tuliskan hasil Pefindo: apakah ada scoring, riwayat dari P2P/multifinance yang tidak tercatat di SLIK OJK, catatan khusus yang relevan.]": {
+    "class": "unclassified"
+  },
+  "[Uraikan industri di mana nasabah beroperasi: definisi, skala industri nasional, pemain utama, regulasi yang mengatur sektor ini, tren pertumbuhan 3–5 tahun terakhir. Sertakan sumber data yang kredibel (BPS, Kemenperin, Asosiasi Industri, dsb.)]": {
+    "class": "unclassified"
+  },
+  "[ Positif / Stagnan / Negatif ]": {
+    "class": "unclassified"
+  },
+  "[Penjelasan singkat tren terkini]": {
+    "class": "unclassified"
+  },
+  "[Daftar 3–5 pemain utama, perkiraan market share nasabah]": {
+    "class": "unclassified"
+  },
+  "[Tinggi/Sedang/Rendah]": {
+    "class": "unclassified"
+  },
+  "[Penjelasan: regulasi, modal, keahlian, relasi]": {
+    "class": "unclassified"
+  },
+  "[Ada / Tidak]": {
+    "class": "unclassified"
+  },
+  "[Sebutkan regulasi yang berpotensi mengubah industri]": {
+    "class": "unclassified"
+  },
+  "[Sebutkan ancaman disrupsi teknologi atau model bisnis baru]": {
+    "class": "unclassified"
+  },
+  "[Sebutkan pola musiman, dampaknya pada cashflow nasabah]": {
+    "class": "unclassified"
+  },
+  "[Kurs, inflasi bahan baku, suku bunga pasar — relevansi terhadap usaha]": {
+    "class": "unclassified"
+  },
+  "[Potensi perubahan fatwa DSN-MUI yang berdampak pada sektor ini]": {
+    "class": "unclassified"
+  },
+  "[Uraikan secara naratif minimal 3 peluang dan 3 tantangan utama yang dihadapi industri ini. Kaitkan dengan posisi dan strategi bisnis nasabah yang bersangkutan.]": {
+    "class": "unclassified"
+  },
+  "[Alamat lengkap sesuai NIB — kecamatan, kota, provinsi]": {
+    "class": "unclassified"
+  },
+  "[Alamat aktual tempat operasional berdasarkan kunjungan lapangan]": {
+    "class": "unclassified"
+  },
+  "[ Milik Sendiri / Sewa / Pinjam Pakai ]": {
+    "class": "unclassified"
+  },
+  "[ Representatif / Cukup / Kurang ]": {
+    "class": "unclassified"
+  },
+  "[Deskripsi singkat hasil visit]": {
+    "class": "unclassified"
+  },
+  "[ Konsisten / Tidak Konsisten ]": {
+    "class": "unclassified"
+  },
+  "[Penjelasan]": {
+    "class": "unclassified"
+  },
+  "[Cantumkan catatan hasil kunjungan lapangan: kondisi fisik, aktivitas yang terlihat, jumlah karyawan di lokasi, peralatan/mesin yang ada, dan apakah skala fisik konsisten dengan klaim omzet. Lampirkan foto hasil visit sebagai bukti.]": {
+    "class": "unclassified"
+  },
+  "[Uraikan secara detail produk/jasa yang dijual nasabah, proses bisnis dari pengadaan/produksi hingga penjualan, model penetapan harga, margin tipikal per produk/jasa, dan siklus operasional (berapa lama dari order masuk hingga pembayaran diterima).]": {
+    "class": "unclassified"
+  },
+  "[Hari ke-1]": {
+    "class": "unclassified"
+  },
+  "[Hari ke-...]": {
+    "class": "unclassified"
+  },
+  "[Kota]": {
+    "class": "unclassified"
+  },
+  "[Phone call/Email/Visit — Tgl ___]": {
+    "class": "unclassified"
+  },
+  "[Deskripsi]": {
+    "class": "unclassified"
+  },
+  "[Tahun]": {
+    "class": "unclassified"
+  },
+  "[Jelaskan status administratif masing-masing upcoming project — sudah sampai tahap apa (tender, verifikasi, penandatanganan), seberapa pasti realisasinya. Analis WAJIB membedakan antara project yang sudah pasti (on-going) dengan yang masih proyeksi, dan hanya menggunakan yang on-going sebagai dasar analisis cashflow konservatif.]": {
+    "class": "unclassified"
+  },
+  "[Bahan baku/Jasa]": {
+    "class": "unclassified"
+  },
+  "[Net 30 / COD / dll.]": {
+    "class": "unclassified"
+  },
+  "[Jenis]": {
+    "class": "unclassified"
+  },
+  "[Terms]": {
+    "class": "unclassified"
+  },
+  "[KAP jika audited / catatan jika inhouse]": {
+    "class": "unclassified"
+  },
+  "[Cantumkan catatan relevan: apakah plafond yang diusulkan mewajibkan laporan audited berdasarkan SOP/RAC internal bank? Jika dibebaskan dari kewajiban audited, sebutkan dasar regulasinya.]": {
+    "class": "unclassified"
+  },
+  "__": {
+    "class": "unclassified"
+  },
+  "[Berikan narasi analisis tren: apakah pertumbuhan pendapatan konsisten? Apa driver utamanya? Apakah margin kotor stabil atau menurun? Jika margin turun, apa penyebabnya dan apakah masih dapat dipertahankan? Kualitas laba: apakah laba bersumber dari aktivitas operasional utama (recurring) atau ada komponen one-off?]": {
+    "class": "unclassified"
+  },
+  "[Analisis kunci neraca: apakah ada piutang pihak terkait yang besar (related party)? Apakah ada hutang kepada pemegang saham yang tidak wajar? Kualitas aset — apakah piutang aging didominasi <30 hari? Apakah kenaikan aset konsisten dengan pertumbuhan bisnis?]": {
+    "class": "unclassified"
+  },
+  "[Berikan narasi DSCRi: berapa cashflow operasional bersih yang tersedia? Berapa total kewajiban angsuran + bagi hasil setelah fasilitas baru masuk? Apakah ratio terpenuhi? Jika menggunakan proyeksi, jelaskan asumsi yang digunakan dan seberapa konservatif asumsi tersebut.]": {
+    "class": "unclassified"
+  },
+  "[Analisis rekening koran: berapa bank yang diserahkan? Apakah semua rekening perusahaan sudah dilampirkan? Berapa persentase pencerminan omzet di rekening koran vs laporan keuangan? Jika ada perbedaan material, jelaskan alasannya (penjualan tunai, penggunaan rekening pribadi, dll.) dan apakah dapat diterima. Waspadai: penarikan tunai besar tanpa tujuan jelas, transfer ke pihak terkait dalam jumlah besar.]": {
+    "class": "unclassified"
+  },
+  "[Jelaskan kebutuhan pembiayaan nasabah secara naratif: apa masalah cashflow yang dihadapi? Apa tujuan spesifik penggunaan dana? Mengapa jumlah yang diminta adalah angka yang tepat? Apa yang terjadi jika pembiayaan tidak diberikan?]": {
+    "class": "unclassified"
+  },
+  "[Kontrak on-going / Proyeksi konservatif]": {
+    "class": "unclassified"
+  },
+  "[Lakukan validasi: apakah plafond yang diminta masuk akal relatif terhadap skala bisnis? Idealnya plafond modal kerja tidak melebihi 1–3 bulan omzet. Jika melebihi, berikan justifikasi kuat.]": {
+    "class": "unclassified"
+  },
+  "[Jenis Agunan]": {
+    "class": "unclassified"
+  },
+  "[Lokasi]": {
+    "class": "unclassified"
+  },
+  "[Jabatan]": {
+    "class": "unclassified"
+  },
+  "[Tuliskan: (1) status kepemilikan agunan — atas nama siapa? jika bukan atas nama nasabah/pengurus, apa alasannya dan kapan akan dibalik nama? (2) apakah sudah ada penilaian KJPP? sebutkan nama KJPP dan tanggal penilaian. (3) rencana pengikatan (HT/Fidusia) — notariil atau un-notariil. (4) catatan khusus terkait agunan (bangunan tanpa IMB, lokasi sengketa, dll.).]": {
+    "class": "unclassified"
+  },
+  "[Jenis Akad]": {
+    "class": "bound"
+  },
+  "[Nomor fatwa]": {
+    "class": "unclassified"
+  },
+  "[Nama fatwa]": {
+    "class": "unclassified"
+  },
+  "[Sesuai / Tidak Sesuai]": {
+    "class": "unclassified"
+  },
+  "[Apakah substansi ekonomi transaksi sesuai dengan akad yang dipilih? Tidak ada hilah?]": {
+    "class": "unclassified"
+  },
+  "[Ada / Tidak Ada]": {
+    "class": "unclassified"
+  },
+  "[Tuliskan opini syariah secara naratif: mengapa akad yang dipilih sudah tepat untuk tujuan pembiayaan ini? Apa elemen fatwa DSN-MUI yang terpenuhi? Apakah ada aspek yang perlu dikonfirmasi ke DPS sebelum akad?]": {
+    "class": "unclassified"
+  },
+  "[Halal / Halal Bersyarat / Perlu Klarifikasi]": {
+    "class": "unclassified"
+  },
+  "[Sumber dan dasar perhitungan]": {
+    "class": "unclassified"
+  },
+  "[Ada / Tidak Ada / Dalam Proses]": {
+    "class": "unclassified"
+  },
+  "[Deskripsi jika ada]": {
+    "class": "unclassified"
+  },
+  "[Diperlukan / Tidak Diperlukan]": {
+    "class": "unclassified"
+  },
+  "[Alasan]": {
+    "class": "unclassified"
+  },
+  "[Pastikan: apakah ada komponen pendapatan dari aktivitas haram? Jika usaha masuk kategori borderline (restoran yang jual alkohol, hotel, konten hiburan), hitung proporsi pendapatan halal vs non-halal. Jika non-halal > 5%, rekomendasikan penolakan atau restrukturisasi sebelum pembiayaan.]": {
+    "class": "unclassified"
+  },
+  "[Terbilang]": {
+    "class": "unclassified"
+  },
+  "[deskripsi spesifik penggunaan]": {
+    "class": "unclassified"
+  },
+  "[Kontrak/PO/SPK/RAB yang menjadi dasar penarikan]": {
+    "class": "unclassified"
+  },
+  "[Deskripsi spesifik tujuan penggunaan]": {
+    "class": "unclassified"
+  },
+  "[bulanan/sekaligus di akhir]": {
+    "class": "unclassified"
+  },
+  "[Nama objek agunan, luas, lokasi lengkap, nomor sertifikat, a.n. siapa]": {
+    "class": "unclassified"
+  },
+  "[Cash collateral, piutang usaha, personal guarantee — rincian masing-masing]": {
+    "class": "unclassified"
+  },
+  "[ SETUJU ]": {
+    "class": "unclassified"
+  },
+  "[ SETUJU DENGAN SYARAT ]": {
+    "class": "unclassified"
+  },
+  "[ TOLAK ]": {
+    "class": "unclassified"
+  },
+  "[Berikan narasi singkat: alasan rekomendasi, poin-poin kekuatan nasabah yang mendukung approval, dan poin-poin risiko utama yang sudah dimitigasi melalui syarat dan covenant. Jika TOLAK, sebutkan alasan spesifik yang menjadi deal breaker.]": {
+    "class": "unclassified"
+  },
+  "[Nama Nasabah]": {
+    "class": "bound"
+  },
+  "[Wa'ad Line Facility + Musyarakah / dll.]": {
+    "class": "unclassified"
+  },
+  "[ Low ]": {
+    "class": "unclassified"
+  },
+  "[ Moderate ]": {
+    "class": "unclassified"
+  },
+  "[ Moderate to High ]": {
+    "class": "unclassified"
+  },
+  "[ High ]": {
+    "class": "unclassified"
+  },
+  "[Jenis agunan, SCCR ___% ]": {
+    "class": "unclassified"
+  },
+  "[Contoh: SLIK Pengurus]": {
+    "class": "unclassified"
+  },
+  "[Tuliskan kondisi aktual secara jujur dan lengkap, lalu berikan justifikasi mengapa deviasi ini masih dapat diterima — misalnya: keterlambatan disebabkan force majeure yang sudah diselesaikan, sudah lunas, dll.]": {
+    "class": "unclassified"
+  },
+  "[Contoh: Rekening Operasional]": {
+    "class": "unclassified"
+  },
+  "[Jelaskan kondisi aktual dan mitigant yang diberikan sebagai pengganti ketentuan yang tidak terpenuhi]": {
+    "class": "unclassified"
+  },
+  "[Deviasi lainnya jika ada]": {
+    "class": "unclassified"
+  },
+  "[Ketentuan RAC yang relevan]": {
+    "class": "unclassified"
+  },
+  "[Kondisi aktual dan justifikasi]": {
+    "class": "unclassified"
+  },
+  "[Jenis & Akad]": {
+    "class": "unclassified"
+  },
+  "_______________": {
+    "class": "unclassified"
+  },
+  "________________________": {
+    "class": "unclassified"
+  },
+  "[Nama RM]": {
+    "class": "bound"
+  },
+  "[Nama TL / SPV]": {
+    "class": "unclassified"
+  },
+  "[Nama BM / KU]": {
+    "class": "unclassified"
+  },
+  "[Bulan Tahun]": {
+    "class": "unclassified"
+  }
+}

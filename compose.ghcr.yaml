@@ -1,0 +1,36 @@
+# Mizan app layer that pulls web/migrate images from GHCR.
+# Use with compose.shared.yaml:
+#   GHCR_IMAGE_PREFIX=ghcr.io/<owner> IMAGE_TAG=main docker compose -f compose.shared.yaml -f compose.ghcr.yaml up -d
+# or run ./scripts/deploy-ghcr.sh to preserve pull → migrate → web ordering.
+
+services:
+  migrate:
+    image: ${GHCR_IMAGE_PREFIX:?set GHCR_IMAGE_PREFIX, e.g. ghcr.io/owner}/mizan-migrate:${IMAGE_TAG:-main}
+    command: >-
+      sh -c "apps/web-app/node_modules/.bin/prisma migrate deploy &&
+      TSX_TSCONFIG_PATH=apps/web-app/tsconfig.json node_modules/.bin/tsx apps/web-app/prisma/seed.ts --config-only"
+    env_file: [.env]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: 'no'
+    networks: [internal]
+
+  web:
+    image: ${GHCR_IMAGE_PREFIX:?set GHCR_IMAGE_PREFIX, e.g. ghcr.io/owner}/mizan-web:${IMAGE_TAG:-main}
+    restart: unless-stopped
+    env_file: [.env]
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+      seaweedfs:
+        condition: service_started
+    networks: [internal]
+    healthcheck:
+      test: ['CMD', 'node', '-e', "fetch('http://localhost:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s

@@ -1,0 +1,13 @@
+rules_version = '2';
+
+// Deny-all for the client SDK. Document bytes are written/read exclusively through the
+// authenticated Next.js server (Admin SDK / getBucket(), which bypass these rules). The
+// browser reaches files only via the server retrieval proxy (api/.../documents/[docId]/file),
+// never the Storage SDK — so the client surface is intentionally zero.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

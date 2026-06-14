@@ -1,0 +1,599 @@
+{
+  "rsk_no": {
+    "replace": "[No. RSK]",
+    "anchor": "RSK Header T1 r0 c1",
+    "occurrence": 1
+  },
+  "rsk_divisi": {
+    "replace": "[Divisi]",
+    "anchor": "RSK Header T1 r0 c1",
+    "occurrence": 1
+  },
+  "rsk_bulan_terbit": {
+    "replace": "[Bulan]",
+    "anchor": "RSK Header T1 r0 c1",
+    "occurrence": 1
+  },
+  "rsk_tahun_terbit": {
+    "replace": "[Tahun]",
+    "anchor": "RSK Header T1 r0 c1",
+    "occurrence": 1
+  },
+  "rsk_tanggal_terbit": {
+    "replace": "[Tanggal Bulan Tahun]",
+    "anchor": "RSK Header T1 r1 c1",
+    "occurrence": 1
+  },
+  "rsk_reviewer_nama": {
+    "replace": "[Nama Reviewer / Unit Risk]",
+    "anchor": "RSK Header T1 r4 c1",
+    "occurrence": 1
+  },
+  "rsk_pengusul_nama": {
+    "replace": "[Nama Account Officer / Unit]",
+    "anchor": "RSK T3 r6 c1",
+    "occurrence": 1
+  },
+  "rsk_badan_hukum_or": {
+    "replace": "[PT / CV / Firma / Perorangan]",
+    "anchor": "RSK T6 r0 c1",
+    "occurrence": 1
+  },
+  "rsk_status_pajak_or": {
+    "replace": "[Wajib Pajak Badan Aktif / Suspended / PKP]",
+    "anchor": "RSK T6 r8 c1",
+    "occurrence": 1
+  },
+  "rsk_keputusan": {
+    "replace": "[ DISETUJUI / DISETUJUI DENGAN SYARAT / DITOLAK ]",
+    "anchor": "RSK T2 r0 c0",
+    "occurrence": 1
+  },
+  "rsk_plafond_rekomendasi": {
+    "replace": "Rp [xxx.xxx.xxx],-",
+    "anchor": "RSK T10 r2 c1",
+    "occurrence": 2
+  },
+  "rsk_plafond_rekomendasi_terbilang": {
+    "replace": "([terbilang])",
+    "anchor": "RSK T10 r2 c1",
+    "occurrence": 1
+  },
+  "rsk_akad_rekomendasi_or": {
+    "replace": "[Jika berbeda, beserta alasan]",
+    "anchor": "RSK T10 r4 c1",
+    "occurrence": 1,
+    "notes": "Composite cell; token writer may need manual split."
+  },
+  "ai_rsk_akad_perbedaan_alasan": {
+    "replace": "[Jika berbeda, beserta alasan]",
+    "anchor": "RSK T10 r4 c1",
+    "occurrence": 1,
+    "notes": "Composite cell; token writer may need manual split."
+  },
+  "rsk_ref_data_pendukung_tanggal": {
+    "replace": "[Tanggal]",
+    "anchor": "RSK T11 r2 c2",
+    "occurrence": 1
+  },
+  "ai_rsk_ref_data_pendukung_ringkas": {
+    "replace": "[Isi ringkas]",
+    "anchor": "RSK T11 r2 c3",
+    "occurrence": 1
+  },
+  "rsk_bmpd_memo_internal_no": {
+    "replace": "[XX/MEMO-HIJRA-RISK/Bulan/Tahun]",
+    "anchor": "RSK T12 prose",
+    "occurrence": 1
+  },
+  "ai_rsk_source_of_repayment": {
+    "replace": "[Source of repayment narrative]",
+    "anchor": "RSK §III.5",
+    "occurrence": 1,
+    "notes": "Walkthrough says no T# scan bracket; placeholder text not visually confirmed."
+  },
+  "rsk_total_rab_proyek": {
+    "replace": "[Total RAB proyek]",
+    "anchor": "RSK T24 r1 c1",
+    "occurrence": 1
+  },
+  "rsk_total_rab_investasi": {
+    "replace": "[Total RAB investasi]",
+    "anchor": "RSK T24 r3 c1",
+    "occurrence": 1
+  },
+  "rsk_cfo_proyeksi_tahunan": {
+    "replace": "[Rp X/tahun]",
+    "anchor": "RSK T24 r5 c1",
+    "occurrence": 1
+  },
+  "rsk_total_kewajiban_tahunan": {
+    "replace": "[Rp Y/tahun]",
+    "anchor": "RSK T24 r6 c1",
+    "occurrence": 1
+  },
+  "rsk_dscri_status_or": {
+    "replace": "[MEMENUHI / TIDAK MEMENUHI]",
+    "anchor": "RSK T24 r8 c1",
+    "occurrence": 1
+  },
+  "nama_perusahaan": {
+    "replace": "[Nama Nasabah / Perusahaan]",
+    "anchor": "RSK Header T1 r2 c1",
+    "occurrence": 1,
+    "notes": "Shared token retargeted from RSK nasabah_nama."
+  },
+  "nama_grup_usaha": {
+    "replace": "[Nama Grup Usaha, jika ada]",
+    "anchor": "RSK T3 r2 c1",
+    "occurrence": 1
+  },
+  "alamat_kantor_nib": {
+    "replace": "[Alamat lengkap sesuai dokumen NIB]",
+    "anchor": "RSK T6 r4 c1",
+    "occurrence": 1
+  },
+  "alamat_kantor_visit": {
+    "replace": "[Alamat operasional aktual — catatan]",
+    "anchor": "RSK T6 r5 c1",
+    "occurrence": 1
+  },
+  "bidang_usaha_utama": {
+    "replace": "[Deskripsi singkat bidang usaha]",
+    "anchor": "RSK T3 r3 c1",
+    "occurrence": 1
+  },
+  "source_of_referral": {
+    "replace": "[Internal Referral / Marketing / Walk-in]",
+    "anchor": "RSK T3 r5 c1",
+    "occurrence": 1
+  },
+  "tanggal_menjadi_nasabah_or_strip": {
+    "replace": "[Tahun]",
+    "anchor": "RSK T3 r4 c1",
+    "occurrence": 2,
+    "notes": "Part of Baru / Existing sejak [Tahun]."
+  },
+  "nama_lengkap_direktur": {
+    "replace": "[Nama Direktur / Pemilik]",
+    "anchor": "RSK T3 r1 c1",
+    "occurrence": 1,
+    "notes": "Shared token retargeted from RSK nama_pengurus_direktur_1."
+  },
+  "plafond": {
+    "replace": "Rp [xxx.xxx.xxx],-",
+    "anchor": "RSK Header T1 r3 c1",
+    "occurrence": 1
+  },
+  "no_nib": {
+    "replace": "[Nomor NIB]",
+    "anchor": "RSK T6 r1 c1",
+    "occurrence": 1
+  },
+  "no_npwp": {
+    "replace": "[Nomor NPWP]",
+    "anchor": "RSK T6 r3 c1",
+    "occurrence": 1
+  },
+  "no_kbli": {
+    "replace": "[KBLI Code]",
+    "anchor": "RSK T6 r6 c1",
+    "occurrence": 1
+  },
+  "deskripsi_kbli": {
+    "replace": "[Nama KBLI]",
+    "anchor": "RSK T6 r6 c1",
+    "occurrence": 1
+  },
+  "__missing__": [
+    "rsk_kategori_halal_usaha_or",
+    "rsk_fac_1_jenis",
+    "rsk_fac_1_limit",
+    "rsk_fac_1_akad",
+    "rsk_fac_1_tarif",
+    "rsk_fac_1_tujuan",
+    "rsk_fac_2_jenis",
+    "rsk_fac_2_limit",
+    "rsk_fac_2_akad",
+    "rsk_fac_2_tarif",
+    "rsk_fac_2_tujuan",
+    "rsk_deviasi_1_isu",
+    "rsk_deviasi_1_kategori_or",
+    "ai_rsk_deviasi_1_mitigasi",
+    "rsk_deviasi_2_isu",
+    "rsk_deviasi_2_kategori_or",
+    "ai_rsk_deviasi_2_mitigasi",
+    "ai_rsk_deviasi_3_mitigasi",
+    "ai_rsk_deviasi_4_mitigasi",
+    "rsk_sister_company_1_nama",
+    "rsk_sister_company_1_bidang_usaha",
+    "rsk_sister_company_1_pembiayaan_or",
+    "rsk_sister_company_2_nama",
+    "rsk_sister_company_2_bidang_usaha",
+    "rsk_sister_company_2_pembiayaan_or",
+    "rsk_entitas_induk_nama",
+    "rsk_entitas_induk_bidang_usaha",
+    "rsk_jenis_fasilitas_or",
+    "rsk_agunan_property_1_alamat",
+    "rsk_agunan_property_1_pemilik",
+    "rsk_agunan_property_1_nilai_pasar",
+    "rsk_agunan_property_1_haircut_persen",
+    "rsk_agunan_property_1_nilai_likuidasi",
+    "ai_rsk_red_flag_agunan_1_catatan",
+    "rsk_red_flag_agunan_1_level_or",
+    "ai_rsk_red_flag_agunan_2_catatan",
+    "rsk_red_flag_agunan_2_level_or",
+    "ai_rsk_red_flag_agunan_3_catatan",
+    "rsk_red_flag_agunan_3_level_or",
+    "rsk_kontrak_aktif_1_status_or",
+    "rsk_kontrak_aktif_2_status_or",
+    "rsk_kontrak_aktif_3_status_or",
+    "rsk_kontrak_aktif_4_status_or",
+    "rsk_trade_check_1_client_cabang",
+    "rsk_trade_check_1_hasil_or",
+    "ai_rsk_trade_check_1_keterangan",
+    "rsk_trade_check_2_client_cabang",
+    "rsk_trade_check_2_hasil_or",
+    "ai_rsk_trade_check_2_keterangan",
+    "rsk_fin_highlight_laba_operasional_p1",
+    "rsk_fin_highlight_laba_operasional_p2",
+    "rsk_fin_highlight_laba_operasional_p3",
+    "ai_rsk_fin_highlight_pendapatan_catatan",
+    "ai_rsk_fin_highlight_yoy_catatan",
+    "ai_rsk_fin_highlight_gpm_catatan",
+    "ai_rsk_fin_highlight_cr_catatan",
+    "ai_rsk_fin_highlight_der_catatan",
+    "rsk_cfo_2023",
+    "rsk_cfo_2024",
+    "rsk_cfo_periode_latest",
+    "rsk_cfi_2023",
+    "rsk_cfi_2024",
+    "rsk_cfi_periode_latest",
+    "rsk_cff_2023",
+    "rsk_cff_2024",
+    "rsk_cff_periode_latest",
+    "rsk_net_cf_2023",
+    "rsk_net_cf_2024",
+    "rsk_net_cf_periode_latest",
+    "rsk_saldo_kas_akhir_2023",
+    "rsk_saldo_kas_akhir_2024",
+    "rsk_saldo_kas_akhir_periode_latest",
+    "ai_rsk_cfo_catatan",
+    "ai_rsk_saldo_kas_verifikasi",
+    "rsk_revenue_1_nama",
+    "rsk_revenue_1_latest_rp",
+    "rsk_revenue_1_latest_pct",
+    "rsk_revenue_2_nama",
+    "rsk_revenue_2_latest_rp",
+    "rsk_revenue_2_latest_pct",
+    "rsk_revenue_total_2023_rp",
+    "rsk_revenue_total_2024_rp",
+    "rsk_revenue_total_latest_rp",
+    "ai_rsk_revenue_konsentrasi_catatan",
+    "ai_rsk_5c_character_temuan",
+    "rsk_5c_character_level_or",
+    "ai_rsk_5c_character_mitigasi",
+    "ai_rsk_5c_capacity_temuan",
+    "rsk_5c_capacity_level_or",
+    "ai_rsk_5c_capacity_mitigasi",
+    "ai_rsk_5c_capital_temuan",
+    "rsk_5c_capital_level_or",
+    "ai_rsk_5c_capital_mitigasi",
+    "ai_rsk_5c_collateral_temuan",
+    "rsk_5c_collateral_level_or",
+    "ai_rsk_5c_collateral_mitigasi",
+    "ai_rsk_5c_condition_temuan",
+    "rsk_5c_condition_level_or",
+    "ai_rsk_5c_condition_mitigasi",
+    "ai_rsk_5c_sharia_compliance_temuan",
+    "rsk_5c_sharia_compliance_level_or",
+    "ai_rsk_5c_sharia_compliance_mitigasi",
+    "ai_rsk_5c_sharia_structuring_temuan",
+    "rsk_5c_sharia_structuring_level_or",
+    "ai_rsk_5c_sharia_structuring_mitigasi",
+    "rsk_5c_overall_level_or",
+    "ai_rsk_5c_overall_summary",
+    "ai_rsk_keputusan_qualifier",
+    "ai_rsk_cp_1_syarat",
+    "rsk_cp_1_batas_waktu_or",
+    "rsk_cp_1_pic_or",
+    "ai_rsk_cp_2_syarat",
+    "rsk_cp_2_batas_waktu_or",
+    "rsk_cp_2_pic_or",
+    "ai_rsk_cp_3_syarat",
+    "rsk_cp_3_batas_waktu_or",
+    "rsk_cp_3_pic_or",
+    "ai_rsk_cp_4_syarat",
+    "rsk_cp_4_batas_waktu_or",
+    "rsk_cp_4_pic_or",
+    "ai_rsk_cp_5_syarat",
+    "rsk_cp_5_batas_waktu_or",
+    "rsk_cp_5_pic_or",
+    "ai_rsk_covenant_1_text",
+    "ai_rsk_covenant_1_konsekuensi",
+    "ai_rsk_covenant_2_text",
+    "ai_rsk_covenant_2_konsekuensi",
+    "rsk_monitoring_1_aktivitas_or",
+    "rsk_monitoring_1_frekuensi_or",
+    "ai_rsk_monitoring_1_item",
+    "rsk_monitoring_2_aktivitas_or",
+    "rsk_monitoring_2_frekuensi_or",
+    "ai_rsk_monitoring_2_item",
+    "rsk_monitoring_3_aktivitas_or",
+    "rsk_monitoring_3_frekuensi_or",
+    "ai_rsk_monitoring_3_item",
+    "rsk_monitoring_4_aktivitas_or",
+    "rsk_monitoring_4_frekuensi_or",
+    "ai_rsk_monitoring_4_item",
+    "rsk_red_flag_1_kategori_or",
+    "ai_rsk_red_flag_1_deskripsi",
+    "rsk_red_flag_1_status_or",
+    "rsk_red_flag_2_kategori_or",
+    "ai_rsk_red_flag_2_deskripsi",
+    "rsk_red_flag_2_status_or",
+    "rsk_red_flag_3_kategori_or",
+    "rsk_red_flag_3_status_or",
+    "rsk_sig_analyst_nama",
+    "rsk_sig_analyst_nik",
+    "rsk_sig_analyst_tanggal",
+    "rsk_sig_officer_nama",
+    "rsk_sig_officer_nik",
+    "rsk_sig_officer_tanggal",
+    "rsk_sig_cro_nama",
+    "rsk_sig_cro_nik",
+    "rsk_sig_cro_tanggal",
+    "rsk_dps_akad_assessment_or",
+    "ai_rsk_dps_akad_penyesuaian",
+    "rsk_dps_usaha_assessment_or",
+    "ai_rsk_dps_catatan",
+    "rsk_dps_nama",
+    "rsk_dps_tanggal",
+    "nasabah_baru_or_lama",
+    "nama_lengkap_komisaris",
+    "no_akta_pendirian",
+    "tanggal_akta_pendirian",
+    "notaris_akta_pendirian",
+    "izin_usaha_sektoral",
+    "izin_usaha_sektoral_berlaku_sampai",
+    "persen_direktur",
+    "professional_or_keluarga_direktur",
+    "persen_komisaris",
+    "professional_or_keluarga_komisaris",
+    "kol_slik_pemohon",
+    "baki_debet_slik_pemohon",
+    "bank_slik_pemohon",
+    "ai_keterangan_slik_pemohon",
+    "kol_slik_direktur",
+    "baki_debet_slik_direktur",
+    "bank_slik_direktur",
+    "ai_keterangan_slik_direktur",
+    "kol_slik_komisaris",
+    "baki_debet_slik_komisaris",
+    "bank_slik_komisaris",
+    "ai_keterangan_slik_komisaris",
+    "ai_kunjungan_lapangan_catatan",
+    "bouwheer_pipeline_1",
+    "nama_pekerjaan_pipeline_1",
+    "nilai_pekerjaan_pipeline_1",
+    "periode_pekerjaan_pipeline_1",
+    "bouwheer_pipeline_2",
+    "nama_pekerjaan_pipeline_2",
+    "nilai_pekerjaan_pipeline_2",
+    "periode_pekerjaan_pipeline_2",
+    "laba_rugi_pendapatan_p1",
+    "laba_rugi_hpp_p1",
+    "laba_rugi_gross_profit_p1",
+    "laba_rugi_gpm_p1",
+    "laba_rugi_biaya_operasional_p1",
+    "laba_rugi_ebitda_p1",
+    "laba_rugi_net_profit_p1",
+    "laba_rugi_npm_p1",
+    "laba_rugi_pendapatan_p2",
+    "laba_rugi_hpp_p2",
+    "laba_rugi_gross_profit_p2",
+    "laba_rugi_gpm_p2",
+    "laba_rugi_biaya_operasional_p2",
+    "laba_rugi_ebitda_p2",
+    "laba_rugi_net_profit_p2",
+    "laba_rugi_npm_p2",
+    "laba_rugi_pendapatan_p3",
+    "laba_rugi_hpp_p3",
+    "laba_rugi_gross_profit_p3",
+    "laba_rugi_gpm_p3",
+    "laba_rugi_biaya_operasional_p3",
+    "laba_rugi_ebitda_p3",
+    "laba_rugi_net_profit_p3",
+    "laba_rugi_npm_p3",
+    "laba_rugi_pertumbuhan_yoy_p2",
+    "laba_rugi_pertumbuhan_yoy_p3",
+    "neraca_total_aset_lancar_p1",
+    "neraca_total_aset_p1",
+    "neraca_hutang_pendek_p1",
+    "neraca_total_liabilitas_p1",
+    "neraca_total_ekuitas_p1",
+    "neraca_total_aset_lancar_p2",
+    "neraca_total_aset_p2",
+    "neraca_hutang_pendek_p2",
+    "neraca_total_liabilitas_p2",
+    "neraca_total_ekuitas_p2",
+    "neraca_total_aset_lancar_p3",
+    "neraca_total_aset_p3",
+    "neraca_hutang_pendek_p3",
+    "neraca_total_liabilitas_p3",
+    "neraca_total_ekuitas_p3",
+    "rasio_cr_p1",
+    "rasio_der_p1",
+    "rasio_dscri_p1",
+    "rasio_cr_p2",
+    "rasio_der_p2",
+    "rasio_dscri_p2"
+  ],
+  "ai_rsk_izin_sektoral_keterangan": {
+    "replace": "Lines 104-106 are fact cells [SIUP/IUI...] + [Tgl Berlaku], no narrative cell",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_agunan_cash_collateral_persen": {
+    "replace": "Rev 1.2 explicitly tokenized row 1 only (\"Rumah tinggal\") and said \"same pattern for slots 2..5\". **PDF rows 1+2 are residential property; row 3 is CASH COLLATERAL (different shape: [10% dari plafond] parenthetical is a composite); row 4 is CESSIE PIUTANG; row 5 is PERSONAL GUARANTEE (no Rp value — Asset List terlampir).** Not homogeneous. Also: PDF has 5 rows visible — does cap stay at 5, or are 1+2 the \"real\" properties and 3-5 are fixed-role rows?",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_agunan_cash_collateral_nilai": {
+    "replace": "Rev 1.2 explicitly tokenized row 1 only (\"Rumah tinggal\") and said \"same pattern for slots 2..5\". **PDF rows 1+2 are residential property; row 3 is CASH COLLATERAL (different shape: [10% dari plafond] parenthetical is a composite); row 4 is CESSIE PIUTANG; row 5 is PERSONAL GUARANTEE (no Rp value — Asset List terlampir).** Not homogeneous. Also: PDF has 5 rows visible — does cap stay at 5, or are 1+2 the \"real\" properties and 3-5 are fixed-role rows?",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_agunan_cessie_pemilik": {
+    "replace": "Rev 1.2 explicitly tokenized row 1 only (\"Rumah tinggal\") and said \"same pattern for slots 2..5\". **PDF rows 1+2 are residential property; row 3 is CASH COLLATERAL (different shape: [10% dari plafond] parenthetical is a composite); row 4 is CESSIE PIUTANG; row 5 is PERSONAL GUARANTEE (no Rp value — Asset List terlampir).** Not homogeneous. Also: PDF has 5 rows visible — does cap stay at 5, or are 1+2 the \"real\" properties and 3-5 are fixed-role rows?",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_agunan_cessie_nilai_pasar": {
+    "replace": "Rev 1.2 explicitly tokenized row 1 only (\"Rumah tinggal\") and said \"same pattern for slots 2..5\". **PDF rows 1+2 are residential property; row 3 is CASH COLLATERAL (different shape: [10% dari plafond] parenthetical is a composite); row 4 is CESSIE PIUTANG; row 5 is PERSONAL GUARANTEE (no Rp value — Asset List terlampir).** Not homogeneous. Also: PDF has 5 rows visible — does cap stay at 5, or are 1+2 the \"real\" properties and 3-5 are fixed-role rows?",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_agunan_cessie_haircut_persen": {
+    "replace": "Rev 1.2 explicitly tokenized row 1 only (\"Rumah tinggal\") and said \"same pattern for slots 2..5\". **PDF rows 1+2 are residential property; row 3 is CASH COLLATERAL (different shape: [10% dari plafond] parenthetical is a composite); row 4 is CESSIE PIUTANG; row 5 is PERSONAL GUARANTEE (no Rp value — Asset List terlampir).** Not homogeneous. Also: PDF has 5 rows visible — does cap stay at 5, or are 1+2 the \"real\" properties and 3-5 are fixed-role rows?",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_agunan_cessie_nilai_likuidasi": {
+    "replace": "Rev 1.2 explicitly tokenized row 1 only (\"Rumah tinggal\") and said \"same pattern for slots 2..5\". **PDF rows 1+2 are residential property; row 3 is CASH COLLATERAL (different shape: [10% dari plafond] parenthetical is a composite); row 4 is CESSIE PIUTANG; row 5 is PERSONAL GUARANTEE (no Rp value — Asset List terlampir).** Not homogeneous. Also: PDF has 5 rows visible — does cap stay at 5, or are 1+2 the \"real\" properties and 3-5 are fixed-role rows?",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_agunan_pg_pemilik": {
+    "replace": "Rev 1.2 explicitly tokenized row 1 only (\"Rumah tinggal\") and said \"same pattern for slots 2..5\". **PDF rows 1+2 are residential property; row 3 is CASH COLLATERAL (different shape: [10% dari plafond] parenthetical is a composite); row 4 is CESSIE PIUTANG; row 5 is PERSONAL GUARANTEE (no Rp value — Asset List terlampir).** Not homogeneous. Also: PDF has 5 rows visible — does cap stay at 5, or are 1+2 the \"real\" properties and 3-5 are fixed-role rows?",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_agunan_pg_asset_list_ref": {
+    "replace": "Rev 1.2 explicitly tokenized row 1 only (\"Rumah tinggal\") and said \"same pattern for slots 2..5\". **PDF rows 1+2 are residential property; row 3 is CASH COLLATERAL (different shape: [10% dari plafond] parenthetical is a composite); row 4 is CESSIE PIUTANG; row 5 is PERSONAL GUARANTEE (no Rp value — Asset List terlampir).** Not homogeneous. Also: PDF has 5 rows visible — does cap stay at 5, or are 1+2 the \"real\" properties and 3-5 are fixed-role rows?",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_sccr_total_likuidasi_adjusted": {
+    "replace": "Rev 1.2 §IV.2 only tokenized 2 explicit [Rp X] cells. Symmetry check: the \"Usulan Unit Bisnis\" column has fact-display + 3 computed (Plafond=plafond, Rasio=fact-calc, Min%=policy, Status=auto). The \"Rekomendasi Unit Risk\" column has fact-display + 3 mirrors. Both sides need symmetric R1+R2 mapping. Rev 1.2 has it but doesn't show the symmetry table explicitly.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_sccr_rasio_adjusted": {
+    "replace": "Rev 1.2 §IV.2 only tokenized 2 explicit [Rp X] cells. Symmetry check: the \"Usulan Unit Bisnis\" column has fact-display + 3 computed (Plafond=plafond, Rasio=fact-calc, Min%=policy, Status=auto). The \"Rekomendasi Unit Risk\" column has fact-display + 3 mirrors. Both sides need symmetric R1+R2 mapping. Rev 1.2 has it but doesn't show the symmetry table explicitly.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_sccr_status_kepatuhan_or": {
+    "replace": "Rev 1.2 §IV.2 only tokenized 2 explicit [Rp X] cells. Symmetry check: the \"Usulan Unit Bisnis\" column has fact-display + 3 computed (Plafond=plafond, Rasio=fact-calc, Min%=policy, Status=auto). The \"Rekomendasi Unit Risk\" column has fact-display + 3 mirrors. Both sides need symmetric R1+R2 mapping. Rev 1.2 has it but doesn't show the symmetry table explicitly.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_rsk_agunan_adjustments": {
+    "replace": "1 bracket [Jalan Sadarmanah] (in narrative)",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_model_bisnis_ringkas": {
+    "replace": "All 7 rows claimed R1/R3 [muap]: ai_model_bisnis_utama, ai_client_bouwheer_utama, ketergantungan_client_tunggal_or + persen_revenue_client_tunggal, ai_pemasok_subkontraktor, jumlah_karyawan_manajemen + jumlah_karyawan_operasional, ai_wilayah_operasional, sektor_industri_or + ai_karakteristik_industri. **NONE of these tokens exist in MUAP rev 2.2.** MUAP bidang_usaha_utama exists but is the section §I \"Bidang Usaha\" field, not §V.1 detailed profile.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_client_bouwheer_utama_ringkas": {
+    "replace": "All 7 rows claimed R1/R3 [muap]: ai_model_bisnis_utama, ai_client_bouwheer_utama, ketergantungan_client_tunggal_or + persen_revenue_client_tunggal, ai_pemasok_subkontraktor, jumlah_karyawan_manajemen + jumlah_karyawan_operasional, ai_wilayah_operasional, sektor_industri_or + ai_karakteristik_industri. **NONE of these tokens exist in MUAP rev 2.2.** MUAP bidang_usaha_utama exists but is the section §I \"Bidang Usaha\" field, not §V.1 detailed profile.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_ketergantungan_client_tunggal_or": {
+    "replace": "All 7 rows claimed R1/R3 [muap]: ai_model_bisnis_utama, ai_client_bouwheer_utama, ketergantungan_client_tunggal_or + persen_revenue_client_tunggal, ai_pemasok_subkontraktor, jumlah_karyawan_manajemen + jumlah_karyawan_operasional, ai_wilayah_operasional, sektor_industri_or + ai_karakteristik_industri. **NONE of these tokens exist in MUAP rev 2.2.** MUAP bidang_usaha_utama exists but is the section §I \"Bidang Usaha\" field, not §V.1 detailed profile.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_persen_revenue_client_tunggal": {
+    "replace": "All 7 rows claimed R1/R3 [muap]: ai_model_bisnis_utama, ai_client_bouwheer_utama, ketergantungan_client_tunggal_or + persen_revenue_client_tunggal, ai_pemasok_subkontraktor, jumlah_karyawan_manajemen + jumlah_karyawan_operasional, ai_wilayah_operasional, sektor_industri_or + ai_karakteristik_industri. **NONE of these tokens exist in MUAP rev 2.2.** MUAP bidang_usaha_utama exists but is the section §I \"Bidang Usaha\" field, not §V.1 detailed profile.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_pemasok_subkontraktor_ringkas": {
+    "replace": "All 7 rows claimed R1/R3 [muap]: ai_model_bisnis_utama, ai_client_bouwheer_utama, ketergantungan_client_tunggal_or + persen_revenue_client_tunggal, ai_pemasok_subkontraktor, jumlah_karyawan_manajemen + jumlah_karyawan_operasional, ai_wilayah_operasional, sektor_industri_or + ai_karakteristik_industri. **NONE of these tokens exist in MUAP rev 2.2.** MUAP bidang_usaha_utama exists but is the section §I \"Bidang Usaha\" field, not §V.1 detailed profile.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_jumlah_karyawan_manajemen": {
+    "replace": "All 7 rows claimed R1/R3 [muap]: ai_model_bisnis_utama, ai_client_bouwheer_utama, ketergantungan_client_tunggal_or + persen_revenue_client_tunggal, ai_pemasok_subkontraktor, jumlah_karyawan_manajemen + jumlah_karyawan_operasional, ai_wilayah_operasional, sektor_industri_or + ai_karakteristik_industri. **NONE of these tokens exist in MUAP rev 2.2.** MUAP bidang_usaha_utama exists but is the section §I \"Bidang Usaha\" field, not §V.1 detailed profile.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_jumlah_karyawan_operasional": {
+    "replace": "All 7 rows claimed R1/R3 [muap]: ai_model_bisnis_utama, ai_client_bouwheer_utama, ketergantungan_client_tunggal_or + persen_revenue_client_tunggal, ai_pemasok_subkontraktor, jumlah_karyawan_manajemen + jumlah_karyawan_operasional, ai_wilayah_operasional, sektor_industri_or + ai_karakteristik_industri. **NONE of these tokens exist in MUAP rev 2.2.** MUAP bidang_usaha_utama exists but is the section §I \"Bidang Usaha\" field, not §V.1 detailed profile.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_wilayah_operasional_ringkas": {
+    "replace": "All 7 rows claimed R1/R3 [muap]: ai_model_bisnis_utama, ai_client_bouwheer_utama, ketergantungan_client_tunggal_or + persen_revenue_client_tunggal, ai_pemasok_subkontraktor, jumlah_karyawan_manajemen + jumlah_karyawan_operasional, ai_wilayah_operasional, sektor_industri_or + ai_karakteristik_industri. **NONE of these tokens exist in MUAP rev 2.2.** MUAP bidang_usaha_utama exists but is the section §I \"Bidang Usaha\" field, not §V.1 detailed profile.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_sektor_industri_or": {
+    "replace": "All 7 rows claimed R1/R3 [muap]: ai_model_bisnis_utama, ai_client_bouwheer_utama, ketergantungan_client_tunggal_or + persen_revenue_client_tunggal, ai_pemasok_subkontraktor, jumlah_karyawan_manajemen + jumlah_karyawan_operasional, ai_wilayah_operasional, sektor_industri_or + ai_karakteristik_industri. **NONE of these tokens exist in MUAP rev 2.2.** MUAP bidang_usaha_utama exists but is the section §I \"Bidang Usaha\" field, not §V.1 detailed profile.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_karakteristik_industri_ringkas": {
+    "replace": "All 7 rows claimed R1/R3 [muap]: ai_model_bisnis_utama, ai_client_bouwheer_utama, ketergantungan_client_tunggal_or + persen_revenue_client_tunggal, ai_pemasok_subkontraktor, jumlah_karyawan_manajemen + jumlah_karyawan_operasional, ai_wilayah_operasional, sektor_industri_or + ai_karakteristik_industri. **NONE of these tokens exist in MUAP rev 2.2.** MUAP bidang_usaha_utama exists but is the section §I \"Bidang Usaha\" field, not §V.1 detailed profile.",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_plafond_mk_rekomendasi": {
+    "replace": "Rp 2.500.000.000 (Plafond MK Rekomendasi)",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "rsk_plafond_investasi_rekomendasi_or_pending": {
+    "replace": "[Dibahas lebih lanjut]",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "plafond_terbilang": {
+    "replace": "Rp [xxx.xxx.xxx],- ([terbilang])",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_keterangan_key_person_direktur": {
+    "replace": "[Latar belakang, industri, dan tahun pengalaman]",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  },
+  "ai_keterangan_key_person_komisaris": {
+    "replace": "[Latar belakang dan keterlibatan operasional]",
+    "anchor": "RSK walkthrough table",
+    "occurrence": 1,
+    "notes": "Auto-extracted from walkthrough row; verify exact occurrence before T3 write."
+  }
+}

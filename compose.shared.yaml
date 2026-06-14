@@ -1,0 +1,164 @@
+# Mizan shared runtime services. Compose this with one app layer:
+#   docker compose -f compose.shared.yaml -f compose.build.yaml up -d --build
+#   docker compose -f compose.shared.yaml -f compose.ghcr.yaml up -d
+#
+# Research is always present in this shared stack. It only becomes active in the app when:
+#   WEB_RESEARCH_PROVIDER=searxng-firecrawl
+#   RESEARCH_WORKER_ENABLED=1
+name: mizan
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-mizan}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-mizan}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${POSTGRES_USER:-mizan} -d ${POSTGRES_DB:-mizan}']
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    networks: [internal]
+
+  seaweedfs:
+    image: chrislusf/seaweedfs:4.28 # pinned; bump deliberately
+    restart: unless-stopped
+    command: server -dir=/data -s3 -s3.config=/etc/seaweedfs/s3.json -master.volumeSizeLimitMB=1024
+    volumes:
+      - seaweed:/data
+      - ./docker/seaweedfs/s3.json:/etc/seaweedfs/s3.json:ro
+    networks: [internal]
+
+  searxng:
+    image: searxng/searxng:latest
+    container_name: searxng
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:8080:8080' # localhost-only on the host; in-cluster traffic uses service DNS
+    environment:
+      - SEARXNG_BASE_URL=http://searxng:8080/
+      # SECRET_KEY required to start; rotate per deploy. Generated once with:
+      #   openssl rand -hex 32
+      - SEARXNG_SECRET=${SEARXNG_SECRET:-please-set-via-env-not-default}
+    volumes:
+      - ./ops/searxng/settings.yml:/etc/searxng/settings.yml:ro
+      - searxng-data:/var/cache/searxng
+    networks: [internal]
+    healthcheck:
+      test: ['CMD', 'wget', '-qO-', 'http://localhost:8080/healthz']
+      interval: 30s
+      timeout: 5s
+      retries: 5
+
+  # --- Firecrawl self-hosted stack ---------------------------------------
+  # Firecrawl's OSS deployment is multi-service (api + worker + playwright +
+  # redis + rabbitmq + its own Postgres "nuq-postgres"). Mirrors upstream
+  # docker-compose.yaml from github.com/firecrawl/firecrawl. Images are
+  # published to ghcr.io/firecrawl/*; there is NO `firecrawl/firecrawl` on
+  # Docker Hub. Pin to a tested tag in production; `:latest` for dev parity.
+  firecrawl:
+    image: ghcr.io/firecrawl/firecrawl:latest
+    container_name: firecrawl
+    restart: unless-stopped
+    ports:
+      - '127.0.0.1:3002:3002' # localhost-only on host
+    environment:
+      HOST: '0.0.0.0'
+      PORT: '3002'
+      INTERNAL_PORT: '3002'
+      LOGGING_LEVEL: info
+      USE_DB_AUTHENTICATION: 'false'
+      REDIS_URL: redis://firecrawl-redis:6379
+      REDIS_RATE_LIMIT_URL: redis://firecrawl-redis:6379
+      PLAYWRIGHT_MICROSERVICE_URL: http://firecrawl-playwright:3000/scrape
+      NUQ_RABBITMQ_URL: amqp://firecrawl-rabbitmq:5672
+      POSTGRES_HOST: firecrawl-postgres
+      POSTGRES_PORT: '5432'
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      SEARXNG_ENDPOINT: http://searxng:8080
+    command: node dist/src/harness.js --start-docker
+    networks: [internal]
+    depends_on:
+      searxng:
+        condition: service_healthy
+      firecrawl-redis:
+        condition: service_started
+      firecrawl-playwright:
+        condition: service_started
+      firecrawl-rabbitmq:
+        condition: service_healthy
+      firecrawl-postgres:
+        condition: service_started
+    ulimits:
+      nofile: { soft: 65535, hard: 65535 }
+
+  firecrawl-playwright:
+    image: ghcr.io/firecrawl/playwright-service:latest
+    restart: unless-stopped
+    environment:
+      PORT: '3000'
+      MAX_CONCURRENT_PAGES: '10'
+    networks: [internal]
+    tmpfs:
+      - /tmp/.cache:noexec,nosuid,size=1g
+
+  firecrawl-redis:
+    image: redis:alpine
+    restart: unless-stopped
+    command: redis-server --bind 0.0.0.0
+    networks: [internal]
+
+  firecrawl-rabbitmq:
+    image: rabbitmq:3-management
+    restart: unless-stopped
+    networks: [internal]
+    healthcheck:
+      test: ['CMD', 'rabbitmq-diagnostics', '-q', 'check_running']
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  firecrawl-postgres:
+    image: ghcr.io/firecrawl/nuq-postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - firecrawl-pgdata:/var/lib/postgresql/data
+    networks: [internal]
+  # ------------------------------------------------------------------------
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '443:443'
+    environment:
+      DOMAIN: ${DOMAIN:-localhost}
+    volumes:
+      - ./docker/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [web]
+    networks: [internal]
+
+networks:
+  internal:
+
+volumes:
+  pgdata:
+  seaweed:
+  searxng-data:
+  firecrawl-pgdata:
+  caddy_data:
+  caddy_config:

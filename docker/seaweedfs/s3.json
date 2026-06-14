@@ -1,0 +1,10 @@
+{
+  "_comment": "Production SeaweedFS S3 credentials. CHANGE these before deploy and keep this file out of any public repo. The same accessKey/secretKey must match S3_ACCESS_KEY/S3_SECRET_KEY in .env.production.",
+  "identities": [
+    {
+      "name": "mizan",
+      "credentials": [{ "accessKey": "CHANGE_ME_ACCESS_KEY", "secretKey": "CHANGE_ME_SECRET_KEY" }],
+      "actions": ["Admin", "Read", "Write", "List", "Tagging"]
+    }
+  ]
+}

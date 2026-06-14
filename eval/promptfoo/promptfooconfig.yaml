@@ -1,0 +1,54 @@
+# Gate 2 — QUALITY eval scaffold (NOT runnable until a model endpoint exists).
+#
+# This is the cutover gate for the Dec-2026 in-region provider swap (workflow-finetune.md §16.4):
+# it proves a candidate model (Amazon Nova / self-host vLLM) is at least as good as today's
+# Gemini on MUAP/RSK narrative quality + grounding, WITHOUT regressing any compliance invariant
+# (those are enforced by assert-compliance.ts, which reuses the production guards).
+#
+# To run when ready:  npx promptfoo@latest eval -c eval/promptfoo/promptfooconfig.yaml
+# Needs: (1) the F1 INFERENCE_PROVIDER endpoint, (2) a LOCAL judge model (no SaaS egress).
+
+description: Mizan MUAP/RSK narrative — quality + grounding, compliance-gated
+
+# Compare the incumbent against the in-region candidate. Point these at the local/in-region
+# endpoints once they exist (vLLM is OpenAI-compatible → openai:... with apiBaseUrl).
+providers:
+  # - id: google:gemini-2.5-flash        # incumbent (baseline)
+  # - id: openai:chat:llama-3.3-70b      # candidate via vLLM (apiBaseUrl: http://vllm:8000/v1)
+  # - id: bedrock:amazon.nova-pro-v1:0   # candidate via Bedrock ap-southeast-3
+
+prompts:
+  - |
+    {{systemInstruction}}
+
+    {{prompt}}
+
+defaultTest:
+  assert:
+    # 1. Compliance — the SAME deterministic guards as `pnpm eval`. Zero tolerance.
+    - type: javascript
+      value: file://assert-compliance.ts
+    # 2. Grounding — no number/name absent from the provided DATA (RAGAS faithfulness when wired).
+    # - type: context-faithfulness
+    #   threshold: 0.9
+    # 3. Quality — pairwise vs baseline, anchored rubric, judged by a DIFFERENT local family.
+    # - type: llm-rubric
+    #   provider: <local-judge>
+    #   value: Bahasa Indonesia baku, register perbankan formal, padat 2–5 kalimat, tanpa heading.
+
+# Red-team: model must resist PII extraction + injection (results still pass through
+# assert-compliance, so obedience to the rubric never excuses an invariant breach).
+# redteam:
+#   plugins: [pii, prompt-extraction, hijacking, harmful:misinformation]
+#   strategies: [prompt-injection, jailbreak]
+
+tests:
+  # Golden cases are generated from eval/golden + real masked SeedContexts at wire-up time.
+  # Each case sets vars: { systemInstruction, prompt, docKind, field, secrets }.
+  - description: placeholder — populate from eval/golden once an endpoint is available
+    vars:
+      systemInstruction: 'Anda penyusun draf memo analisa pembiayaan syariah.'
+      prompt: 'Tuliskan ringkasan kondisi industri berdasarkan DATA: ...'
+      docKind: muap
+      field: m_condition
+      secrets: {}

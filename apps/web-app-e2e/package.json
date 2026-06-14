@@ -1,0 +1,19 @@
+{
+  "name": "@mizan/web-app-e2e",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "nx": {
+    "projectType": "application",
+    "targets": {
+      "e2e": {
+        "executor": "nx:run-commands",
+        "options": {
+          "cwd": "{workspaceRoot}",
+          "command": "cucumber-js --config apps/web-app-e2e/cucumber.cjs"
+        },
+        "cache": false
+      }
+    }
+  }
+}

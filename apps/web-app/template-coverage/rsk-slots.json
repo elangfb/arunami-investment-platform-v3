@@ -1,0 +1,834 @@
+[
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[No. RSK]",
+    "line": "[No. RSK] / [Divisi] / [Bulan] / [Tahun]",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Divisi]",
+    "line": "[No. RSK] / [Divisi] / [Bulan] / [Tahun]",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Bulan]",
+    "line": "[No. RSK] / [Divisi] / [Bulan] / [Tahun]",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Tahun]",
+    "line": "[No. RSK] / [Divisi] / [Bulan] / [Tahun]",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Tanggal RSK]",
+    "line": "[Tanggal RSK]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Perusahaan Pemohon]",
+    "line": "[Nama Perusahaan Pemohon]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Plafond yang Diajukan]",
+    "line": "Rp [Plafond yang Diajukan],-",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Reviewer / Unit Risk]",
+    "line": "[Nama Reviewer / Unit Risk]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[ DISETUJUI  /  DISETUJUI DENGAN SYARAT  /  DITOLAK ]",
+    "line": "[ DISETUJUI  /  DISETUJUI DENGAN SYARAT  /  DITOLAK ]",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Perusahaan Pemohon]",
+    "line": "[Nama Perusahaan Pemohon]",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Direktur / Pemilik]",
+    "line": "[Nama Direktur / Pemilik]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Grup Usaha, jika ada]",
+    "line": "[Nama Grup Usaha, jika ada]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Deskripsi singkat bidang usaha]",
+    "line": "[Deskripsi singkat bidang usaha]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Tahun]",
+    "line": "Baru / Existing sejak [Tahun]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Internal Referral / Marketing / Walk-in]",
+    "line": "[Internal Referral / Marketing / Walk-in]",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Account Officer / Unit]",
+    "line": "[Nama Account Officer / Unit]",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[PT / CV / Firma / Perorangan]",
+    "line": "[PT / CV / Firma / Perorangan] — tulis nama lengkap sesuai akta",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nomor NIB]",
+    "line": "[Nomor NIB]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[dd Bulan Tahun]",
+    "line": "[dd Bulan Tahun] — No. Akta [X] oleh Notaris [Nama]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[X] oleh Notaris [Nama]",
+    "line": "[dd Bulan Tahun] — No. Akta [X] oleh Notaris [Nama]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nomor NPWP]",
+    "line": "[Nomor NPWP]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Alamat lengkap sesuai dokumen NIB]",
+    "line": "[Alamat lengkap sesuai dokumen NIB]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Alamat operasional aktual — jika berbeda, catat sebagai catatan]",
+    "line": "[Alamat operasional aktual — jika berbeda, catat sebagai catatan]",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama KBLI]",
+    "line": "[Nama KBLI] — Kode [KBLI Code]",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[KBLI Code]",
+    "line": "[Nama KBLI] — Kode [KBLI Code]",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Jika ada: SIUP, izin Kemenhub, SIUJK, dll. — sertakan nomor dan masa berlaku]",
+    "line": "[Jika ada: SIUP, izin Kemenhub, SIUJK, dll. — sertakan nomor dan masa berlaku]",
+    "section": "(top)",
+    "table": "7,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Wajib Pajak Badan Aktif / Suspended / PKP]",
+    "line": "[Wajib Pajak Badan Aktif / Suspended / PKP]",
+    "section": "(top)",
+    "table": "8,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Pemegang Saham 1]",
+    "line": "[Nama Pemegang Saham 1]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[UBO / Profesional]",
+    "line": "[UBO / Profesional]",
+    "section": "(top)",
+    "table": "1,4"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Pemegang Saham 2]",
+    "line": "[Nama Pemegang Saham 2]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Keluarga / Investor]",
+    "line": "[Keluarga / Investor]",
+    "section": "(top)",
+    "table": "2,4"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Direktur]",
+    "line": "[Nama Direktur]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Latar belakang, industri, dan tahun pengalaman]",
+    "line": "[Latar belakang, industri, dan tahun pengalaman]",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Komisaris]",
+    "line": "[Nama Komisaris]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Latar belakang dan keterlibatan operasional]",
+    "line": "[Latar belakang dan keterlibatan operasional]",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Sister Company 1]",
+    "line": "[Nama Sister Company 1]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Bidang Usaha]",
+    "line": "[Bidang Usaha]",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Ada pembiayaan / tidak]",
+    "line": "[Ada pembiayaan / tidak]",
+    "section": "(top)",
+    "table": "1,4"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Entitas Induk]",
+    "line": "[Nama Entitas Induk]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Bidang Usaha]",
+    "line": "[Bidang Usaha]",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Line Facility / Term Loan / Non-Revolving / Revolving]",
+    "line": "[Line Facility / Term Loan / Non-Revolving / Revolving]",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Plafond yang Diajukan]",
+    "line": "Rp [Plafond yang Diajukan],- ([Plafond Terbilang])",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Plafond Terbilang]",
+    "line": "Rp [Plafond yang Diajukan],- ([Plafond Terbilang])",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[xxx.xxx.xxx]",
+    "line": "Rp [xxx.xxx.xxx],- ([terbilang])",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[terbilang]",
+    "line": "Rp [xxx.xxx.xxx],- ([terbilang])",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Jenis Akad]",
+    "line": "[Jenis Akad]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Jika berbeda, beserta alasan]",
+    "line": "[Jika berbeda, beserta alasan]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Margin/Nisbah]",
+    "line": "[Margin/Nisbah]",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Jangka Waktu]",
+    "line": "[Jangka Waktu] bulan sejak penandatanganan akad",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Revolving / Non-Revolving]",
+    "line": "[Revolving / Non-Revolving]",
+    "section": "(top)",
+    "table": "8,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[No. / Tanggal]",
+    "line": "[No. / Tanggal]",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Tanggal]",
+    "line": "[Tanggal]",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Isi ringkas]",
+    "line": "[Isi ringkas]",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[No. / Tanggal]",
+    "line": "[No. / Tanggal]",
+    "section": "(top)",
+    "table": "3,2"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama bouwheer]",
+    "line": "[Nama bouwheer]",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp]",
+    "line": "[Rp]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp]",
+    "line": "[Rp]",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp]",
+    "line": "[Rp]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp]",
+    "line": "[Rp]",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp 3.000.000.000]",
+    "line": "[Rp 3.000.000.000]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[XX/MEMO-HIJRA-RISK/Bulan/Tahun]",
+    "line": "Referensi: Memo Internal No. [XX/MEMO-HIJRA-RISK/Bulan/Tahun] perihal Ketentuan Limit Penyaluran Dana.",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Akad Musyarakah sesuai / tidak sesuai karena...]",
+    "line": "[Akad Musyarakah sesuai / tidak sesuai karena...]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Apakah ada unsur riba/gharar tersembunyi? Jelaskan]",
+    "line": "[Apakah ada unsur riba/gharar tersembunyi? Jelaskan]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Jenis usaha — halal/haram/borderline — proporsi pendapatan halal]",
+    "line": "[Jenis usaha — halal/haram/borderline — proporsi pendapatan halal]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Apakah perlu eskalasi ke DPS?]",
+    "line": "[Apakah perlu eskalasi ke DPS?]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Alamat 1]",
+    "line": "Rumah tinggal – [Alamat 1]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Pemilik]",
+    "line": "[Nama Pemilik]",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp X]",
+    "line": "[Rp X]",
+    "section": "(top)",
+    "table": "1,3"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[20-40%]",
+    "line": "[20-40%]",
+    "section": "(top)",
+    "table": "1,4"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp Y]",
+    "line": "[Rp Y]",
+    "section": "(top)",
+    "table": "1,5"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Alamat 2]",
+    "line": "Rumah tinggal – [Alamat 2]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama Pemilik]",
+    "line": "[Nama Pemilik]",
+    "section": "(top)",
+    "table": "2,2"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp X]",
+    "line": "[Rp X]",
+    "section": "(top)",
+    "table": "2,3"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[20-40%]",
+    "line": "[20-40%]",
+    "section": "(top)",
+    "table": "2,4"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp Y]",
+    "line": "[Rp Y]",
+    "section": "(top)",
+    "table": "2,5"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[10% dari plafond]",
+    "line": "Cash Collateral – [10% dari plafond]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp X]",
+    "line": "[Rp X]",
+    "section": "(top)",
+    "table": "3,3"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp X]",
+    "line": "[Rp X]",
+    "section": "(top)",
+    "table": "3,5"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp X]",
+    "line": "[Rp X]",
+    "section": "(top)",
+    "table": "4,3"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[50%]",
+    "line": "[50%]",
+    "section": "(top)",
+    "table": "4,4"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp Y]",
+    "line": "[Rp Y]",
+    "section": "(top)",
+    "table": "4,5"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nilai Agunan]",
+    "line": "[Nilai Agunan]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp Y — setelah penyesuaian]",
+    "line": "[Rp Y — setelah penyesuaian]",
+    "section": "(top)",
+    "table": "1,2"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Jalan Sadarmanah]",
+    "line": "Aset rumah tinggal di [Jalan Sadarmanah] tidak memiliki IMB — nilai bangunan disesuaikan menjadi Rp 0. Nilai tanah tetap diperhitungkan sesuai penilaian KJPP.",
+    "section": "(top)",
+    "table": null
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Deskripsikan dengan singkat dan jelas — mis: Man Power Supply untuk airport services]",
+    "line": "[Deskripsikan dengan singkat dan jelas — mis: Man Power Supply untuk airport services]",
+    "section": "(top)",
+    "table": "0,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama client, kontribusi % terhadap total revenue, durasi kerjasama]",
+    "line": "[Nama client, kontribusi % terhadap total revenue, durasi kerjasama]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Ya/Tidak — konsentrasi risiko]",
+    "line": "[Ya/Tidak — konsentrasi risiko] — [persentase revenue dari 1 client]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[persentase revenue dari 1 client]",
+    "line": "[Ya/Tidak — konsentrasi risiko] — [persentase revenue dari 1 client]",
+    "section": "(top)",
+    "table": "2,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Nama vendor, jenis pengadaan, ada/tidak perjanjian tertulis]",
+    "line": "[Nama vendor, jenis pengadaan, ada/tidak perjanjian tertulis]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[X] orang manajemen + [Y]",
+    "line": "[X] orang manajemen + [Y] personil operasional",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Daftar kota/bandara/lokasi proyek aktif]",
+    "line": "[Daftar kota/bandara/lokasi proyek aktif]",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Ground Handling / Logistik / Konstruksi / dll.]",
+    "line": "[Ground Handling / Logistik / Konstruksi / dll.] — karakteristik dan siklus usaha",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Total RAB proyek]",
+    "line": "[Total RAB proyek]",
+    "section": "(top)",
+    "table": "1,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Total RAB investasi]",
+    "line": "[Total RAB investasi]",
+    "section": "(top)",
+    "table": "3,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Dibahas lebih lanjut]",
+    "line": "[Dibahas lebih lanjut]",
+    "section": "(top)",
+    "table": "4,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp X/tahun]",
+    "line": "[Rp X/tahun]",
+    "section": "(top)",
+    "table": "5,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[Rp Y/tahun]",
+    "line": "[Rp Y/tahun]",
+    "section": "(top)",
+    "table": "6,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[MEMENUHI / TIDAK MEMENUHI]",
+    "line": "[MEMENUHI / TIDAK MEMENUHI]",
+    "section": "(top)",
+    "table": "8,1"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[ ] Sesuai prinsip syariah  [ ]",
+    "line": "Akad yang digunakan: [ ] Sesuai prinsip syariah  [ ] Perlu penyesuaian — uraikan:",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "rsk",
+    "kind": "bracket",
+    "slot": "[ ] Halal  [ ]",
+    "line": "Objek usaha: [ ] Halal  [ ] Perlu klarifikasi lebih lanjut",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "rsk",
+    "kind": "underscore",
+    "slot": "_______________________________________________",
+    "line": "Catatan DPS (jika ada): _______________________________________________",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "rsk",
+    "kind": "underscore",
+    "slot": "_________________________",
+    "line": "Nama DPS: _________________________     Tanggal: ___________     Tanda Tangan: ___________",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "rsk",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Nama DPS: _________________________     Tanggal: ___________     Tanda Tangan: ___________",
+    "section": "(top)",
+    "table": "0,0"
+  },
+  {
+    "template": "rsk",
+    "kind": "underscore",
+    "slot": "___________",
+    "line": "Nama DPS: _________________________     Tanggal: ___________     Tanda Tangan: ___________",
+    "section": "(top)",
+    "table": "0,0"
+  }
+]
