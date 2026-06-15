@@ -18,6 +18,8 @@
     "test:unit": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.test.json node --import tsx --test \"apps/web-app/src/**/*.test.ts\"",
     "eval": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.test.json node --import tsx --test \"eval/guardrails/*.test.ts\"",
     "test:integration": "bash scripts/test-integration.sh",
+    "test:integration:firestore": "bash scripts/test-integration-firestore.sh",
+    "test:integration:storage": "bash scripts/test-integration-storage.sh",
     "test:e2e": "bash scripts/test-e2e.sh",
     "seed": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.json tsx apps/web-app/prisma/seed.ts",
     "seed:config": "TSX_TSCONFIG_PATH=apps/web-app/tsconfig.json tsx apps/web-app/prisma/seed.ts --config-only",
