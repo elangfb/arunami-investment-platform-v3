@@ -9,6 +9,7 @@
 // about against the real action handlers; this route only stages the starting state.
 import { NextResponse } from 'next/server'
 import { createApplication, loadApplicationForWrite, saveApplication } from '@/server/repo/write'
+import { upsertDocLinkage } from '@/server/repo/doc-linkage'
 import { e2eFixturesEnabled } from '@/server/auth/e2e-fixtures'
 import { buildAmlAttestation } from '@/lib/aml'
 import type { LoanApplication, Stage } from '@/lib/types'
@@ -101,6 +102,16 @@ async function advanceTo(appId: string, targetStage: Stage): Promise<LoanApplica
       if (targetStage >= 4) app.riskRecommendation = 'approve'
       await saveApplication(app)
     }
+    // ADR-0018 N2: the MUAP ladder `request` is blocked until the MUAP doc is minted
+    // (approval.ts gates on DocLinkage.muapDocId — a pure-app gate can't see it). The "Generate
+    // MUAP" step is out of scope for the ladder scenarios, so stage in a synthetic linkage. The
+    // id only needs to be non-null: the in-Doc QR stamp is best-effort, and the verifiable QR the
+    // scenarios open is the ledger /qr/<token>, not the Doc.
+    await upsertDocLinkage({
+      applicationId: appId,
+      create: { muapDocId: `fixture-muap-${appId}`, rskDocId: null, templateVersion: 'v1' },
+      update: { muapDocId: `fixture-muap-${appId}` },
+    })
   }
   const final = await loadApplicationForWrite(appId)
   if (!final) throw new Error(`fixture: app ${appId} missing after advance`)
