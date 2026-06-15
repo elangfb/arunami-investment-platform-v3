@@ -10,6 +10,7 @@
 import { NextResponse } from 'next/server'
 import { createApplication, loadApplicationForWrite, saveApplication } from '@/server/repo/write'
 import { e2eFixturesEnabled } from '@/server/auth/e2e-fixtures'
+import { buildAmlAttestation } from '@/lib/aml'
 import type { LoanApplication, Stage } from '@/lib/types'
 
 interface FixtureInput {
@@ -83,14 +84,21 @@ async function advanceTo(appId: string, targetStage: Stage): Promise<LoanApplica
     })
     await saveApplication(app)
   }
-  // ADR-0007: a stage-3+ deal has Legal & Appraisal done (they gate the MUAP→Risk submit), so
-  // scenarios exercising the MUAP ladder aren't blocked by the prerequisite. (documents: [] makes
-  // the per-doc legal check vacuously satisfied; set the two completion signals.)
+  // Fast-forwarding past a gate-bearing stage means the prerequisites that gate the NEXT desk's
+  // maker action must already be in place — otherwise the ladder scenarios are blocked by setup
+  // state, not by the behaviour under test. Set them by target stage:
+  //   stage ≥ 3 → MUAP→Risk submit gate (makerSubmitGateError('muap') / muapToRiskBlockers):
+  //               Legal+Appraisal done (ADR-0007) AND the Initial-AML attestation (relocated intake
+  //               gate, ADR-0020 §2). documents: [] makes the per-doc legal check vacuously satisfied.
+  //   stage ≥ 4 → RSK ladder request gate (makerSubmitGateError('rsk')): a recorded risk
+  //               recommendation. Default 'approve'; a scenario can override it (e.g. conditional).
   if (targetStage >= 3) {
     const app = await loadApplicationForWrite(appId)
     if (app) {
       app.stage2LegalApproval = { verifiedByLG: true, notes: 'Fixture: Analisa Yuridis selesai.' }
       app.appraisalPath = 'internal'
+      app.amlAttestation = buildAmlAttestation(SYSTEM_USER_ID, SYSTEM_USER_NAME)
+      if (targetStage >= 4) app.riskRecommendation = 'approve'
       await saveApplication(app)
     }
   }

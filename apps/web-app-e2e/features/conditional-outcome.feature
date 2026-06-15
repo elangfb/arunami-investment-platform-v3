@@ -4,12 +4,12 @@ Feature: Committee conditional outcome & terminal closure
   to branch on the nasabah's response
   So that an application can proceed to disbursement or end cleanly
 
-  Scenario: Risk Analyst forwards a CONDITIONAL recommendation to the committee
+  Scenario: Risk Analyst with a CONDITIONAL recommendation opens the RSK ladder to committee
     Given a fixture application at stage 4 with:
       | riskRecommendation | conditional |
     And I sign in as "Ahmad Fauzi"
     When I open the fixture application
-    Then I see the button "Kirim ke Komite"
+    Then I see the button "Buka RSK"
 
   Scenario: RM records the nasabah response to a conditional approval
     Given a fixture application at stage 1 with:

@@ -6,7 +6,7 @@ Feature: Application detail — task-first action band & grouped tabs
   Scenario: Account Officer sees the intake action at stage 1
     Given I sign in as "Siti Rahma"
     When I open application "FOS-2026-001"
-    Then the action band shows "Lengkapi berkas"
+    Then the action band shows "Kirim ke Legal, Agunan & Biro"
     And I see the button "Kirim ke Legal, Agunan & Biro"
 
   Scenario: Loan Analyst sees the feasibility action at stage 3
@@ -19,12 +19,12 @@ Feature: Application detail — task-first action band & grouped tabs
     Given I sign in as "Laila Ahmadi"
     When I open application "FOS-2026-003"
     Then the action band shows "Verifikasi dokumen"
-    And I see the button "Buka Verifikasi Dokumen"
+    And I see the button "Selesaikan Analisa Yuridis"
 
-  Scenario: Risk Team sends an approved app to committee at stage 4
+  Scenario: Risk Team opens the RSK ladder for an approved app at stage 4
     Given I sign in as "Ahmad Fauzi"
     When I open application "FOS-2026-007"
-    Then I see the button "Kirim ke Komite"
+    Then I see the button "Buka RSK"
 
   Scenario: Committee member opens the committee room at stage 5
     Given I sign in as "Dewi Kirana"

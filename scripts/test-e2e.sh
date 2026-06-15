@@ -46,6 +46,11 @@ export E2E_MODE=1
 export OCR_PROVIDER=stub
 export INFERENCE_PROVIDER="${INFERENCE_PROVIDER:-stub}"
 export DOCS_PROVIDER="${DOCS_PROVIDER:-stub}"
+# MoM/SP3 generation (server/docs/mom-sp3.ts) reads these template ids and throws if unset — even under
+# DOCS_PROVIDER=stub, where the in-memory drive.files.copy ignores the id entirely. Dummy non-empty
+# values satisfy the guard so the MoM/SP3 doc-gen scenarios exercise the stub copy path with no egress.
+export GOOGLE_MOM_TEMPLATE_DOC_ID="${GOOGLE_MOM_TEMPLATE_DOC_ID:-stub-mom-template}"
+export GOOGLE_SP3_TEMPLATE_DOC_ID="${GOOGLE_SP3_TEMPLATE_DOC_ID:-stub-sp3-template}"
 export WEB_RESEARCH_PROVIDER="${WEB_RESEARCH_PROVIDER:-stub}"
 export STORAGE_PROVIDER="${STORAGE_PROVIDER:-stub}"
 export NEXT_PUBLIC_USE_AUTH_EMULATOR=1
